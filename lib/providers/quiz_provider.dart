@@ -91,7 +91,7 @@ class QuizProvider extends ChangeNotifier {
     '六': 6, '七': 7, '八': 8, '九': 9, '十': 10,
   };
 
-  static int _cnNumValue(String s) {
+  static int cnNumValue(String s) {
     // 匹配"第十单元"“第11课”这类：优先阿拉伯数字
     final arabic = RegExp(r'(\d+)').firstMatch(s);
     if (arabic != null) return int.parse(arabic.group(1)!);
@@ -110,21 +110,21 @@ class QuizProvider extends ChangeNotifier {
   /// 单元列表，按序号排
   List<String> get units {
     final list = currentSubjectQuestions.map((q) => q.unit).toSet().toList();
-    list.sort((a, b) => _cnNumValue(a).compareTo(_cnNumValue(b)));
+    list.sort((a, b) => cnNumValue(a).compareTo(cnNumValue(b)));
     return list;
   }
 
   /// 知识点列表，按序号排
   List<String> get knowledges {
     final list = currentSubjectQuestions.map((q) => q.knowledge).toSet().toList();
-    list.sort((a, b) => _cnNumValue(a).compareTo(_cnNumValue(b)));
+    list.sort((a, b) => cnNumValue(a).compareTo(cnNumValue(b)));
     return list;
   }
 
   /// 来源列表，按序号排
   List<String> get workbooks {
     final list = currentSubjectQuestions.map((q) => q.workbook).toSet().toList();
-    list.sort((a, b) => _cnNumValue(a).compareTo(_cnNumValue(b)));
+    list.sort((a, b) => cnNumValue(a).compareTo(cnNumValue(b)));
     return list;
   }
 
