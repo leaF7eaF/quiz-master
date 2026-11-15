@@ -56,25 +56,25 @@ jobs:
           storeFile=quiz-release.jks
           EOF
 
-          # 注入签名配置到 app/build.gradle
           python3 - <<'PY'
-          import re
           p = "android/app/build.gradle"
           s = open(p).read()
-          if "key.properties" not in s:
-              s = s.replace(
-                  "android {",
-                  """def keystoreProperties = new Properties()
+
+          # 1) 顶部注入 keystoreProperties 读取
+          if "keystorePropertiesFile" not in s:
+              inject_head = """def keystoreProperties = new Properties()
           def keystorePropertiesFile = rootProject.file('key.properties')
           if (keystorePropertiesFile.exists()) {
               keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
           }
 
-          android {"""
-              )
-              s = s.replace(
-                  "buildTypes {",
-                  """signingConfigs {
+          """
+              # 在 "android {" 前插入（只在第一次出现处）
+              s = s.replace("android {", inject_head + "android {", 1)
+
+          # 2) 定义 release signingConfig（插在 buildTypes 之前）
+          if "signingConfigs.release" not in s:
+              rel_cfg = """signingConfigs {
               release {
                   keyAlias keystoreProperties['keyAlias']
                   keyPassword keystoreProperties['keyPassword']
@@ -82,15 +82,20 @@ jobs:
                   storePassword keystoreProperties['storePassword']
               }
           }
-          buildTypes {"""
-              )
-              s = re.sub(
-                  r"buildTypes \{\s*release \{([^}]*?)signingConfig signingConfig\.debug",
-                  r"buildTypes {\n        release {\n\1signingConfig signingConfigs.release",
-                  s
-              )
-              open(p, "w").write(s)
-          print("gradle sign config injected")
+          """
+              s = s.replace("    buildTypes {", rel_cfg + "    buildTypes {", 1)
+
+          # 3) release 块改用 release 签名（模板写法: signingConfig = signingConfigs.debug）
+          s = s.replace("signingConfig = signingConfigs.debug",
+                        "signingConfig = signingConfigs.release")
+
+          open(p, "w").write(s)
+          print("=== 注入后 buildTypes 段 ===")
+          import re as _re
+          m = _re.search(r"buildTypes \{[\s\S]*?\n    \}", s)
+          print(m.group(0) if m else "NOT FOUND")
+          assert "signingConfigs.release" in s, "注入失败！"
+          print("gradle sign config OK")
           PY
 
       - name: 安装依赖
