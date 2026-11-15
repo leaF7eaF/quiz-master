@@ -85,17 +85,48 @@ class QuizProvider extends ChangeNotifier {
     return list;
   }
 
-  /// 当前科目的单元列表
-  List<String> get units =>
-      currentSubjectQuestions.map((q) => q.unit).toSet().toList()..sort();
+  /// 按中文序号提取数字排序：第一(1)、二(2)…十(10)、十一(11)…
+  static final Map<String, int> _cnNum = {
+    '零': 0, '一': 1, '二': 2, '三': 3, '四': 4, '五': 5,
+    '六': 6, '七': 7, '八': 8, '九': 9, '十': 10,
+  };
 
-  /// 当前科目的知识点列表
-  List<String> get knowledges =>
-      currentSubjectQuestions.map((q) => q.knowledge).toSet().toList()..sort();
+  static int _cnNumValue(String s) {
+    // 匹配"第十单元"“第11课”这类：优先阿拉伯数字
+    final arabic = RegExp(r'(\d+)').firstMatch(s);
+    if (arabic != null) return int.parse(arabic.group(1)!);
+    final m = RegExp(r'第([零一二三四五六七八九十]+)').firstMatch(s);
+    if (m == null) return 999; // 无序号的排最后
+    final cn = m.group(1)!;
+    // 简单支持"十""十一"…“二十"组合
+    if (cn == '十') return 10;
+    final tenIdx = cn.indexOf('十');
+    if (tenIdx < 0) return _cnNum[cn] ?? 999;
+    final tens = tenIdx == 0 ? 1 : (_cnNum[cn.substring(0, tenIdx)] ?? 1);
+    final ones = tenIdx + 1 < cn.length ? (_cnNum[cn.substring(tenIdx + 1)] ?? 0) : 0;
+    return tens * 10 + ones;
+  }
 
-  /// 当前科目的练习册列表
-  List<String> get workbooks =>
-      currentSubjectQuestions.map((q) => q.workbook).toSet().toList()..sort();
+  /// 单元列表，按序号排
+  List<String> get units {
+    final list = currentSubjectQuestions.map((q) => q.unit).toSet().toList();
+    list.sort((a, b) => _cnNumValue(a).compareTo(_cnNumValue(b)));
+    return list;
+  }
+
+  /// 知识点列表，按序号排
+  List<String> get knowledges {
+    final list = currentSubjectQuestions.map((q) => q.knowledge).toSet().toList();
+    list.sort((a, b) => _cnNumValue(a).compareTo(_cnNumValue(b)));
+    return list;
+  }
+
+  /// 来源列表，按序号排
+  List<String> get workbooks {
+    final list = currentSubjectQuestions.map((q) => q.workbook).toSet().toList();
+    list.sort((a, b) => _cnNumValue(a).compareTo(_cnNumValue(b)));
+    return list;
+  }
 
   // ===== 答题 =====
   Future<void> answer(Question q, bool correct, int timeMs) async {

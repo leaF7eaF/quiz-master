@@ -104,7 +104,8 @@ class _BrowseScreenState extends State<BrowseScreen> {
       };
       counts[key] = (counts[key] ?? 0) + 1;
     }
-    final keys = counts.keys.toList()..sort();
+    final keys = counts.keys.toList()
+      ..sort((a, b) => QuizProvider._cnNumValue(a).compareTo(QuizProvider._cnNumValue(b)));
 
     if (keys.isEmpty) {
       return const Center(child: Text('暂无题目'));
