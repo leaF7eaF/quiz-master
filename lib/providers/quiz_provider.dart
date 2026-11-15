@@ -1,0 +1,192 @@
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../models/question.dart';
+import '../data/all_questions.dart';
+
+/// 刷题状态与本地持久化
+class QuizProvider extends ChangeNotifier {
+  static const _kRecords = 'answer_records_v1';
+
+  List<Question> _all = [];
+  List<AnswerRecord> _records = [];
+  String _subject = 'politics';
+  String? _filterUnit;
+  String? _filterKnowledge;
+  String? _filterWorkbook;
+
+  List<Question> get all => _all;
+  List<AnswerRecord> get records => _records;
+  String get subject => _subject;
+  String? get filterUnit => _filterUnit;
+  String? get filterKnowledge => _filterKnowledge;
+  String? get filterWorkbook => _filterWorkbook;
+
+  Future<void> init() async {
+    _all = buildAllQuestions();
+    final sp = await SharedPreferences.getInstance();
+    final raw = sp.getString(_kRecords);
+    if (raw != null && raw.isNotEmpty) {
+      try {
+        final list = (jsonDecode(raw) as List).cast<Map<String, dynamic>>();
+        _records = list.map((m) => AnswerRecord(
+              qid: m['qid'] as String,
+              subject: m['subject'] as String,
+              knowledge: (m['knowledge'] ?? '') as String,
+              workbook: (m['workbook'] ?? '') as String,
+              correct: m['correct'] as bool,
+              timeMs: (m['timeMs'] ?? 0) as int,
+              when: DateTime.fromMillisecondsSinceEpoch(m['when'] as int),
+            )).toList();
+      } catch (_) {}
+    }
+    notifyListeners();
+  }
+
+  Future<void> _persist() async {
+    final sp = await SharedPreferences.getInstance();
+    final list = _records
+        .map((r) => {
+              'qid': r.qid,
+              'subject': r.subject,
+              'knowledge': r.knowledge,
+              'workbook': r.workbook,
+              'correct': r.correct,
+              'timeMs': r.timeMs,
+              'when': r.when.millisecondsSinceEpoch,
+            })
+        .toList();
+    await sp.setString(_kRecords, jsonEncode(list));
+  }
+
+  // ===== 选择 / 筛选 =====
+  void selectSubject(String s) {
+    _subject = s;
+    _filterUnit = null;
+    _filterKnowledge = null;
+    _filterWorkbook = null;
+    notifyListeners();
+  }
+
+  void setFilterUnit(String? u) { _filterUnit = u; notifyListeners(); }
+  void setFilterKnowledge(String? k) { _filterKnowledge = k; notifyListeners(); }
+  void setFilterWorkbook(String? w) { _filterWorkbook = w; notifyListeners(); }
+
+  /// 当前科目下的题目
+  List<Question> get currentSubjectQuestions =>
+      _all.where((q) => q.subject == _subject).toList();
+
+  /// 经过所有筛选条件的题目
+  List<Question> get filteredQuestions {
+    var list = currentSubjectQuestions;
+    if (_filterUnit != null) list = list.where((q) => q.unit == _filterUnit).toList();
+    if (_filterKnowledge != null) list = list.where((q) => q.knowledge == _filterKnowledge).toList();
+    if (_filterWorkbook != null) list = list.where((q) => q.workbook == _filterWorkbook).toList();
+    return list;
+  }
+
+  /// 当前科目的单元列表
+  List<String> get units =>
+      currentSubjectQuestions.map((q) => q.unit).toSet().toList()..sort();
+
+  /// 当前科目的知识点列表
+  List<String> get knowledges =>
+      currentSubjectQuestions.map((q) => q.knowledge).toSet().toList()..sort();
+
+  /// 当前科目的练习册列表
+  List<String> get workbooks =>
+      currentSubjectQuestions.map((q) => q.workbook).toSet().toList()..sort();
+
+  // ===== 答题 =====
+  Future<void> answer(Question q, bool correct, int timeMs) async {
+    _records.add(AnswerRecord(
+      qid: q.id,
+      subject: q.subject,
+      knowledge: q.knowledge,
+      workbook: q.workbook,
+      correct: correct,
+      timeMs: timeMs,
+      when: DateTime.now(),
+    ));
+    notifyListeners();
+    await _persist();
+  }
+
+  // ===== 统计 =====
+  int get totalAnswered => _records.length;
+  int get totalCorrect => _records.where((r) => r.correct).length;
+  double get accuracy =>
+      totalAnswered == 0 ? 0 : totalCorrect / totalAnswered;
+
+  /// 某天做题数（热力图用），key 为 yyyy-MM-dd
+  Map<String, int> get dailyCounts {
+    final m = <String, int>{};
+    for (final r in _records) {
+      final k = _ymd(r.when);
+      m[k] = (m[k] ?? 0) + 1;
+    }
+    return m;
+  }
+
+  /// 连续打卡天数
+  int get streak {
+    final days = dailyCounts.keys.toSet();
+    if (days.isEmpty) return 0;
+    int count = 0;
+    var d = DateTime.now();
+    // 若今天没做，从昨天开始算
+    if (!days.contains(_ymd(d))) {
+      d = d.subtract(const Duration(days: 1));
+    }
+    while (days.contains(_ymd(d))) {
+      count++;
+      d = d.subtract(const Duration(days: 1));
+    }
+    return count;
+  }
+
+  /// 今日做题数
+  int get todayCount => dailyCounts[_ymd(DateTime.now())] ?? 0;
+
+  /// 按知识点正确率（当前科目）
+  Map<String, double> get accuracyByKnowledge {
+    final total = <String, int>{};
+    final correct = <String, int>{};
+    for (final r in _records) {
+      if (r.subject != _subject) continue;
+      final k = r.knowledge.isEmpty ? '未分类' : r.knowledge;
+      total[k] = (total[k] ?? 0) + 1;
+      if (r.correct) correct[k] = (correct[k] ?? 0) + 1;
+    }
+    return total.map((k, t) => MapEntry(k, (correct[k] ?? 0) / t));
+  }
+
+  /// 薄弱知识点（正确率<60%，且至少做过1题）
+  List<MapEntry<String, double>> get weakKnowledges {
+    final acc = accuracyByKnowledge;
+    final list = acc.entries.where((e) => e.value < 0.6).toList();
+    list.sort((a, b) => a.value.compareTo(b.value));
+    return list;
+  }
+
+  /// 错题列表（当前科目，去重保留最近一次做错且之后没做对的）
+  List<Question> get wrongQuestions {
+    final lastResult = <String, bool>{};
+    for (final r in _records) {
+      if (r.subject != _subject) continue;
+      lastResult[r.qid] = r.correct;
+    }
+    final ids = lastResult.entries.where((e) => !e.value).map((e) => e.key).toSet();
+    return currentSubjectQuestions.where((q) => ids.contains(q.id)).toList();
+  }
+
+  String _ymd(DateTime d) =>
+      '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
+
+  /// 重置全部记录
+  Future<void> resetAll() async {
+    _records.clear();
+    notifyListeners();
+    await _persist();
+  }
+}
