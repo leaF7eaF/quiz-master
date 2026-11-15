@@ -9,6 +9,10 @@ build/
 .vscode/
 
 # Android（由 workflow 自动生成）
-/android/
-# 测试文件（引用了不存在的 MyApp）
+/android/*
+!/android/app/
+/android/app/*
+!/android/app/quiz-release.jks
+
+# 测试文件
 test/

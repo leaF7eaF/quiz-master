@@ -220,4 +220,74 @@ class QuizProvider extends ChangeNotifier {
     notifyListeners();
     await _persist();
   }
+
+  // ===== 存档导出 / 导入 =====
+
+  /// 导出：一行一条，字段用制表符分隔，前 8 位是校验头
+  String exportArchive() {
+    final buf = StringBuffer();
+    buf.writeln('QUIZMASTER_ARCHIVE_V1');
+    buf.writeln('total=${_records.length}');
+    for (final r in _records) {
+      buf.writeln([
+        r.qid,
+        r.subject,
+        r.knowledge,
+        r.workbook,
+        r.correct ? 1 : 0,
+        r.timeMs,
+        r.when.millisecondsSinceEpoch,
+      ].join('\t'));
+    }
+    return buf.toString();
+  }
+
+  /// 导入：替换模式 or 合并模式（按 qid+时间戳去重）
+  Future<String> importArchive(String text, {bool merge = true}) async {
+    final lines = text.trim().split('\n');
+    if (lines.isEmpty || lines.first.trim() != 'QUIZMASTER_ARCHIVE_V1') {
+      return '存档格式不正确';
+    }
+    final parsed = <AnswerRecord>[];
+    for (final line in lines.skip(1)) {
+      if (line.startsWith('total=')) continue;
+      if (line.trim().isEmpty) continue;
+      final f = line.split('\t');
+      if (f.length < 7) continue;
+      try {
+        parsed.add(AnswerRecord(
+          qid: f[0],
+          subject: f[1],
+          knowledge: f[2],
+          workbook: f[3],
+          correct: f[4] == '1',
+          timeMs: int.tryParse(f[5]) ?? 0,
+          when: DateTime.fromMillisecondsSinceEpoch(int.tryParse(f[6]) ?? 0),
+        ));
+      } catch (_) {}
+    }
+    if (parsed.isEmpty) return '存档中没有有效记录';
+
+    if (merge) {
+      final seen = _records.map((r) => '${r.qid}|${r.when.millisecondsSinceEpoch}').toSet();
+      var added = 0;
+      for (final r in parsed) {
+        final k = '${r.qid}|${r.when.millisecondsSinceEpoch}';
+        if (seen.contains(k)) continue;
+        seen.add(k);
+        _records.add(r);
+        added++;
+      }
+      notifyListeners();
+      await _persist();
+      return '合并完成：新增 $added 条（原有 ${_records.length - added} 条）';
+    } else {
+      _records
+        ..clear()
+        ..addAll(parsed);
+      notifyListeners();
+      await _persist();
+      return '恢复完成：共 ${_records.length} 条记录';
+    }
+  }
 }

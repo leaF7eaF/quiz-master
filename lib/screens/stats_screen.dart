@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/quiz_provider.dart';
 import '../theme/app_theme.dart';
+import 'archive_screen.dart';
 
 class StatsScreen extends StatelessWidget {
   const StatsScreen({super.key});
@@ -13,7 +14,14 @@ class StatsScreen extends StatelessWidget {
       ..sort((a, b) => b.value.compareTo(a.value));
 
     return Scaffold(
-      appBar: AppBar(title: const Text('学习统计')),
+      appBar: AppBar(title: const Text('学习统计'), actions: [
+        IconButton(
+          tooltip: '存档备份',
+          icon: const Icon(Icons.cloud_sync_outlined),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (_) => const ArchiveScreen())),
+        ),
+      ]),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

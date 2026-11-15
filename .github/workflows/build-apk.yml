@@ -44,15 +44,64 @@ jobs:
               cp "$src"/*.png "$dst/"
             fi
           done
-          # 应用名
           sed -i 's/android:label="quiz_master"/android:label="刷题本"/' \
             android/app/src/main/AndroidManifest.xml || true
+
+      - name: 配置固定签名
+        run: |
+          cat > android/key.properties <<'EOF'
+          storePassword=quizmaster2026
+          keyPassword=quizmaster2026
+          keyAlias=quiz
+          storeFile=quiz-release.jks
+          EOF
+
+          # 注入签名配置到 app/build.gradle
+          python3 - <<'PY'
+          import re
+          p = "android/app/build.gradle"
+          s = open(p).read()
+          if "key.properties" not in s:
+              s = s.replace(
+                  "android {",
+                  """def keystoreProperties = new Properties()
+          def keystorePropertiesFile = rootProject.file('key.properties')
+          if (keystorePropertiesFile.exists()) {
+              keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+          }
+
+          android {"""
+              )
+              s = s.replace(
+                  "buildTypes {",
+                  """signingConfigs {
+              release {
+                  keyAlias keystoreProperties['keyAlias']
+                  keyPassword keystoreProperties['keyPassword']
+                  storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+                  storePassword keystoreProperties['storePassword']
+              }
+          }
+          buildTypes {"""
+              )
+              s = re.sub(
+                  r"buildTypes \{\s*release \{([^}]*?)signingConfig signingConfig\.debug",
+                  r"buildTypes {\n        release {\n\1signingConfig signingConfigs.release",
+                  s
+              )
+              open(p, "w").write(s)
+          print("gradle sign config injected")
+          PY
 
       - name: 安装依赖
         run: flutter pub get
 
-      - name: 构建 release APK
+      - name: 构建 release APK（固定签名）
         run: flutter build apk --release
+
+      - name: 校验签名一致性
+        run: |
+          ${ANDROID_HOME}/build-tools/$(ls ${ANDROID_HOME}/build-tools | tail -1)/apksigner verify --print-certs build/app/outputs/flutter-apk/app-release.apk | head -5
 
       - name: 重命名 APK
         run: cp build/app/outputs/flutter-apk/app-release.apk quiz-master.apk
@@ -71,7 +120,7 @@ jobs:
           name: 刷题本 最新版
           body: |
             九年级文科刷题 App（道法 / 历史 / 语文 / 化学）
-            下载下方 apk 文件安装即可。
+            固定签名版本：覆盖安装不再丢失做题记录。
           files: quiz-master.apk
           make_latest: true
         env:
