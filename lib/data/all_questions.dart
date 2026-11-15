@@ -1,10 +1,10 @@
-import 'models/question.dart';
-import 'data/politics_2026_unit1.dart';
-import 'data/politics_2026_unit234.dart';
-import 'data/history_2026_unit14.dart';
-import 'data/history_2026_unit57.dart';
-import 'data/chinese_2026.dart';
-import 'data/chemistry_2026.dart';
+import '../models/question.dart';
+import 'politics_2026_unit1.dart';
+import 'politics_2026_unit234.dart';
+import 'history_2026_unit14.dart';
+import 'history_2026_unit57.dart';
+import 'chinese_2026.dart';
+import 'chemistry_2026.dart';
 
 /// 全部题库汇总
 List<Question> buildAllQuestions() {
