@@ -4,6 +4,7 @@ import '../providers/quiz_provider.dart';
 import '../data/all_questions.dart';
 import '../theme/app_theme.dart';
 import 'practice_screen.dart';
+import 'browse_screen.dart';
 import 'stats_screen.dart';
 
 class HomeScreen extends StatelessWidget {
