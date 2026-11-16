@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../providers/quiz_provider.dart';
 import '../theme/app_theme.dart';
 import 'archive_screen.dart';
+import 'changelog_screen.dart';
 
 class StatsScreen extends StatelessWidget {
   const StatsScreen({super.key});
@@ -98,9 +99,13 @@ class StatsScreen extends StatelessWidget {
 
         const SizedBox(height: 8),
         Center(
-          child: Text(
-            '版本 ${const String.fromEnvironment("APP_VERSION", defaultValue: "dev")}',
-            style: const TextStyle(fontSize: 11, color: AppTheme.muted),
+          child: TextButton(
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const ChangelogScreen())),
+            child: const Text(
+              '版本 ${const String.fromEnvironment("APP_VERSION", defaultValue: "dev")} · 更新日志',
+              style: TextStyle(fontSize: 11, color: AppTheme.muted),
+            ),
           ),
         ),
       ],
