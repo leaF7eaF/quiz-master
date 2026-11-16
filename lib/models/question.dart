@@ -4,6 +4,7 @@ class Question {
   final String subject; // politics / history / chinese / chemistry
   final String grade; // 七年级 / 八年级 / 九年级
   final String unit; // 单元 / 模块
+  final String lesson; // 课（教材目录）
   final String knowledge; // 知识点
   final String workbook; // 练习册来源: 五三/必刷题/真题/自编
   final String type; // single / multiple / fill
@@ -17,6 +18,7 @@ class Question {
     required this.subject,
     required this.grade,
     required this.unit,
+    this.lesson = '',
     required this.knowledge,
     this.workbook = '自编',
     required this.type,
@@ -30,6 +32,7 @@ class Question {
   factory Question.fromJson(Map<String, dynamic> j) => Question(
         id: j['id'], subject: j['subject'],
         grade: j['grade'] ?? '九年级', unit: j['unit'] ?? '',
+        lesson: j['lesson'] ?? '',
         knowledge: j['knowledge'] ?? '', workbook: j['workbook'] ?? '自编',
         type: j['type'] ?? 'single',
         stem: j['stem'],

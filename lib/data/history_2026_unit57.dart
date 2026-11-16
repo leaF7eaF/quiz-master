@@ -4,7 +4,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_001",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "西欧经济社会发展", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "西欧经济社会发展",
+ "lesson": "第13课 西欧经济社会发展与文艺复兴运动", "workbook": "自编", "type": "single",
     "stem": "14世纪起，西欧一些富裕农民租种土地、雇佣工人经营农场；一些商人提供原料和生产工具，雇佣工人集中生产。这两种经营方式在西欧农村和城市逐渐普及。它们标志着（ ）",
     "options": [
       "西欧资本主义萌芽的产生",
@@ -19,7 +20,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_002",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "文艺复兴", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "文艺复兴",
+ "lesson": "第13课 西欧经济社会发展与文艺复兴运动", "workbook": "自编", "type": "single",
     "stem": "但丁在《神曲》中把贪官污吏和伪善的教士打入地狱，把追求自由爱情的恋人送入天堂；达·芬奇的人体画作精确展现人的肌肉与比例；莎士比亚借哈姆雷特之口赞叹“人类是一件多么了不起的杰作”。这些作品共同体现的思想是（ ）",
     "options": ["人文主义", "理性主义", "禁欲主义", "神权至上"],
     "answer": "A",
@@ -29,7 +31,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_003",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "文艺复兴", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "文艺复兴",
+ "lesson": "第13课 西欧经济社会发展与文艺复兴运动", "workbook": "自编", "type": "single",
     "stem": "但丁被誉为“文艺复兴的先驱”，他的长诗《神曲》分《地狱》《炼狱》《天堂》三部分，借幻游三界的故事抨击教会的黑暗、表达对人性解放的追求。这部作品的作者是（ ）",
     "options": ["但丁", "达·芬奇", "莎士比亚", "薄伽丘"],
     "answer": "A",
@@ -39,7 +42,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_004",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "文艺复兴", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "文艺复兴",
+ "lesson": "第13课 西欧经济社会发展与文艺复兴运动", "workbook": "自编", "type": "single",
     "stem": "文艺复兴运动打着“复兴古希腊罗马文化”的旗号，但并不是简单地复活古典文化，而是借古典文化中的理性与人性因素，反对教会神权对人的束缚。这说明文艺复兴的实质是（ ）",
     "options": [
       "新兴资产阶级的思想解放运动",
@@ -54,7 +58,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_005",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "探寻新航路", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "探寻新航路",
+ "lesson": "第14课 探寻新航路", "workbook": "自编", "type": "single",
     "stem": "15世纪，欧洲商品经济发展、资本主义萌芽出现，对黄金和东方商品的需求剧增；同时奥斯曼帝国控制了传统商路，使东西方贸易受阻。这些因素促使欧洲人（ ）",
     "options": [
       "开辟通往东方的新航路",
@@ -69,7 +74,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_006",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "探寻新航路", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "探寻新航路",
+ "lesson": "第14课 探寻新航路", "workbook": "自编", "type": "single",
     "stem": "1492年，哥伦布在西班牙王室支持下横渡大西洋，到达巴哈马群岛，他误以为自己到达了印度，称当地居民为“印第安人”。哥伦布的航行（ ）",
     "options": [
       "开辟了欧洲到美洲的新航路",
@@ -84,7 +90,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_007",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "探寻新航路", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "探寻新航路",
+ "lesson": "第14课 探寻新航路", "workbook": "自编", "type": "single",
     "stem": "1519年，麦哲伦率船队从西班牙出发，横渡大西洋、绕过南美洲南端、穿越太平洋，1522年返回西班牙，完成了人类历史上第一次环球航行。这次航行的重大意义是（ ）",
     "options": [
       "证明了地圆学说，世界开始连为一个整体",
@@ -99,7 +106,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_008",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "早期殖民掠夺", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "早期殖民掠夺",
+ "lesson": "第15课 早期殖民掠夺", "workbook": "自编", "type": "single",
     "stem": "欧洲殖民者从欧洲出发，携带廉价工业品到非洲换取黑奴，再把黑奴运到美洲贩卖，最后把美洲的黄金、白银和原料运回欧洲。这一“三角贸易”持续数百年，使非洲损失上亿人口。这说明三角贸易（ ）",
     "options": [
       "是欧洲殖民者获取巨额利润的罪恶贸易",
@@ -114,7 +122,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_009",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "早期殖民掠夺", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "早期殖民掠夺",
+ "lesson": "第15课 早期殖民掠夺", "workbook": "自编", "type": "single",
     "stem": "据统计，16至19世纪，西班牙从美洲运回黄金约200吨、白银约1.8万吨。这些财富流入欧洲后，转化为资本，推动了欧洲工场手工业和海外贸易的发展。这表明早期殖民掠夺（ ）",
     "options": [
       "为欧洲资本主义发展提供了资本原始积累",
@@ -129,7 +138,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u5_010",
     "subject": "history", "grade": "九年级",
-    "unit": "第五单元 走向近代", "knowledge": "走向近代", "workbook": "自编", "type": "single",
+    "unit": "第五单元 走向近代", "knowledge": "走向近代",
+ "lesson": "第15课 早期殖民掠夺", "workbook": "自编", "type": "single",
     "stem": "14至16世纪，西欧在經濟、思想、地理三个领域相继发生重大变化：租地农场和手工工场出现、文艺复兴兴起、新航路开辟。这些变化共同推动欧洲（ ）",
     "options": [
       "由封建社会向近代社会过渡",
@@ -146,7 +156,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u6_001",
     "subject": "history", "grade": "九年级",
-    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "英国资产阶级革命", "workbook": "自编", "type": "single",
+    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "英国资产阶级革命",
+ "lesson": "第16课 君主立宪制的英国", "workbook": "自编", "type": "single",
     "stem": "17世纪初，英国国王詹姆士一世宣扬“君权神授”，认为国王可以任意征税；议会则坚持只有议会才有征税权。双方矛盾激化，1640年国王被迫重新召开议会。这一事件标志着（ ）",
     "options": [
       "英国资产阶级革命开始",
@@ -161,7 +172,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u6_002",
     "subject": "history", "grade": "九年级",
-    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "英国资产阶级革命", "workbook": "自编", "type": "single",
+    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "英国资产阶级革命",
+ "lesson": "第16课 君主立宪制的英国", "workbook": "自编", "type": "single",
     "stem": "1689年，英国议会通过《权利法案》，规定：未经议会同意，国王不得征税；不得废止法律；不得在和平时期维持常备军。此后英国国王逐渐“统而不治”。这表明英国确立了（ ）",
     "options": ["君主立宪制", "民主共和制", "君主专制", "总统制"],
     "answer": "A",
@@ -171,7 +183,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u6_003",
     "subject": "history", "grade": "九年级",
-    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "美国独立战争", "workbook": "自编", "type": "single",
+    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "美国独立战争",
+ "lesson": "第17课 美国的独立", "workbook": "自编", "type": "single",
     "stem": "18世纪60年代起，英国对北美殖民地征收印花税、茶税等，并驻军镇压反抗。1775年4月，北美民兵在来克星顿与英军交火。这一事件标志着（ ）",
     "options": [
       "美国独立战争开始",
@@ -186,7 +199,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u6_004",
     "subject": "history", "grade": "九年级",
-    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "美国独立战争", "workbook": "自编", "type": "single",
+    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "美国独立战争",
+ "lesson": "第17课 美国的独立", "workbook": "自编", "type": "single",
     "stem": "1776年7月4日，大陆会议通过《独立宣言》，宣布“人人生而平等，造物主赋予他们若干不可让与的权利，其中包括生命权、自由权和追求幸福的权利”，并宣告北美13个殖民地脱离英国独立。这一文献（ ）",
     "options": [
       "宣告美国诞生，体现了资产阶级平等自由思想",
@@ -201,7 +215,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u6_005",
     "subject": "history", "grade": "九年级",
-    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "法国大革命", "workbook": "自编", "type": "single",
+    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "法国大革命",
+ "lesson": "第18课 法国大革命和拿破仑帝国", "workbook": "自编", "type": "single",
     "stem": "18世纪末，法国社会分为三个等级，教士和贵族享有免税特权，占人口98%的第三等级承担全部赋税。1789年7月14日，巴黎人民攻占象征封建专制的巴士底狱。这一事件标志着（ ）",
     "options": [
       "法国大革命开始",
@@ -216,7 +231,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u6_006",
     "subject": "history", "grade": "九年级",
-    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "法国大革命", "workbook": "自编", "type": "single",
+    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "法国大革命",
+ "lesson": "第18课 法国大革命和拿破仑帝国", "workbook": "自编", "type": "single",
     "stem": "1789年法国制宪议会通过《人权宣言》，宣布“人生来就是而且始终是自由的，在权利上是平等的”“私有财产神圣不可侵犯”。这一文献的核心思想是（ ）",
     "options": [
       "自由、平等、私有财产神圣不可侵犯",
@@ -231,7 +247,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u6_007",
     "subject": "history", "grade": "九年级",
-    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "拿破仑", "workbook": "自编", "type": "single",
+    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "拿破仑",
+ "lesson": "第18课 法国大革命和拿破仑帝国", "workbook": "自编", "type": "single",
     "stem": "1804年，拿破仑颁布《拿破仑法典》，规定“所有法国人都享有民事权利”“私有财产神圣不可侵犯”，并把自由平等原则写入法律。这部法典（ ）",
     "options": [
       "巩固了资产阶级革命成果，对后世民法典影响深远",
@@ -246,7 +263,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u6_008",
     "subject": "history", "grade": "九年级",
-    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "资本主义制度", "workbook": "自编", "type": "single",
+    "unit": "第六单元 资本主义制度的初步确立", "knowledge": "资本主义制度",
+ "lesson": "第18课 法国大革命和拿破仑帝国", "workbook": "自编", "type": "single",
     "stem": "英国通过1689年《权利法案》限制王权；美国通过独立战争摆脱殖民统治、建立联邦共和制；法国通过大革命推翻君主专制。这些革命的共同点是（ ）",
     "options": [
       "都为资本主义发展扫清了道路",
@@ -263,7 +281,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u7_001",
     "subject": "history", "grade": "九年级",
-    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命", "workbook": "自编", "type": "single",
+    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
+ "lesson": "第19课 第一次工业革命", "workbook": "自编", "type": "single",
     "stem": "18世纪60年代，英国棉纺织业率先出现“珍妮机”，随后水力纺纱机、蒸汽机车相继问世；19世纪中期，英国成为“世界工厂”。工业革命首先发生在英国的最重要条件是（ ）",
     "options": [
       "英国最早确立资本主义制度，具备资金、市场、劳动力和技术条件",
@@ -278,7 +297,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u7_002",
     "subject": "history", "grade": "九年级",
-    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命", "workbook": "自编", "type": "single",
+    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
+ "lesson": "第19课 第一次工业革命", "workbook": "自编", "type": "single",
     "stem": "1785年，瓦特改良的蒸汽机投入使用，随后被广泛应用于纺织、采矿、冶金和交通运输业。到19世纪30年代，蒸汽机成为主要动力机械。瓦特改良蒸汽机的重大意义是（ ）",
     "options": [
       "使人类进入“蒸汽时代”，极大提高生产力",
@@ -293,7 +313,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u7_003",
     "subject": "history", "grade": "九年级",
-    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命", "workbook": "自编", "type": "single",
+    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
+ "lesson": "第19课 第一次工业革命", "workbook": "自编", "type": "single",
     "stem": "工业革命后，英国曼彻斯特的棉纺织厂大量雇佣女工和童工，工人每天劳动16小时以上，居住在拥挤肮脏的贫民窟。与此同时，工厂主积累起巨额财富。这一现象说明工业革命（ ）",
     "options": [
       "极大提高生产力，但也加剧了社会贫富分化",
@@ -308,7 +329,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u7_004",
     "subject": "history", "grade": "九年级",
-    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生", "workbook": "自编", "type": "single",
+    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生",
+ "lesson": "第20课 马克思主义的诞生", "workbook": "自编", "type": "single",
     "stem": "1848年，一本只有23页的小册子在伦敦出版，它开篇写道：“一个幽灵，共产主义的幽灵，在欧洲游荡。”这本书系统阐述了阶级斗争学说，号召“全世界无产者，联合起来”。这本书的发表标志着（ ）",
     "options": [
       "马克思主义的诞生",
@@ -323,7 +345,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u7_005",
     "subject": "history", "grade": "九年级",
-    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生", "workbook": "自编", "type": "single",
+    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生",
+ "lesson": "第20课 马克思主义的诞生", "workbook": "自编", "type": "single",
     "stem": "马克思和恩格斯深入工人运动实践，批判继承德国古典哲学、英国古典政治经济学和法国空想社会主义，创立了马克思主义理论体系。他们的合作成果《共产党宣言》由两人共同撰写。这说明马克思主义（ ）",
     "options": [
       "是批判继承人类优秀思想成果的产物",
@@ -338,7 +361,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u7_006",
     "subject": "history", "grade": "九年级",
-    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生", "workbook": "自编", "type": "single",
+    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生",
+ "lesson": "第20课 马克思主义的诞生", "workbook": "自编", "type": "single",
     "stem": "《共产党宣言》指出，资本主义社会必将被共产主义社会所取代，无产阶级是资本主义的掘墓人。这一论断（ ）",
     "options": [
       "为无产阶级革命提供了科学理论指导",
@@ -353,7 +377,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u7_007",
     "subject": "history", "grade": "九年级",
-    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "国际共产主义运动", "workbook": "自编", "type": "single",
+    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "国际共产主义运动",
+ "lesson": "第21课 国际共产主义运动", "workbook": "自编", "type": "single",
     "stem": "1871年3月18日，巴黎人民起义，赶走资产阶级政府，选举产生公社委员会。公社废除了旧军队、旧警察，规定公职人员由选举产生、可随时撤换，工资不得超过工人工资。这个政权是（ ）",
     "options": [
       "世界上第一个无产阶级政权",
@@ -368,7 +393,8 @@ const List<Map<String, dynamic>> history2026Unit57 = [
   {
     "id": "his26_u7_008",
     "subject": "history", "grade": "九年级",
-    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "国际共产主义运动", "workbook": "自编", "type": "single",
+    "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "国际共产主义运动",
+ "lesson": "第21课 国际共产主义运动", "workbook": "自编", "type": "single",
     "stem": "巴黎公社只存在了72天就失败了。公社缺乏统一的革命政党领导，未能发动广大农民，也未能及时进攻凡尔赛。巴黎公社的失败说明（ ）",
     "options": [
       "当时建立无产阶级政权的条件尚不成熟",

@@ -114,6 +114,23 @@ class QuizProvider extends ChangeNotifier {
     return list;
   }
 
+  /// 某单元下的课列表（按教材顺序）
+  List<String> lessonsOf(String unit) {
+    final list = currentSubjectQuestions
+        .where((q) => q.unit == unit)
+        .map((q) => q.lesson)
+        .where((l) => l.isNotEmpty)
+        .toSet()
+        .toList();
+    list.sort((a, b) => cnNumValue(a).compareTo(cnNumValue(b)));
+    return list;
+  }
+
+  /// 某课下的题目
+  List<Question> questionsOfLesson(String unit, String lesson) =>
+      currentSubjectQuestions
+          .where((q) => q.unit == unit && q.lesson == lesson)
+          .toList();
   /// 知识点列表，按序号排
   List<String> get knowledges {
     final list = currentSubjectQuestions.map((q) => q.knowledge).toSet().toList();

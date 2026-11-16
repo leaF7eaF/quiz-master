@@ -4,6 +4,8 @@ import 'politics_2026_unit234.dart';
 import 'politics_essential_2026.dart';
 import 'history_2026_unit14.dart';
 import 'history_2026_unit57.dart';
+import 'history_essential_unit14.dart';
+import 'history_essential_unit57.dart';
 import 'chinese_2026.dart';
 import 'chemistry_2026.dart';
 
@@ -15,6 +17,8 @@ List<Question> buildAllQuestions() {
     ...politicsEssential2026,
     ...history2026Unit14,
     ...history2026Unit57,
+    ...historyEssentialUnit14,
+    ...historyEssentialUnit57,
     ...chinese2026Unit,
     ...chemistry2026Unit,
   ];
