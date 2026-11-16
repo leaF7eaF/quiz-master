@@ -109,7 +109,8 @@ class StatsScreen extends StatelessWidget {
           ),
         ),
       ],
-    );
+    ),
+  );
   }
 
   Widget _metric(String label, String value, String unit) {
