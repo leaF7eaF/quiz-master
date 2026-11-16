@@ -1,6 +1,7 @@
 import '../models/question.dart';
 import 'politics_2026_unit1.dart';
 import 'politics_2026_unit234.dart';
+import 'politics_essential_2026.dart';
 import 'history_2026_unit14.dart';
 import 'history_2026_unit57.dart';
 import 'chinese_2026.dart';
@@ -11,6 +12,7 @@ List<Question> buildAllQuestions() {
   final raw = <Map<String, dynamic>>[
     ...politics2026Unit1,
     ...politics2026Unit234,
+    ...politicsEssential2026,
     ...history2026Unit14,
     ...history2026Unit57,
     ...chinese2026Unit,
