@@ -5,7 +5,6 @@ import '../data/all_questions.dart';
 import '../theme/app_theme.dart';
 import 'practice_screen.dart';
 import 'browse_screen.dart';
-import 'stats_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,14 +15,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('刷题本'),
-        actions: [
-          IconButton(
-            tooltip: '学习统计',
-            icon: const Icon(Icons.insights_outlined),
-            onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: (_) => const StatsScreen())),
-          ),
-        ],
       ),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),

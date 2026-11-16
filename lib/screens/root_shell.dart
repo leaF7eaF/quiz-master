@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
-import 'browse_screen.dart';
+import 'stats_screen.dart';
 import 'heatmap_screen.dart';
 import 'wrong_screen.dart';
 
@@ -15,7 +15,7 @@ class _RootShellState extends State<RootShell> {
 
   static const _pages = [
     HomeScreen(),
-    BrowseScreen(),
+    StatsScreen(),
     HeatmapScreen(),
     WrongScreen(),
   ];
@@ -31,7 +31,7 @@ class _RootShellState extends State<RootShell> {
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: '首页'),
-          NavigationDestination(icon: Icon(Icons.menu_book_outlined), selectedIcon: Icon(Icons.menu_book), label: '题库'),
+          NavigationDestination(icon: Icon(Icons.insights_outlined), selectedIcon: Icon(Icons.insights), label: '统计'),
           NavigationDestination(icon: Icon(Icons.grid_on_outlined), selectedIcon: Icon(Icons.grid_on), label: '热力图'),
           NavigationDestination(icon: Icon(Icons.flag_outlined), selectedIcon: Icon(Icons.flag), label: '错题'),
         ],
