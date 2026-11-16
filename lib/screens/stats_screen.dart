@@ -95,8 +95,15 @@ class StatsScreen extends StatelessWidget {
             },
             child: const Text('清空答题记录'),
           ),
-        ],
-      ),
+
+        const SizedBox(height: 8),
+        Center(
+          child: Text(
+            '版本 ${const String.fromEnvironment("APP_VERSION", defaultValue: "dev")}',
+            style: const TextStyle(fontSize: 11, color: AppTheme.muted),
+          ),
+        ),
+      ],
     );
   }
 

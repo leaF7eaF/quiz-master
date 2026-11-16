@@ -101,8 +101,14 @@ jobs:
       - name: 安装依赖
         run: flutter pub get
 
-      - name: 构建 release APK（固定签名）
-        run: flutter build apk --release
+      - name: 构建 release APK（固定签名 + 自动版本号）
+        run: |
+          VERSION="1.4.${GITHUB_RUN_NUMBER}"
+          echo "构建版本: $VERSION (code=${GITHUB_RUN_NUMBER})"
+          flutter build apk --release \
+            --build-name="$VERSION" \
+            --build-number=${GITHUB_RUN_NUMBER} \
+            --dart-define=APP_VERSION="$VERSION"
 
       - name: 校验签名一致性
         run: |
