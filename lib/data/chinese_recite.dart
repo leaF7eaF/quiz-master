@@ -384,7 +384,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "options": [], "answer": "闲来垂钓碧溪上",
     "analysis": "用姜太公渭水垂钓、伊尹梦日边受聘的典故。",
     "difficulty": 2
-  }
+  },
   {
     "id": "chy_rec_041", "subject": "chinese", "grade": "九年级",
     "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
