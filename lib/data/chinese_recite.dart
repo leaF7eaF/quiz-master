@@ -385,4 +385,94 @@ const List<Map<String, dynamic>> chineseRecite = [
     "analysis": "用姜太公渭水垂钓、伊尹梦日边受聘的典故。",
     "difficulty": 2
   }
+  {
+    "id": "chy_rec_041", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "金樽清酒斗十千，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "玉盘珍羞直万钱",
+    "analysis": "李白《行路难》开篇，以美酒佳肴反衬内心苦闷。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_042", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "停杯投箸不能食，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "拔剑四顾心茫然",
+    "analysis": "李白《行路难》，写怀才不遇的苦闷。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_043", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "行路难！行路难！多歧路，＿＿＿＿＿？",
+    "options": [], "answer": "今安在",
+    "analysis": "李白《行路难》，直抒前路迷茫之感。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_044", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "酬乐天扬州初逢席上见赠",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "怀旧空吟闻笛赋，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "到乡翻似烂柯人",
+    "analysis": "刘禹锡诗颔联，用向秀《思旧赋》和王质烂柯的典故写物是人非。",
+    "difficulty": 3
+  },
+  {
+    "id": "chy_rec_045", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "不知天上宫阙，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "今夕是何年",
+    "analysis": "苏轼《水调歌头》，写对天上人间的遐想。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_046", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "起舞弄清影，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "何似在人间",
+    "analysis": "苏轼《水调歌头》，表达对人间的眷恋。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_047", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "我欲乘风归去，＿＿＿＿＿＿＿＿＿，高处不胜寒。",
+    "options": [], "answer": "又恐琼楼玉宇",
+    "analysis": "苏轼《水调歌头》，写欲超脱又眷恋的复杂心境。",
+    "difficulty": 3
+  },
+  {
+    "id": "chy_rec_048", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "转朱阁，低绮户，＿＿＿＿＿。",
+    "options": [], "answer": "照无眠",
+    "analysis": "苏轼《水调歌头》，写月光移动与不眠之人。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_049", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "月夜忆舍弟",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "有弟皆分散，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "无家问死生",
+    "analysis": "杜甫《月夜忆舍弟》，写战乱中骨肉分离之痛。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_050", "subject": "chinese", "grade": "九年级",
+    "unit": "背诵默写 诗词曲", "lesson": "长沙过贾谊宅",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "三年谪宦此栖迟，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "万古惟留楚客悲",
+    "analysis": "刘长卿《长沙过贾谊宅》首联，借贾谊谪居起笔。",
+    "difficulty": 3
+  }
 ];
