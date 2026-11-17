@@ -45,15 +45,23 @@ class _PracticeScreenState extends State<PracticeScreen> {
     _sw.start();
   }
 
-  /// flash 模式：自评「记住了 / 没记住」
+  /// flash 模式：自评「记住了 / 没记住」后直接进入下一题
   void _submitFlash(bool remembered) async {
     if (_isSubmitted) return;
     final q = _q;
     if (remembered) _correctCount++;
     setState(() => _submitted.add(q.id));
     await context.read<QuizProvider>().answer(q, remembered, _sw.elapsedMilliseconds);
-    _sw.reset();
-    _sw.start();
+
+    // 自评完立刻翻到下一张（最后一题则结束）
+    if (!mounted) return;
+    if (_index < widget.questions.length - 1) {
+      setState(() => _index++);
+      _sw.reset();
+      _sw.start();
+    } else {
+      _finish();
+    }
   }
 
   void _reveal() {
@@ -148,20 +156,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
 
           // ===== 答案区 =====
           if (_isFlash) ...[
-            if (!_isRevealed)
-              Center(
-                child: TextButton.icon(
-                  onPressed: _reveal,
-                  icon: const Icon(Icons.visibility_outlined),
-                  label: const Text('显示答案'),
-                  style: TextButton.styleFrom(
-                    foregroundColor: AppTheme.primary,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                  ),
-                ),
-              )
-            else
+            if (_isRevealed)
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
@@ -321,7 +316,6 @@ class _PracticeScreenState extends State<PracticeScreen> {
   }
 
   Widget _flashActions() {
-    final last = _index == widget.questions.length - 1;
     if (!_isRevealed) {
       return SizedBox(
         width: double.infinity,
@@ -366,17 +360,8 @@ class _PracticeScreenState extends State<PracticeScreen> {
         ],
       );
     }
-    return SizedBox(
-      width: double.infinity,
-      child: FilledButton(
-        onPressed: _next,
-        style: FilledButton.styleFrom(
-          backgroundColor: AppTheme.primary,
-          padding: const EdgeInsets.symmetric(vertical: 16),
-        ),
-        child: Text(last ? '完成' : '下一个'),
-      ),
-    );
+    // 自评后已自动翻页，这里不会再渲染
+    return const SizedBox.shrink();
   }
 
   Widget _tag(String t) {
