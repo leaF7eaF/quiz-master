@@ -101,14 +101,19 @@ jobs:
       - name: 安装依赖
         run: flutter pub get
 
+      - name: 计算版本号
+        id: ver
+        run: |
+          VERSION="1.6.${GITHUB_RUN_NUMBER}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "构建版本: $VERSION"
+
       - name: 构建 release APK（固定签名 + 自动版本号）
         run: |
-          VERSION="1.4.${GITHUB_RUN_NUMBER}"
-          echo "构建版本: $VERSION (code=${GITHUB_RUN_NUMBER})"
           flutter build apk --release \
-            --build-name="$VERSION" \
+            --build-name="${{ steps.ver.outputs.version }}" \
             --build-number=${GITHUB_RUN_NUMBER} \
-            --dart-define=APP_VERSION="$VERSION"
+            --dart-define=APP_VERSION="${{ steps.ver.outputs.version }}"
 
       - name: 校验签名一致性
         run: |
@@ -124,15 +129,20 @@ jobs:
           path: quiz-master.apk
           retention-days: 30
 
-      - name: 发布到 Releases（可直接下载）
+      - name: 发布到 Releases（每版独立，不覆盖旧版）
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: latest
-          name: 刷题本 最新版
+          tag_name: v${{ steps.ver.outputs.version }}
+          name: 刷题本 v${{ steps.ver.outputs.version }}
           body: |
-            九年级文科刷题 App（道法 / 历史 / 语文 / 化学）
-            固定签名版本：覆盖安装不再丢失做题记录。
+            **版本 v${{ steps.ver.outputs.version }}**（构建号 ${{ github.run_number }}）
+
+            九年级文科刷题 App —— 道法 / 历史 / 语文 / 化学
+            固定签名，覆盖安装不丢失做题记录。
+
+            提交：${{ github.event.head_commit.message }}
           files: quiz-master.apk
           make_latest: true
+          generate_release_notes: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
