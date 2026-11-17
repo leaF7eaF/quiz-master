@@ -53,7 +53,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_006", "subject": "chinese", "grade": "九年级",
     "unit": "第三单元 文言文", "knowledge": "《岳阳楼记》",
- "lesson": "《岳阳楼记》", "workbook": "自编", "type": "single",
+ "lesson": "岳阳楼记", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》中表达作者政治抱负的名句是（ ）",
     "options": [
       "先天下之忧而忧，后天下之乐而乐",
@@ -68,7 +68,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_007", "subject": "chinese", "grade": "九年级",
     "unit": "第三单元 文言文", "knowledge": "《岳阳楼记》",
- "lesson": "《岳阳楼记》", "workbook": "自编", "type": "single",
+ "lesson": "岳阳楼记", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》的作者是（ ）",
     "options": ["范仲淹", "欧阳修", "苏轼", "王安石"],
     "answer": "A",
@@ -78,7 +78,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_008", "subject": "chinese", "grade": "九年级",
     "unit": "第三单元 文言文", "knowledge": "《醉翁亭记》",
- "lesson": "《醉翁亭记》", "workbook": "自编", "type": "single",
+ "lesson": "醉翁亭记", "workbook": "自编", "type": "single",
     "stem": "《醉翁亭记》中“醉翁之意不在酒”的下一句是（ ）",
     "options": ["在乎山水之间也", "得之心而寓之酒也", "山水之乐也", "而年又最高"],
     "answer": "A",
@@ -88,7 +88,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_009", "subject": "chinese", "grade": "九年级",
     "unit": "第三单元 文言文", "knowledge": "《醉翁亭记》",
- "lesson": "《醉翁亭记》", "workbook": "自编", "type": "single",
+ "lesson": "醉翁亭记", "workbook": "自编", "type": "single",
     "stem": "《醉翁亭记》的作者是（ ）",
     "options": ["欧阳修", "范仲淹", "苏轼", "柳宗元"],
     "answer": "A",
@@ -98,7 +98,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_010", "subject": "chinese", "grade": "九年级",
     "unit": "第三单元 文言文", "knowledge": "《湖心亭看雪》",
- "lesson": "《湖心亭看雪》", "workbook": "自编", "type": "single",
+ "lesson": "湖心亭看雪", "workbook": "自编", "type": "single",
     "stem": "《湖心亭看雪》中“雾凇沆砀”的“沆砀”意思是（ ）",
     "options": ["白气弥漫的样子", "水汽冻结", "寒冷", "朦胧"],
     "answer": "A",
@@ -108,7 +108,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_011", "subject": "chinese", "grade": "九年级",
     "unit": "第六单元 文言文", "knowledge": "《曹刿论战》",
- "lesson": "《曹刿论战》", "workbook": "自编", "type": "single",
+ "lesson": "曹刿论战", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》中“一鼓作气”的下一句是（ ）",
     "options": ["再而衰，三而竭", "再而衰", "三而竭", "彼竭我盈"],
     "answer": "A",
@@ -118,7 +118,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_012", "subject": "chinese", "grade": "九年级",
     "unit": "第六单元 文言文", "knowledge": "《曹刿论战》",
- "lesson": "《曹刿论战》", "workbook": "自编", "type": "single",
+ "lesson": "曹刿论战", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》选自（ ）",
     "options": ["《左传》", "《战国策》", "《史记》", "《论语》"],
     "answer": "A",
@@ -128,7 +128,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_013", "subject": "chinese", "grade": "九年级",
     "unit": "第六单元 文言文", "knowledge": "《邹忌讽齐王纳谏》",
- "lesson": "《邹忌讽齐王纳谏》", "workbook": "自编", "type": "single",
+ "lesson": "邹忌讽齐王纳谏", "workbook": "自编", "type": "single",
     "stem": "《邹忌讽齐王纳谏》中邹忌用什么事例讽谏齐王？（ ）",
     "options": ["自己与徐公比美", "治国之道", "战争胜负", "农业生产"],
     "answer": "A",
@@ -138,7 +138,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_014", "subject": "chinese", "grade": "九年级",
     "unit": "第六单元 文言文", "knowledge": "《陈涉世家》",
- "lesson": "《陈涉世家》", "workbook": "自编", "type": "single",
+ "lesson": "陈涉世家", "workbook": "自编", "type": "single",
     "stem": "《陈涉世家》中“王侯将相宁有种乎”表达了（ ）",
     "options": ["对封建等级制度的反抗精神", "对君主的忠诚", "对财富的追求", "对和平的向往"],
     "answer": "A",
@@ -148,7 +148,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_015", "subject": "chinese", "grade": "九年级",
     "unit": "第六单元 文言文", "knowledge": "《出师表》",
- "lesson": "《出师表》", "workbook": "自编", "type": "single",
+ "lesson": "出师表", "workbook": "自编", "type": "single",
     "stem": "《出师表》中“先帝创业未半而中道崩殂”的作者是（ ）",
     "options": ["诸葛亮", "刘备", "曹操", "关羽"],
     "answer": "A",
@@ -158,7 +158,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_016", "subject": "chinese", "grade": "九年级",
     "unit": "第六单元 文言文", "knowledge": "《出师表》",
- "lesson": "《出师表》", "workbook": "自编", "type": "single",
+ "lesson": "出师表", "workbook": "自编", "type": "single",
     "stem": "《出师表》中诸葛亮提出的三条建议不包括（ ）",
     "options": ["广开言路", "严明赏罚", "亲贤远佞", "增加赋税"],
     "answer": "D",
@@ -223,7 +223,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   {
     "id": "chy26_022", "subject": "chinese", "grade": "九年级",
     "unit": "第三单元 文言文", "knowledge": "文言实词",
- "lesson": "文言实词", "workbook": "自编", "type": "single",
+ "lesson": "岳阳楼记", "workbook": "自编", "type": "single",
     "stem": "下列加点词解释有误的一项是（ ）",
     "options": [
       "予观夫巴陵胜状（胜：美好的）",

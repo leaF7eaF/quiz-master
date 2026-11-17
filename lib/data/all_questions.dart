@@ -7,6 +7,8 @@ import 'history_2026_unit57.dart';
 import 'history_essential_unit14.dart';
 import 'history_essential_unit57.dart';
 import 'chinese_2026.dart';
+import 'chinese_classical.dart';
+import 'chinese_recite.dart';
 import 'chemistry_2026.dart';
 
 /// 全部题库汇总
@@ -20,6 +22,8 @@ List<Question> buildAllQuestions() {
     ...historyEssentialUnit14,
     ...historyEssentialUnit57,
     ...chinese2026Unit,
+    ...chineseClassical,
+    ...chineseRecite,
     ...chemistry2026Unit,
   ];
   return raw.map(Question.fromJson).toList();
