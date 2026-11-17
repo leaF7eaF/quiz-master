@@ -18,6 +18,9 @@ class BrowseScreen extends StatefulWidget {
 class _BrowseScreenState extends State<BrowseScreen> {
   BrowseDim _dim = BrowseDim.unit;
 
+  /// 当前学期（null = 自动取第一个）
+  String? _grade;
+
   /// 当前进入的单元（null = 单元列表页）
   String? _openUnit;
 
@@ -29,13 +32,19 @@ class _BrowseScreenState extends State<BrowseScreen> {
     if (_dim == BrowseDim.unit && _openUnit != null) {
       return _LessonPage(
         unit: _openUnit!,
+        grade: _grade ?? (p.grades.isEmpty ? '' : p.grades.first),
         onBack: () => setState(() => _openUnit = null),
       );
     }
 
+    final grades = p.grades;
+    final curGrade = _grade ?? (grades.isEmpty ? '' : grades.first);
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(_dim == BrowseDim.all ? '全部题目' : (_dim == BrowseDim.unit ? '按目录' : '按来源')),
+        title: Text(_dim == BrowseDim.all
+            ? '全部题目'
+            : (_dim == BrowseDim.unit ? '按目录' : '按来源')),
       ),
       body: Column(
         children: [
@@ -65,9 +74,40 @@ class _BrowseScreenState extends State<BrowseScreen> {
               }).toList(),
             ),
           ),
+          // 学期切换（仅目录维度）
+          if (_dim == BrowseDim.unit && grades.length > 1)
+            Container(
+              color: Colors.white,
+              padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
+              child: Row(
+                children: grades.map((g) {
+                  final sel = g == curGrade;
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: ChoiceChip(
+                      label: Text(g),
+                      selected: sel,
+                      onSelected: (_) => setState(() {
+                        _grade = g;
+                        _openUnit = null;
+                      }),
+                      showCheckmark: false,
+                      selectedColor: AppTheme.primary.withOpacity(0.16),
+                      labelStyle: TextStyle(
+                          fontSize: 12.5,
+                          color: sel ? AppTheme.primary : AppTheme.ink,
+                          fontWeight:
+                              sel ? FontWeight.w600 : FontWeight.normal),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
           const Divider(height: 1),
           Expanded(
-            child: _dim == BrowseDim.all ? _allList(p) : _groupList(p),
+            child: _dim == BrowseDim.all
+                ? _allList(p)
+                : _groupList(p, curGrade),
           ),
         ],
       ),
@@ -126,11 +166,16 @@ class _BrowseScreenState extends State<BrowseScreen> {
   }
 
   // ===== 单元列表 / 来源列表 =====
-  Widget _groupList(QuizProvider p) {
+  Widget _groupList(QuizProvider p, String grade) {
     final items = <String, int>{};
     for (final q in p.currentSubjectQuestions) {
       final k = _dim == BrowseDim.unit ? q.unit : q.workbook;
       items[k] = (items[k] ?? 0) + 1;
+    }
+    // 目录维度只显示当前学期的单元
+    if (_dim == BrowseDim.unit) {
+      final allowed = p.unitsOfGrade(grade).toSet();
+      items.removeWhere((k, v) => !allowed.contains(k));
     }
     final keys = items.keys.toList()
       ..sort((a, b) =>
@@ -144,7 +189,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
       itemBuilder: (_, i) {
         final k = keys[i];
         final sub = _dim == BrowseDim.unit
-            ? '${items[k]} 题 · ${p.lessonsOf(k).length} 课'
+            ? '${items[k]} 题 · ${p.lessonsOfGrade(grade, k).length} 课'
             : '${items[k]} 题';
         return ListTile(
           title: Text(k,
@@ -182,14 +227,16 @@ class _BrowseScreenState extends State<BrowseScreen> {
 /// 单元内的课列表页
 class _LessonPage extends StatelessWidget {
   final String unit;
+  final String grade;
   final VoidCallback onBack;
-  const _LessonPage({required this.unit, required this.onBack});
+  const _LessonPage(
+      {required this.unit, required this.grade, required this.onBack});
 
   @override
   Widget build(BuildContext context) {
     final p = context.watch<QuizProvider>();
-    final lessons = p.lessonsOf(unit);
-    final total = p.currentSubjectQuestions.where((q) => q.unit == unit).length;
+    final lessons = p.lessonsOfGrade(grade, unit);
+    final total = p.questionsOfUnitGrade(grade, unit).length;
 
     return Scaffold(
       appBar: AppBar(
@@ -212,9 +259,7 @@ class _LessonPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
                 onPressed: () {
-                  final qs = p.currentSubjectQuestions
-                      .where((q) => q.unit == unit)
-                      .toList()
+                  final qs = p.questionsOfUnitGrade(grade, unit).toList()
                     ..shuffle();
                   Navigator.push(
                       context,
@@ -235,7 +280,7 @@ class _LessonPage extends StatelessWidget {
                         const Divider(height: 1, indent: 16),
                     itemBuilder: (_, i) {
                       final les = lessons[i];
-                      final qs = p.questionsOfLesson(unit, les);
+                      final qs = p.questionsOfLessonGrade(grade, unit, les);
                       return ListTile(
                         leading: CircleAvatar(
                           radius: 14,

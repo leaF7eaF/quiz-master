@@ -3,7 +3,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   // ===== 第一单元 文明的产生和古代亚非文明 =====
   {
     "id": "his26_u1_001",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "从原始社会到奴隶社会",
     "lesson": "第1课 从原始社会到奴隶社会", "workbook": "自编", "type": "single",
@@ -20,7 +20,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_002",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "从原始社会到奴隶社会",
     "lesson": "第1课 从原始社会到奴隶社会", "workbook": "自编", "type": "single",
@@ -37,7 +37,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_003",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "古代埃及",
     "lesson": "第2课 古代埃及", "workbook": "自编", "type": "single",
@@ -54,7 +54,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_004",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "古代埃及",
     "lesson": "第2课 古代埃及", "workbook": "自编", "type": "single",
@@ -71,7 +71,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_005",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "古代两河流域",
     "lesson": "第3课 古代两河流域", "workbook": "自编", "type": "single",
@@ -88,7 +88,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_006",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "古代两河流域",
     "lesson": "第3课 古代两河流域", "workbook": "自编", "type": "single",
@@ -105,7 +105,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_007",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "古代印度",
     "lesson": "第4课 古代印度", "workbook": "自编", "type": "single",
@@ -117,7 +117,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_008",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "古代印度",
     "lesson": "第4课 古代印度", "workbook": "自编", "type": "single",
@@ -134,7 +134,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_009",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "古代亚非文明",
     "lesson": "第4课 古代印度", "workbook": "自编", "type": "single",
@@ -151,7 +151,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_010",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
     "knowledge": "古代亚非文明",
     "lesson": "第4课 古代印度", "workbook": "自编", "type": "single",
@@ -170,7 +170,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   // ===== 第二单元 古代欧洲文明 =====
   {
     "id": "his26_u2_001",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
     "knowledge": "希腊城邦",
     "lesson": "第5课 希腊城邦和亚历山大帝国", "workbook": "自编", "type": "single",
@@ -182,7 +182,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_002",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
     "knowledge": "希腊城邦",
     "lesson": "第5课 希腊城邦和亚历山大帝国", "workbook": "自编", "type": "single",
@@ -199,7 +199,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_003",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
     "knowledge": "亚历山大帝国",
     "lesson": "第5课 希腊城邦和亚历山大帝国", "workbook": "自编", "type": "single",
@@ -216,7 +216,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_004",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
     "knowledge": "罗马城邦和罗马帝国",
     "lesson": "第6课 罗马城邦和罗马帝国", "workbook": "自编", "type": "single",
@@ -233,7 +233,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_005",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
     "knowledge": "罗马城邦和罗马帝国",
     "lesson": "第6课 罗马城邦和罗马帝国", "workbook": "自编", "type": "single",
@@ -250,7 +250,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_006",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
     "knowledge": "希腊罗马古典文化",
     "lesson": "第7课 希腊罗马古典文化", "workbook": "自编", "type": "single",
@@ -267,7 +267,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_007",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
     "knowledge": "希腊罗马古典文化",
     "lesson": "第7课 希腊罗马古典文化", "workbook": "自编", "type": "single",
@@ -284,7 +284,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_008",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
     "knowledge": "希腊罗马古典文化",
     "lesson": "第7课 希腊罗马古典文化", "workbook": "自编", "type": "single",
@@ -303,7 +303,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   // ===== 第三单元 封建时代的欧洲 =====
   {
     "id": "his26_u3_001",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
     "knowledge": "法兰克王国",
     "lesson": "第7课 法兰克王国和西欧封建制度", "workbook": "自编", "type": "single",
@@ -320,7 +320,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_002",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
     "knowledge": "西欧封建制度",
     "lesson": "第7课 法兰克王国和西欧封建制度", "workbook": "自编", "type": "single",
@@ -332,7 +332,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_003",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
     "knowledge": "西欧封建制度",
     "lesson": "第7课 法兰克王国和西欧封建制度", "workbook": "自编", "type": "single",
@@ -349,7 +349,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_004",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
     "knowledge": "西欧庄园",
     "lesson": "第7课 法兰克王国和西欧封建制度", "workbook": "自编", "type": "single",
@@ -366,7 +366,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_005",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
     "knowledge": "西欧城市和大学",
     "lesson": "第8课 西欧的城市和大学", "workbook": "自编", "type": "single",
@@ -383,7 +383,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_006",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
     "knowledge": "西欧城市和大学",
     "lesson": "第8课 西欧的城市和大学", "workbook": "自编", "type": "single",
@@ -400,7 +400,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_007",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
     "knowledge": "拜占庭帝国",
     "lesson": "第9课 拜占庭帝国", "workbook": "自编", "type": "single",
@@ -417,7 +417,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_008",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
     "knowledge": "拜占庭帝国",
     "lesson": "第9课 拜占庭帝国", "workbook": "自编",
@@ -437,7 +437,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   // ===== 第四单元 中古时期的亚洲、非洲和美洲 =====
   {
     "id": "his26_u4_001",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
     "knowledge": "封建时代的日本",
     "lesson": "第10课 封建时代的日本", "workbook": "自编", "type": "single",
@@ -454,7 +454,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_002",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
     "knowledge": "封建时代的日本",
     "lesson": "第10课 封建时代的日本", "workbook": "自编", "type": "single",
@@ -471,7 +471,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_003",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
     "knowledge": "阿拉伯帝国",
     "lesson": "第11课 阿拉伯帝国", "workbook": "自编", "type": "single",
@@ -488,7 +488,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_004",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
     "knowledge": "阿拉伯帝国",
     "lesson": "第11课 阿拉伯帝国", "workbook": "自编", "type": "single",
@@ -505,7 +505,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_005",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
     "knowledge": "中古时期的非洲",
     "lesson": "第12课 中古时期的非洲和美洲", "workbook": "自编", "type": "single",
@@ -522,7 +522,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_006",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
     "knowledge": "中古时期的美洲",
     "lesson": "第12课 中古时期的非洲和美洲", "workbook": "自编", "type": "single",
@@ -539,7 +539,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_007",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
     "knowledge": "中古时期的美洲",
     "lesson": "第12课 中古时期的非洲和美洲", "workbook": "自编", "type": "single",
@@ -556,7 +556,7 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_008",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
     "knowledge": "中古世界文明",
     "lesson": "第12课 中古时期的非洲和美洲", "workbook": "自编", "type": "single",

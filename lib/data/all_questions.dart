@@ -13,6 +13,8 @@ import 'glossary_yueyang.dart';
 import 'glossary_zuiweng.dart';
 import 'glossary_caoqui.dart';
 import 'glossary_chenshe.dart';
+import 'chinese_recite_9b.dart';
+import 'glossary_9b.dart';
 
 /// 注释库来源（篇目 → 注释列表）
 const Map<String, List<Map<String, dynamic>>> glossarySources = {
@@ -25,13 +27,29 @@ const Map<String, List<Map<String, dynamic>>> glossarySources = {
   '出师表': glossaryChushi,
 };
 
+/// 九下注释库
+const Map<String, List<Map<String, dynamic>>> glossarySources9B = {
+  '鱼我所欲也': glossaryYuwo,
+  '唐雎不辱使命': glossaryTangju,
+  '送东阳马生序': glossarySongdongyang,
+};
+
 /// 把注释库展开成题目：
 /// 1) 速过卡（flash）：看词 → 想意思 → 翻面自评
 /// 2) 注释测验（single）：问意思，四选一，干扰项从同篇其他注释取
 List<Map<String, dynamic>> buildGlossaryQuestions() {
   final out = <Map<String, dynamic>>[];
+  _expandGlossary(glossarySources, '九年级上册', '文言文注释', out);
+  _expandGlossary(glossarySources9B, '九年级下册', '文言文注释', out);
+  return out;
+}
 
-  glossarySources.forEach((lesson, entries) {
+void _expandGlossary(
+    Map<String, List<Map<String, dynamic>>> sources,
+    String grade,
+    String unitBase,
+    List<Map<String, dynamic>> out) {
+  sources.forEach((lesson, entries) {
     final n = entries.length;
     if (n == 0) return;
 
@@ -40,10 +58,10 @@ List<Map<String, dynamic>> buildGlossaryQuestions() {
       final g = entries[i];
       final star = g['star'] == true;
       out.add({
-        'id': 'gl_${_slug(lesson)}_f$i',
+        'id': 'gl_${_slug(lesson)}_${grade == '九年级下册' ? 'b' : 'a'}_f$i',
         'subject': 'chinese',
-        'grade': '九年级',
-        'unit': '文言文注释 · 速过',
+        'grade': grade,
+        'unit': '$unitBase · 速过',
         'lesson': lesson,
         'knowledge': star ? '重点注释' : '常规注释',
         'workbook': '自编',
@@ -89,10 +107,10 @@ List<Map<String, dynamic>> buildGlossaryQuestions() {
       }
 
       out.add({
-        'id': 'gl_${_slug(lesson)}_q$i',
+        'id': 'gl_${_slug(lesson)}_${grade == '九年级下册' ? 'b' : 'a'}_q$i',
         'subject': 'chinese',
-        'grade': '九年级',
-        'unit': '文言文注释 · 测验',
+        'grade': grade,
+        'unit': '$unitBase · 测验',
         'lesson': lesson,
         'knowledge': star ? '重点注释' : '常规注释',
         'workbook': '自编',
@@ -105,8 +123,6 @@ List<Map<String, dynamic>> buildGlossaryQuestions() {
       });
     }
   });
-
-  return out;
 }
 
 String _slug(String s) {
@@ -134,6 +150,7 @@ List<Question> buildAllQuestions() {
     ...historyEssentialUnit57,
     ...chinese2026Unit,
     ...chineseRecite,
+    ...chineseRecite9B,
     ...buildGlossaryQuestions(),
     ...chemistry2026Unit,
   ];

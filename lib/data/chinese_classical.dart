@@ -2,7 +2,7 @@
 const List<Map<String, dynamic>> chineseClassical = [
   // ===== 岳阳楼记 =====
   {
-    "id": "chy_cls_001", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_001", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "岳阳楼记",
     "knowledge": "通假字", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》：“属予作文以记之。”句中“属”的意思是（ ）",
@@ -12,7 +12,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 1
   },
   {
-    "id": "chy_cls_002", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_002", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "岳阳楼记",
     "knowledge": "通假字", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》：“政通人和，百废具兴。”句中“具”的意思是（ ）",
@@ -22,7 +22,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 1
   },
   {
-    "id": "chy_cls_003", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_003", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "岳阳楼记",
     "knowledge": "古今异义", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》：“去国怀乡，忧谗畏讥。”句中“去”的意思是（ ）",
@@ -32,7 +32,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 1
   },
   {
-    "id": "chy_cls_004", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_004", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "岳阳楼记",
     "knowledge": "古今异义", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》：“微斯人，吾谁与归？”句中“微”的意思是（ ）",
@@ -42,7 +42,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_005", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_005", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "岳阳楼记",
     "knowledge": "一词多义", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》：“予观夫巴陵胜状。”句中“胜”的意思是（ ）",
@@ -52,7 +52,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_006", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_006", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "岳阳楼记",
     "knowledge": "句子翻译", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》：“不以物喜，不以己悲。”正确的翻译是（ ）",
@@ -69,7 +69,7 @@ const List<Map<String, dynamic>> chineseClassical = [
 
   // ===== 醉翁亭记 =====
   {
-    "id": "chy_cls_007", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_007", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "醉翁亭记",
     "knowledge": "一词多义", "workbook": "自编", "type": "single",
     "stem": "《醉翁亭记》：“醉翁之意不在酒。”句中“意”的意思是（ ）",
@@ -79,7 +79,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_008", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_008", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "醉翁亭记",
     "knowledge": "词类活用", "workbook": "自编", "type": "single",
     "stem": "《醉翁亭记》：“名之者谁？太守自谓也。”句中“名”的用法是（ ）",
@@ -89,7 +89,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_009", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_009", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "醉翁亭记",
     "knowledge": "古今异义", "workbook": "自编", "type": "single",
     "stem": "《醉翁亭记》：“伛偻提携，往来而不绝者。”句中“提携”的意思是（ ）",
@@ -99,7 +99,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 3
   },
   {
-    "id": "chy_cls_010", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_010", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "醉翁亭记",
     "knowledge": "句子翻译", "workbook": "自编", "type": "single",
     "stem": "《醉翁亭记》：“山水之乐，得之心而寓之酒也。”正确的翻译是（ ）",
@@ -116,7 +116,7 @@ const List<Map<String, dynamic>> chineseClassical = [
 
   // ===== 湖心亭看雪 =====
   {
-    "id": "chy_cls_011", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_011", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "湖心亭看雪",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《湖心亭看雪》：“余拏一小舟。”句中“拏”的意思是（ ）",
@@ -126,7 +126,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_012", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_012", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "湖心亭看雪",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《湖心亭看雪》：“雾凇沆砀，天与云与山与水，上下一白。”句中“沆砀”的意思是（ ）",
@@ -136,7 +136,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 3
   },
   {
-    "id": "chy_cls_013", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_013", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "湖心亭看雪",
     "knowledge": "古今异义", "workbook": "自编", "type": "single",
     "stem": "《湖心亭看雪》：“余强饮三大白而别。”句中“白”的意思是（ ）",
@@ -148,7 +148,7 @@ const List<Map<String, dynamic>> chineseClassical = [
 
   // ===== 曹刿论战 =====
   {
-    "id": "chy_cls_014", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_014", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "曹刿论战",
     "knowledge": "古今异义", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》：“肉食者鄙，未能远谋。”句中“鄙”的意思是（ ）",
@@ -158,7 +158,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 1
   },
   {
-    "id": "chy_cls_015", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_015", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "曹刿论战",
     "knowledge": "一词多义", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》：“又何间焉？”句中“间”的意思是（ ）",
@@ -168,7 +168,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_016", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_016", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "曹刿论战",
     "knowledge": "古今异义", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》：“小大之狱，虽不能察，必以情。”句中“狱”的意思是（ ）",
@@ -178,7 +178,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 1
   },
   {
-    "id": "chy_cls_017", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_017", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "曹刿论战",
     "knowledge": "古今异义", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》：“牺牲玉帛，弗敢加也，必以信。”句中“牺牲”的意思是（ ）",
@@ -193,7 +193,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_018", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_018", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "曹刿论战",
     "knowledge": "句子翻译", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》：“一鼓作气，再而衰，三而竭。”正确的翻译是（ ）",
@@ -210,7 +210,7 @@ const List<Map<String, dynamic>> chineseClassical = [
 
   // ===== 邹忌讽齐王纳谏 =====
   {
-    "id": "chy_cls_019", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_019", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "邹忌讽齐王纳谏",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《邹忌讽齐王纳谏》：“邹忌修八尺有余。”句中“修”的意思是（ ）",
@@ -220,7 +220,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_020", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_020", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "邹忌讽齐王纳谏",
     "knowledge": "词类活用", "workbook": "自编", "type": "single",
     "stem": "《邹忌讽齐王纳谏》：“吾妻之美我者，私我也。”句中“美”的用法是（ ）",
@@ -235,7 +235,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 3
   },
   {
-    "id": "chy_cls_021", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_021", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "邹忌讽齐王纳谏",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《邹忌讽齐王纳谏》：“王之蔽甚矣。”句中“蔽”的意思是（ ）",
@@ -245,7 +245,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_022", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_022", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "邹忌讽齐王纳谏",
     "knowledge": "一词多义", "workbook": "自编", "type": "single",
     "stem": "《邹忌讽齐王纳谏》：“时时而间进。”句中“间”的意思是（ ）",
@@ -257,7 +257,7 @@ const List<Map<String, dynamic>> chineseClassical = [
 
   // ===== 陈涉世家 =====
   {
-    "id": "chy_cls_023", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_023", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "陈涉世家",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《陈涉世家》：“尝与人佣耕。”句中“尝”的意思是（ ）",
@@ -267,7 +267,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 1
   },
   {
-    "id": "chy_cls_024", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_024", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "陈涉世家",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《陈涉世家》：“苟富贵，无相忘。”句中“苟”的意思是（ ）",
@@ -277,7 +277,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_025", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_025", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "陈涉世家",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《陈涉世家》：“或以为死，或以为亡。”句中两个“或”的意思是（ ）",
@@ -287,7 +287,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_026", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_026", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "陈涉世家",
     "knowledge": "词类活用", "workbook": "自编", "type": "single",
     "stem": "《陈涉世家》：“乃丹书帛曰‘陈胜王’。”句中“丹”的用法是（ ）",
@@ -302,7 +302,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 3
   },
   {
-    "id": "chy_cls_027", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_027", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "陈涉世家",
     "knowledge": "句子翻译", "workbook": "自编", "type": "single",
     "stem": "《陈涉世家》：“王侯将相宁有种乎！”正确的翻译是（ ）",
@@ -319,7 +319,7 @@ const List<Map<String, dynamic>> chineseClassical = [
 
   // ===== 出师表 =====
   {
-    "id": "chy_cls_028", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_028", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "出师表",
     "knowledge": "古今异义", "workbook": "自编", "type": "single",
     "stem": "《出师表》：“先帝创业未半而中道崩殂。”句中“崩殂”的意思是（ ）",
@@ -329,7 +329,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_029", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_029", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "出师表",
     "knowledge": "古今异义", "workbook": "自编", "type": "single",
     "stem": "《出师表》：“此诚危急存亡之秋也。”句中“秋”的意思是（ ）",
@@ -339,7 +339,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_030", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_030", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "出师表",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《出师表》：“陟罚臧否，不宜异同。”句中“陟”的意思是（ ）",
@@ -349,7 +349,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 3
   },
   {
-    "id": "chy_cls_031", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_031", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "出师表",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《出师表》：“夙夜忧叹，恐托付不效。”句中“夙”的意思是（ ）",
@@ -359,7 +359,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_032", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_032", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "出师表",
     "knowledge": "句子翻译", "workbook": "自编", "type": "single",
     "stem": "《出师表》：“苟全性命于乱世，不求闻达于诸侯。”正确的翻译是（ ）",
@@ -374,7 +374,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_033", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_033", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "出师表",
     "knowledge": "词语解释", "workbook": "自编", "type": "single",
     "stem": "《出师表》：“先帝不以臣卑鄙。”句中“卑鄙”的意思是（ ）",
@@ -391,7 +391,7 @@ const List<Map<String, dynamic>> chineseClassical = [
 
   // ===== 通假字/词类活用 综合 =====
   {
-    "id": "chy_cls_034", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_034", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "出师表",
     "knowledge": "通假字", "workbook": "自编", "type": "single",
     "stem": "《出师表》：“必能裨补阙漏。”句中“阙”的意思是（ ）",
@@ -401,7 +401,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 3
   },
   {
-    "id": "chy_cls_035", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_035", "subject": "chinese", "grade": "九年级上册",
     "unit": "第六单元 文言文", "lesson": "曹刿论战",
     "knowledge": "词类活用", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》：“公将鼓之。”句中“鼓”的用法是（ ）",
@@ -416,7 +416,7 @@ const List<Map<String, dynamic>> chineseClassical = [
     "difficulty": 2
   },
   {
-    "id": "chy_cls_036", "subject": "chinese", "grade": "九年级",
+    "id": "chy_cls_036", "subject": "chinese", "grade": "九年级上册",
     "unit": "第三单元 文言文", "lesson": "岳阳楼记",
     "knowledge": "词类活用", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》：“先天下之忧而忧，后天下之乐而乐。”句中“先”“后”的用法是（ ）",

@@ -1,7 +1,7 @@
 // 化学九年级上册 2026新版（人教版） 全单选题
 const List<Map<String, dynamic>> chemistry2026Unit = [
   {
-    "id": "chm26_001", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_001", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第一单元 走进化学世界", "knowledge": "物质的变化",
  "lesson": "物质的变化", "workbook": "自编", "type": "single",
     "stem": "下列变化属于化学变化的是（ ）",
@@ -11,7 +11,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_002", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_002", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第一单元 走进化学世界", "knowledge": "物质的性质",
  "lesson": "物质的性质", "workbook": "自编", "type": "single",
     "stem": "下列性质属于化学性质的是（ ）",
@@ -21,7 +21,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_003", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_003", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第一单元 走进化学世界", "knowledge": "实验基本操作",
  "lesson": "实验基本操作", "workbook": "自编", "type": "single",
     "stem": "给试管中的液体加热时，液体体积不应超过试管容积的（ ）",
@@ -31,7 +31,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_004", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_004", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第一单元 走进化学世界", "knowledge": "实验基本操作",
  "lesson": "实验基本操作", "workbook": "自编", "type": "single",
     "stem": "取用粉末状固体试剂时，应使用（ ）",
@@ -41,7 +41,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_005", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_005", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第二单元 空气和氧气", "knowledge": "空气的成分",
  "lesson": "空气的成分", "workbook": "自编", "type": "single",
     "stem": "空气中氮气和氧气的体积分数分别约为（ ）",
@@ -51,7 +51,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_006", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_006", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第二单元 空气和氧气", "knowledge": "空气的成分",
  "lesson": "空气的成分", "workbook": "自编", "type": "single",
     "stem": "空气中二氧化碳的体积分数约为（ ）",
@@ -61,7 +61,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_007", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_007", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第二单元 空气和氧气", "knowledge": "保护大气环境",
  "lesson": "保护大气环境", "workbook": "自编", "type": "single",
     "stem": "下列做法不利于保护大气环境的是（ ）",
@@ -71,7 +71,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_008", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_008", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第二单元 空气和氧气", "knowledge": "氧气的性质",
  "lesson": "氧气的性质", "workbook": "自编", "type": "single",
     "stem": "下列关于氧气性质的描述，正确的是（ ）",
@@ -86,7 +86,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_009", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_009", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第二单元 空气和氧气", "knowledge": "实验室制氧气",
  "lesson": "实验室制氧气", "workbook": "自编", "type": "single",
     "stem": "实验室用高锰酸钾制取氧气时，试管口应放一团棉花，其作用是（ ）",
@@ -96,7 +96,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_010", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_010", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第二单元 空气和氧气", "knowledge": "催化剂",
  "lesson": "催化剂", "workbook": "自编", "type": "single",
     "stem": "用过氧化氢溶液制氧气时，二氧化锰的作用是（ ）",
@@ -106,7 +106,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_011", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_011", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第二单元 空气和氧气", "knowledge": "燃烧现象",
  "lesson": "燃烧现象", "workbook": "自编", "type": "single",
     "stem": "硫在氧气中燃烧的现象是（ ）",
@@ -116,7 +116,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_012", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_012", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第三单元 物质构成的奥秘", "knowledge": "分子和原子",
  "lesson": "分子和原子", "workbook": "自编", "type": "single",
     "stem": "“墙内开花墙外香”说明（ ）",
@@ -126,7 +126,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_013", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_013", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第三单元 物质构成的奥秘", "knowledge": "原子结构",
  "lesson": "原子结构", "workbook": "自编", "type": "single",
     "stem": "原子中带正电的粒子是（ ）",
@@ -136,7 +136,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_014", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_014", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第三单元 物质构成的奥秘", "knowledge": "元素",
  "lesson": "元素", "workbook": "自编", "type": "single",
     "stem": "决定元素种类的是原子的（ ）",
@@ -146,7 +146,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_015", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_015", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第三单元 物质构成的奥秘", "knowledge": "化学式与化合价",
  "lesson": "化学式与化合价", "workbook": "自编", "type": "single",
     "stem": "水中氢元素与氧元素的质量比为（ ）",
@@ -156,7 +156,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_016", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_016", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第四单元 自然界的水", "knowledge": "水的净化",
  "lesson": "水的净化", "workbook": "自编", "type": "single",
     "stem": "自来水厂净水过程中，起吸附作用的是（ ）",
@@ -166,7 +166,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_017", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_017", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第四单元 自然界的水", "knowledge": "水的组成",
  "lesson": "水的组成", "workbook": "自编", "type": "single",
     "stem": "电解水实验说明水是由（ ）组成的",
@@ -176,7 +176,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_018", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_018", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第四单元 自然界的水", "knowledge": "化学式与化合价",
  "lesson": "化学式与化合价", "workbook": "自编", "type": "single",
     "stem": "硫酸铵[(NH₄)₂SO₄]中氮元素的质量分数约为（ ）",
@@ -186,7 +186,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 3
   },
   {
-    "id": "chm26_019", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_019", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第五单元 化学反应的定量关系", "knowledge": "质量守恒定律",
  "lesson": "质量守恒定律", "workbook": "自编", "type": "single",
     "stem": "质量守恒定律的微观解释是（ ）",
@@ -201,7 +201,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_020", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_020", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第五单元 化学反应的定量关系", "knowledge": "化学方程式",
  "lesson": "化学方程式", "workbook": "自编", "type": "single",
     "stem": "下列关于化学方程式 C + O₂ →(点燃) CO₂ 的说法正确的是（ ）",
@@ -216,7 +216,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_021", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_021", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第六单元 碳和碳的氧化物", "knowledge": "碳单质",
  "lesson": "碳单质", "workbook": "自编", "type": "single",
     "stem": "金刚石和石墨物理性质差异很大的原因是（ ）",
@@ -226,7 +226,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_022", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_022", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第六单元 碳和碳的氧化物", "knowledge": "二氧化碳",
  "lesson": "二氧化碳", "workbook": "自编", "type": "single",
     "stem": "检验二氧化碳常用的试剂是（ ）",
@@ -236,7 +236,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_023", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_023", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第六单元 碳和碳的氧化物", "knowledge": "一氧化碳",
  "lesson": "一氧化碳", "workbook": "自编", "type": "single",
     "stem": "一氧化碳有毒，主要原因是（ ）",
@@ -251,7 +251,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chm26_024", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_024", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第七单元 能源的合理利用及其开发", "knowledge": "燃烧的条件",
  "lesson": "燃烧的条件", "workbook": "自编", "type": "single",
     "stem": "燃烧需要同时满足的条件不包括（ ）",
@@ -261,7 +261,7 @@ const List<Map<String, dynamic>> chemistry2026Unit = [
     "difficulty": 1
   },
   {
-    "id": "chm26_025", "subject": "chemistry", "grade": "九年级",
+    "id": "chm26_025", "subject": "chemistry", "grade": "九年级上册",
     "unit": "第七单元 能源的合理利用及其开发", "knowledge": "灭火原理",
  "lesson": "灭火原理", "workbook": "自编", "type": "single",
     "stem": "用锅盖盖灭油锅着火，利用的灭火原理是（ ）",

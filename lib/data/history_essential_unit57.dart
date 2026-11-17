@@ -2,7 +2,7 @@
 const List<Map<String, dynamic>> historyEssentialUnit57 = [
   // ===== 第五单元 走向近代 =====
   {
-    "id": "his_ess_031", "subject": "history", "grade": "九年级",
+    "id": "his_ess_031", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "探寻新航路",
  "lesson": "第14课 探寻新航路",
     "workbook": "必刷题", "type": "single",
@@ -18,7 +18,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_032", "subject": "history", "grade": "九年级",
+    "id": "his_ess_032", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "探寻新航路",
  "lesson": "第14课 探寻新航路",
     "workbook": "必刷题", "type": "single",
@@ -34,7 +34,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_033", "subject": "history", "grade": "九年级",
+    "id": "his_ess_033", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "探寻新航路",
  "lesson": "第14课 探寻新航路",
     "workbook": "必刷题", "type": "single",
@@ -50,7 +50,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_034", "subject": "history", "grade": "九年级",
+    "id": "his_ess_034", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "早期殖民掠夺",
  "lesson": "第15课 早期殖民掠夺",
     "workbook": "必刷题", "type": "single",
@@ -66,7 +66,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_035", "subject": "history", "grade": "九年级",
+    "id": "his_ess_035", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "文艺复兴",
  "lesson": "第13课 西欧经济社会发展与文艺复兴运动",
     "workbook": "必刷题", "type": "single",
@@ -82,7 +82,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_036", "subject": "history", "grade": "九年级",
+    "id": "his_ess_036", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "文艺复兴",
  "lesson": "第13课 西欧经济社会发展与文艺复兴运动",
     "workbook": "必刷题", "type": "single",
@@ -98,7 +98,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 1
   },
   {
-    "id": "his_ess_037", "subject": "history", "grade": "九年级",
+    "id": "his_ess_037", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "探寻新航路",
  "lesson": "第14课 探寻新航路",
     "workbook": "必刷题", "type": "single",
@@ -114,7 +114,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 1
   },
   {
-    "id": "his_ess_038", "subject": "history", "grade": "九年级",
+    "id": "his_ess_038", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "文艺复兴",
  "lesson": "第13课 西欧经济社会发展与文艺复兴运动",
     "workbook": "必刷题", "type": "single",
@@ -130,7 +130,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_039", "subject": "history", "grade": "九年级",
+    "id": "his_ess_039", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "早期殖民掠夺",
  "lesson": "第15课 早期殖民掠夺",
     "workbook": "必刷题", "type": "single",
@@ -146,7 +146,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_040", "subject": "history", "grade": "九年级",
+    "id": "his_ess_040", "subject": "history", "grade": "九年级上册",
     "unit": "第五单元 走向近代", "knowledge": "早期殖民掠夺",
  "lesson": "第15课 早期殖民掠夺",
     "workbook": "必刷题", "type": "single",
@@ -164,7 +164,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
 
   // ===== 第六单元 资本主义制度的初步确立 =====
   {
-    "id": "his_ess_041", "subject": "history", "grade": "九年级",
+    "id": "his_ess_041", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "英国资产阶级革命",
  "lesson": "第16课 君主立宪制的英国",
     "workbook": "必刷题", "type": "single",
@@ -180,7 +180,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_042", "subject": "history", "grade": "九年级",
+    "id": "his_ess_042", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "英国资产阶级革命",
  "lesson": "第16课 君主立宪制的英国",
     "workbook": "必刷题", "type": "single",
@@ -196,7 +196,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_043", "subject": "history", "grade": "九年级",
+    "id": "his_ess_043", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "英国资产阶级革命",
  "lesson": "第16课 君主立宪制的英国",
     "workbook": "必刷题", "type": "single",
@@ -212,7 +212,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_044", "subject": "history", "grade": "九年级",
+    "id": "his_ess_044", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "美国独立战争",
  "lesson": "第17课 美国的独立",
     "workbook": "必刷题", "type": "single",
@@ -228,7 +228,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_045", "subject": "history", "grade": "九年级",
+    "id": "his_ess_045", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "美国独立战争",
  "lesson": "第17课 美国的独立",
     "workbook": "必刷题", "type": "single",
@@ -244,7 +244,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_046", "subject": "history", "grade": "九年级",
+    "id": "his_ess_046", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "法国大革命",
  "lesson": "第18课 法国大革命和拿破仑帝国",
     "workbook": "必刷题", "type": "single",
@@ -255,7 +255,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 1
   },
   {
-    "id": "his_ess_047", "subject": "history", "grade": "九年级",
+    "id": "his_ess_047", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "法国大革命",
  "lesson": "第18课 法国大革命和拿破仑帝国",
     "workbook": "必刷题", "type": "single",
@@ -271,7 +271,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_048", "subject": "history", "grade": "九年级",
+    "id": "his_ess_048", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "资本主义制度",
  "lesson": "第18课 法国大革命和拿破仑帝国",
     "workbook": "必刷题", "type": "single",
@@ -287,7 +287,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 1
   },
   {
-    "id": "his_ess_049", "subject": "history", "grade": "九年级",
+    "id": "his_ess_049", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "拿破仑",
  "lesson": "第18课 法国大革命和拿破仑帝国",
     "workbook": "必刷题", "type": "single",
@@ -303,7 +303,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_050", "subject": "history", "grade": "九年级",
+    "id": "his_ess_050", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "拿破仑",
  "lesson": "第18课 法国大革命和拿破仑帝国",
     "workbook": "必刷题", "type": "single",
@@ -319,7 +319,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_051", "subject": "history", "grade": "九年级",
+    "id": "his_ess_051", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "英国资产阶级革命",
  "lesson": "第16课 君主立宪制的英国",
     "workbook": "必刷题", "type": "single",
@@ -335,7 +335,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_052", "subject": "history", "grade": "九年级",
+    "id": "his_ess_052", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "英国资产阶级革命",
  "lesson": "第16课 君主立宪制的英国",
     "workbook": "必刷题", "type": "single",
@@ -351,7 +351,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_053", "subject": "history", "grade": "九年级",
+    "id": "his_ess_053", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "美国独立战争",
  "lesson": "第17课 美国的独立",
     "workbook": "必刷题", "type": "single",
@@ -367,7 +367,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 1
   },
   {
-    "id": "his_ess_054", "subject": "history", "grade": "九年级",
+    "id": "his_ess_054", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "法国大革命",
  "lesson": "第18课 法国大革命和拿破仑帝国",
     "workbook": "必刷题", "type": "single",
@@ -383,7 +383,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_055", "subject": "history", "grade": "九年级",
+    "id": "his_ess_055", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "拿破仑",
  "lesson": "第18课 法国大革命和拿破仑帝国",
     "workbook": "必刷题", "type": "single",
@@ -399,7 +399,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_056", "subject": "history", "grade": "九年级",
+    "id": "his_ess_056", "subject": "history", "grade": "九年级上册",
     "unit": "第六单元 资本主义制度的初步确立", "knowledge": "美国独立战争",
  "lesson": "第17课 美国的独立",
     "workbook": "必刷题", "type": "single",
@@ -417,7 +417,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
 
   // ===== 第七单元 第一次工业革命和马克思主义的诞生 =====
   {
-    "id": "his_ess_057", "subject": "history", "grade": "九年级",
+    "id": "his_ess_057", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
  "lesson": "第19课 第一次工业革命",
     "workbook": "必刷题", "type": "single",
@@ -433,7 +433,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_058", "subject": "history", "grade": "九年级",
+    "id": "his_ess_058", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
  "lesson": "第19课 第一次工业革命",
     "workbook": "必刷题", "type": "single",
@@ -449,7 +449,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_059", "subject": "history", "grade": "九年级",
+    "id": "his_ess_059", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
  "lesson": "第19课 第一次工业革命",
     "workbook": "必刷题", "type": "single",
@@ -465,7 +465,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_060", "subject": "history", "grade": "九年级",
+    "id": "his_ess_060", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
  "lesson": "第19课 第一次工业革命",
     "workbook": "必刷题", "type": "single",
@@ -481,7 +481,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_061", "subject": "history", "grade": "九年级",
+    "id": "his_ess_061", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
  "lesson": "第19课 第一次工业革命",
     "workbook": "必刷题", "type": "single",
@@ -497,7 +497,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_062", "subject": "history", "grade": "九年级",
+    "id": "his_ess_062", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
  "lesson": "第19课 第一次工业革命",
     "workbook": "必刷题", "type": "single",
@@ -513,7 +513,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_063", "subject": "history", "grade": "九年级",
+    "id": "his_ess_063", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生",
  "lesson": "第20课 马克思主义的诞生",
     "workbook": "必刷题", "type": "single",
@@ -529,7 +529,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_064", "subject": "history", "grade": "九年级",
+    "id": "his_ess_064", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生",
  "lesson": "第20课 马克思主义的诞生",
     "workbook": "必刷题", "type": "single",
@@ -545,7 +545,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 1
   },
   {
-    "id": "his_ess_065", "subject": "history", "grade": "九年级",
+    "id": "his_ess_065", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生",
  "lesson": "第20课 马克思主义的诞生",
     "workbook": "必刷题", "type": "single",
@@ -561,7 +561,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_066", "subject": "history", "grade": "九年级",
+    "id": "his_ess_066", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "马克思主义的诞生",
  "lesson": "第20课 马克思主义的诞生",
     "workbook": "必刷题", "type": "single",
@@ -577,7 +577,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_067", "subject": "history", "grade": "九年级",
+    "id": "his_ess_067", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "国际共产主义运动",
  "lesson": "第21课 国际共产主义运动",
     "workbook": "必刷题", "type": "single",
@@ -593,7 +593,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_068", "subject": "history", "grade": "九年级",
+    "id": "his_ess_068", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "国际共产主义运动",
  "lesson": "第21课 国际共产主义运动",
     "workbook": "必刷题", "type": "single",
@@ -609,7 +609,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_069", "subject": "history", "grade": "九年级",
+    "id": "his_ess_069", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "国际共产主义运动",
  "lesson": "第21课 国际共产主义运动",
     "workbook": "必刷题", "type": "single",
@@ -625,7 +625,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_070", "subject": "history", "grade": "九年级",
+    "id": "his_ess_070", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "国际共产主义运动",
  "lesson": "第21课 国际共产主义运动",
     "workbook": "必刷题", "type": "single",
@@ -641,7 +641,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_071", "subject": "history", "grade": "九年级",
+    "id": "his_ess_071", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "国际共产主义运动",
  "lesson": "第21课 国际共产主义运动",
     "workbook": "必刷题", "type": "single",
@@ -657,7 +657,7 @@ const List<Map<String, dynamic>> historyEssentialUnit57 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_072", "subject": "history", "grade": "九年级",
+    "id": "his_ess_072", "subject": "history", "grade": "九年级上册",
     "unit": "第七单元 第一次工业革命和马克思主义的诞生", "knowledge": "第一次工业革命",
  "lesson": "第19课 第一次工业革命",
     "workbook": "必刷题", "type": "single",

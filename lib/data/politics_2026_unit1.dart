@@ -3,7 +3,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_001",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的百年奋斗历程",
     "lesson": "第一课 百年大党风华正茂",
@@ -18,7 +18,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_002",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的百年奋斗历程",
     "lesson": "第一课 百年大党风华正茂",
@@ -38,7 +38,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_003",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "伟大建党精神",
     "lesson": "第一课 百年大党风华正茂",
@@ -58,7 +58,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_004",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "伟大建党精神",
     "lesson": "第一课 百年大党风华正茂",
@@ -73,7 +73,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_005",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的初心使命",
     "lesson": "第二课 坚持以人民为中心",
@@ -93,7 +93,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_006",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "以人民为中心",
     "lesson": "第二课 坚持以人民为中心",
@@ -113,7 +113,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_007",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "以人民为中心",
     "lesson": "第二课 坚持以人民为中心",
@@ -133,7 +133,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_008",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的领导地位",
     "lesson": "第三课 党是领导一切的",
@@ -153,7 +153,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_009",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的领导地位",
     "lesson": "第三课 党是领导一切的",
@@ -173,7 +173,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_010",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的领导地位",
     "lesson": "第三课 党是领导一切的",
@@ -193,7 +193,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_011",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "两个确立",
     "lesson": "第三课 党是领导一切的",
@@ -213,7 +213,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_012",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "两个确立",
     "lesson": "第三课 党是领导一切的",
@@ -233,7 +233,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_013",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的领导地位",
     "lesson": "第三课 党是领导一切的",
@@ -253,7 +253,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_014",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的百年奋斗历程",
     "lesson": "第一课 百年大党风华正茂",
@@ -273,7 +273,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_015",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "伟大建党精神",
     "lesson": "第一课 百年大党风华正茂",
@@ -293,7 +293,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_016",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "以人民为中心",
     "lesson": "第二课 坚持以人民为中心",
@@ -313,7 +313,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_017",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的领导地位",
     "lesson": "第三课 党是领导一切的",
@@ -333,7 +333,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_018",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的初心使命",
     "lesson": "第二课 坚持以人民为中心",
@@ -353,7 +353,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_019",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "伟大建党精神",
     "lesson": "第一课 百年大党风华正茂",
@@ -373,7 +373,7 @@ const List<Map<String, dynamic>> politics2026Unit1 = [
   {
     "id": "pol26_u1_020",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的领导地位",
     "lesson": "第三课 党是领导一切的",

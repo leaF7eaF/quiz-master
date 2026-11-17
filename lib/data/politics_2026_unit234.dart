@@ -4,7 +4,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_001",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的历史方位",
     "lesson": "第四课 新的历史方位",
@@ -24,7 +24,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_002",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "社会主要矛盾",
     "lesson": "第四课 新的历史方位",
@@ -44,7 +44,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_003",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "社会主要矛盾",
     "lesson": "第四课 新的历史方位",
@@ -64,7 +64,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_004",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的意义",
     "lesson": "第四课 新的历史方位",
@@ -84,7 +84,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_005",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的思想旗帜",
     "lesson": "第五课 新时代的思想旗帜",
@@ -104,7 +104,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_006",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的思想旗帜",
     "lesson": "第五课 新时代的思想旗帜",
@@ -124,7 +124,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_007",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的成就",
     "lesson": "第六课 中国腾飞谱新篇",
@@ -144,7 +144,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_008",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的成就",
     "lesson": "第六课 中国腾飞谱新篇",
@@ -164,7 +164,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_009",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的思想旗帜",
     "lesson": "第五课 新时代的思想旗帜",
@@ -184,7 +184,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u2_010",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的成就",
     "lesson": "第六课 中国腾飞谱新篇",
@@ -206,7 +206,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_001",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "两步走战略",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -226,7 +226,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_002",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "中国式现代化",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -246,7 +246,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_003",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "中国式现代化",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -266,7 +266,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_004",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "新发展理念",
     "lesson": "第八课 推动高质量发展",
@@ -286,7 +286,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_005",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "新发展理念",
     "lesson": "第八课 推动高质量发展",
@@ -301,7 +301,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_006",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "新发展格局",
     "lesson": "第八课 推动高质量发展",
@@ -321,7 +321,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_007",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "高质量发展",
     "lesson": "第八课 推动高质量发展",
@@ -341,7 +341,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_008",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "高质量发展",
     "lesson": "第八课 推动高质量发展",
@@ -361,7 +361,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_009",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "中国式现代化",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -381,7 +381,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u3_010",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "两步走战略",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -403,7 +403,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_001",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "中华民族伟大复兴",
     "lesson": "第十课 实现伟大梦想",
@@ -423,7 +423,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_002",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "中国梦",
     "lesson": "第十课 实现伟大梦想",
@@ -443,7 +443,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_003",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "铸牢中华民族共同体意识",
     "lesson": "第九课 凝聚团结伟力",
@@ -463,7 +463,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_004",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "民族团结",
     "lesson": "第九课 凝聚团结伟力",
@@ -478,7 +478,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_005",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "一国两制",
     "lesson": "第九课 凝聚团结伟力",
@@ -498,7 +498,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_006",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "祖国统一",
     "lesson": "第九课 凝聚团结伟力",
@@ -518,7 +518,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_007",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "青年担当",
     "lesson": "第十课 实现伟大梦想",
@@ -538,7 +538,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_008",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "中国梦",
     "lesson": "第十课 实现伟大梦想",
@@ -558,7 +558,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_009",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "四个自信",
     "lesson": "第十课 实现伟大梦想",
@@ -578,7 +578,7 @@ const List<Map<String, dynamic>> politics2026Unit234 = [
   {
     "id": "pol26_u4_010",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "青年担当",
     "lesson": "第十课 实现伟大梦想",

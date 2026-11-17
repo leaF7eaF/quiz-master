@@ -2,7 +2,7 @@
 const List<Map<String, dynamic>> historyEssentialUnit14 = [
   // ===== 第一单元 文明的产生和古代亚非文明 =====
   {
-    "id": "his_ess_001", "subject": "history", "grade": "九年级",
+    "id": "his_ess_001", "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明", "knowledge": "古代两河流域",
  "lesson": "第3课 古代两河流域",
     "workbook": "必刷题", "type": "single",
@@ -18,7 +18,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 1
   },
   {
-    "id": "his_ess_002", "subject": "history", "grade": "九年级",
+    "id": "his_ess_002", "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明", "knowledge": "古代埃及",
  "lesson": "第2课 古代埃及",
     "workbook": "必刷题", "type": "single",
@@ -34,7 +34,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_003", "subject": "history", "grade": "九年级",
+    "id": "his_ess_003", "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明", "knowledge": "古代埃及",
  "lesson": "第2课 古代埃及",
     "workbook": "必刷题", "type": "single",
@@ -50,7 +50,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_004", "subject": "history", "grade": "九年级",
+    "id": "his_ess_004", "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明", "knowledge": "古代亚非文明",
  "lesson": "第4课 古代印度",
     "workbook": "必刷题", "type": "single",
@@ -66,7 +66,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_005", "subject": "history", "grade": "九年级",
+    "id": "his_ess_005", "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明", "knowledge": "古代印度",
  "lesson": "第4课 古代印度",
     "workbook": "必刷题", "type": "single",
@@ -82,7 +82,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_006", "subject": "history", "grade": "九年级",
+    "id": "his_ess_006", "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明", "knowledge": "古代埃及",
  "lesson": "第2课 古代埃及",
     "workbook": "必刷题", "type": "single",
@@ -98,7 +98,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_007", "subject": "history", "grade": "九年级",
+    "id": "his_ess_007", "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明", "knowledge": "文明的产生",
  "lesson": "第1课 从原始社会到奴隶社会",
     "workbook": "必刷题", "type": "single",
@@ -116,7 +116,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
 
   // ===== 第二单元 古代欧洲文明 =====
   {
-    "id": "his_ess_008", "subject": "history", "grade": "九年级",
+    "id": "his_ess_008", "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明", "knowledge": "希腊城邦",
  "lesson": "第5课 希腊城邦和亚历山大帝国",
     "workbook": "必刷题", "type": "single",
@@ -132,7 +132,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_009", "subject": "history", "grade": "九年级",
+    "id": "his_ess_009", "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明", "knowledge": "亚历山大帝国",
  "lesson": "第5课 希腊城邦和亚历山大帝国",
     "workbook": "必刷题", "type": "single",
@@ -148,7 +148,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_010", "subject": "history", "grade": "九年级",
+    "id": "his_ess_010", "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明", "knowledge": "罗马城邦和罗马帝国",
  "lesson": "第6课 罗马城邦和罗马帝国",
     "workbook": "必刷题", "type": "single",
@@ -164,7 +164,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_011", "subject": "history", "grade": "九年级",
+    "id": "his_ess_011", "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明", "knowledge": "罗马城邦和罗马帝国",
  "lesson": "第6课 罗马城邦和罗马帝国",
     "workbook": "必刷题", "type": "single",
@@ -180,7 +180,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_012", "subject": "history", "grade": "九年级",
+    "id": "his_ess_012", "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明", "knowledge": "罗马城邦和罗马帝国",
  "lesson": "第6课 罗马城邦和罗马帝国",
     "workbook": "必刷题", "type": "single",
@@ -196,7 +196,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_013", "subject": "history", "grade": "九年级",
+    "id": "his_ess_013", "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明", "knowledge": "希腊城邦",
  "lesson": "第5课 希腊城邦和亚历山大帝国",
     "workbook": "必刷题", "type": "single",
@@ -212,7 +212,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_014", "subject": "history", "grade": "九年级",
+    "id": "his_ess_014", "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明", "knowledge": "罗马城邦和罗马帝国",
  "lesson": "第6课 罗马城邦和罗马帝国",
     "workbook": "必刷题", "type": "single",
@@ -228,7 +228,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_015", "subject": "history", "grade": "九年级",
+    "id": "his_ess_015", "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明", "knowledge": "罗马城邦和罗马帝国",
  "lesson": "第6课 罗马城邦和罗马帝国",
     "workbook": "必刷题", "type": "single",
@@ -244,7 +244,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 3
   },
   {
-    "id": "his_ess_016", "subject": "history", "grade": "九年级",
+    "id": "his_ess_016", "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明", "knowledge": "希腊罗马古典文化",
  "lesson": "第7课 希腊罗马古典文化",
     "workbook": "必刷题", "type": "single",
@@ -262,7 +262,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
 
   // ===== 第三单元 封建时代的欧洲 =====
   {
-    "id": "his_ess_017", "subject": "history", "grade": "九年级",
+    "id": "his_ess_017", "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲", "knowledge": "法兰克王国",
  "lesson": "第7课 法兰克王国和西欧封建制度",
     "workbook": "必刷题", "type": "single",
@@ -278,7 +278,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_018", "subject": "history", "grade": "九年级",
+    "id": "his_ess_018", "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲", "knowledge": "西欧封建制度",
  "lesson": "第7课 法兰克王国和西欧封建制度",
     "workbook": "必刷题", "type": "single",
@@ -294,7 +294,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_019", "subject": "history", "grade": "九年级",
+    "id": "his_ess_019", "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲", "knowledge": "西欧城市和大学",
  "lesson": "第8课 西欧的城市和大学",
     "workbook": "必刷题", "type": "single",
@@ -310,7 +310,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_020", "subject": "history", "grade": "九年级",
+    "id": "his_ess_020", "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲", "knowledge": "西欧城市和大学",
  "lesson": "第8课 西欧的城市和大学",
     "workbook": "必刷题", "type": "single",
@@ -326,7 +326,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_021", "subject": "history", "grade": "九年级",
+    "id": "his_ess_021", "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲", "knowledge": "西欧城市和大学",
  "lesson": "第8课 西欧的城市和大学",
     "workbook": "必刷题", "type": "single",
@@ -342,7 +342,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_022", "subject": "history", "grade": "九年级",
+    "id": "his_ess_022", "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲", "knowledge": "拜占庭帝国",
  "lesson": "第9课 拜占庭帝国",
     "workbook": "必刷题", "type": "single",
@@ -358,7 +358,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_023", "subject": "history", "grade": "九年级",
+    "id": "his_ess_023", "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲", "knowledge": "拜占庭帝国",
  "lesson": "第9课 拜占庭帝国",
     "workbook": "必刷题", "type": "single",
@@ -369,7 +369,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_024", "subject": "history", "grade": "九年级",
+    "id": "his_ess_024", "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲", "knowledge": "拜占庭帝国",
  "lesson": "第9课 拜占庭帝国",
     "workbook": "必刷题", "type": "single",
@@ -385,7 +385,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_025", "subject": "history", "grade": "九年级",
+    "id": "his_ess_025", "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲", "knowledge": "法兰克王国",
  "lesson": "第7课 法兰克王国和西欧封建制度",
     "workbook": "必刷题", "type": "single",
@@ -403,7 +403,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
 
   // ===== 第四单元 中古时期的亚洲、非洲和美洲 =====
   {
-    "id": "his_ess_026", "subject": "history", "grade": "九年级",
+    "id": "his_ess_026", "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲", "knowledge": "封建时代的日本",
  "lesson": "第10课 封建时代的日本",
     "workbook": "必刷题", "type": "single",
@@ -419,7 +419,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_027", "subject": "history", "grade": "九年级",
+    "id": "his_ess_027", "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲", "knowledge": "封建时代的日本",
  "lesson": "第10课 封建时代的日本",
     "workbook": "必刷题", "type": "single",
@@ -435,7 +435,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 1
   },
   {
-    "id": "his_ess_028", "subject": "history", "grade": "九年级",
+    "id": "his_ess_028", "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲", "knowledge": "中古时期的非洲",
  "lesson": "第12课 中古时期的非洲和美洲",
     "workbook": "必刷题", "type": "single",
@@ -451,7 +451,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_029", "subject": "history", "grade": "九年级",
+    "id": "his_ess_029", "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲", "knowledge": "中古时期的非洲",
  "lesson": "第12课 中古时期的非洲和美洲",
     "workbook": "必刷题", "type": "single",
@@ -467,7 +467,7 @@ const List<Map<String, dynamic>> historyEssentialUnit14 = [
     "difficulty": 2
   },
   {
-    "id": "his_ess_030", "subject": "history", "grade": "九年级",
+    "id": "his_ess_030", "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲", "knowledge": "中古世界文明",
  "lesson": "第12课 中古时期的非洲和美洲",
     "workbook": "必刷题", "type": "single",

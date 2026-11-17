@@ -2,7 +2,7 @@
 const List<Map<String, dynamic>> chineseRecite = [
   // ===== 岳阳楼记 =====
   {
-    "id": "chy_rec_001", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_001", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "先天下之忧而忧，＿＿＿＿＿＿＿。",
@@ -11,7 +11,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_002", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_002", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "不以物喜，＿＿＿＿＿＿＿。",
@@ -20,7 +20,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_003", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_003", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "居庙堂之高则忧其民，＿＿＿＿＿＿＿＿＿。",
@@ -29,7 +29,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_004", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_004", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "衔远山，吞长江，＿＿＿＿＿＿，横无际涯。",
@@ -40,7 +40,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 醉翁亭记 =====
   {
-    "id": "chy_rec_005", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_005", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "醉翁亭记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "醉翁之意不在酒，＿＿＿＿＿＿＿＿＿。",
@@ -49,7 +49,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_006", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_006", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "醉翁亭记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "山水之乐，＿＿＿＿＿＿＿＿＿＿＿。",
@@ -58,7 +58,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_007", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_007", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "醉翁亭记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "野芳发而幽香，＿＿＿＿＿＿＿＿＿。",
@@ -69,7 +69,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 湖心亭看雪 =====
   {
-    "id": "chy_rec_008", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_008", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "湖心亭看雪",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "雾凇沆砀，天与云与山与水，＿＿＿＿＿＿。",
@@ -78,7 +78,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_009", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_009", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "湖心亭看雪",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "湖上影子，惟长堤一痕、湖心亭一点、＿＿＿＿＿＿＿＿＿＿、舟中人两三粒而已。",
@@ -89,7 +89,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 曹刿论战 =====
   {
-    "id": "chy_rec_010", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_010", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "曹刿论战",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "一鼓作气，＿＿＿＿，＿＿＿＿。",
@@ -98,7 +98,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_011", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_011", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "曹刿论战",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "夫战，勇气也。＿＿＿＿＿＿＿，再而衰，三而竭。",
@@ -107,7 +107,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_012", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_012", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "曹刿论战",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "小大之狱，虽不能察，＿＿＿＿＿。",
@@ -118,7 +118,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 邹忌讽齐王纳谏 =====
   {
-    "id": "chy_rec_013", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_013", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "邹忌讽齐王纳谏",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "群臣吏民能面刺寡人之过者，＿＿＿＿＿；上书谏寡人者，＿＿＿＿＿。",
@@ -127,7 +127,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
   {
-    "id": "chy_rec_014", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_014", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "邹忌讽齐王纳谏",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "燕、赵、韩、魏闻之，皆朝于齐。＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿。",
@@ -138,7 +138,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 陈涉世家 =====
   {
-    "id": "chy_rec_015", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_015", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "陈涉世家",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "王侯将相＿＿＿＿＿＿＿！",
@@ -147,7 +147,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_016", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_016", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "陈涉世家",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "燕雀安知＿＿＿＿＿＿＿哉！",
@@ -156,7 +156,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_017", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_017", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "陈涉世家",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "苟富贵，＿＿＿＿＿。",
@@ -167,7 +167,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 出师表 =====
   {
-    "id": "chy_rec_018", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_018", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "出师表",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "受任于败军之际，＿＿＿＿＿＿＿＿。",
@@ -176,7 +176,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_019", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_019", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "出师表",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "先帝创业未半而中道崩殂，今天下三分，益州疲弊，＿＿＿＿＿＿＿。",
@@ -185,7 +185,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_020", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_020", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "出师表",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "苟全性命于乱世，＿＿＿＿＿＿＿＿＿。",
@@ -194,7 +194,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_021", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_021", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "出师表",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "＿＿＿＿＿＿＿，不宜异同。",
@@ -205,7 +205,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 行路难 =====
   {
-    "id": "chy_rec_022", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_022", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "长风破浪会有时，＿＿＿＿＿＿＿＿＿。",
@@ -214,7 +214,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_023", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_023", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "欲渡黄河冰塞川，＿＿＿＿＿＿＿＿＿。",
@@ -223,7 +223,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_024", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_024", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "闲来垂钓碧溪上，＿＿＿＿＿＿＿＿＿。",
@@ -234,7 +234,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 酬乐天扬州初逢席上见赠 =====
   {
-    "id": "chy_rec_025", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_025", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "酬乐天扬州初逢席上见赠",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "沉舟侧畔千帆过，＿＿＿＿＿＿＿＿＿。",
@@ -243,7 +243,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_026", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_026", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "酬乐天扬州初逢席上见赠",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "巴山楚水凄凉地，＿＿＿＿＿＿＿＿＿。",
@@ -252,7 +252,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_027", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_027", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "酬乐天扬州初逢席上见赠",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "今日听君歌一曲，＿＿＿＿＿＿＿＿＿。",
@@ -263,7 +263,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 水调歌头 =====
   {
-    "id": "chy_rec_028", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_028", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "但愿人长久，＿＿＿＿＿＿＿。",
@@ -272,7 +272,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_029", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_029", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "人有悲欢离合，＿＿＿＿＿＿＿，此事古难全。",
@@ -281,7 +281,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_030", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_030", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "明月几时有？＿＿＿＿＿＿＿。",
@@ -290,7 +290,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_031", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_031", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "不应有恨，＿＿＿＿＿＿＿＿＿？",
@@ -301,7 +301,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 月夜忆舍弟 =====
   {
-    "id": "chy_rec_032", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_032", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "月夜忆舍弟",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "露从今夜白，＿＿＿＿＿＿＿。",
@@ -310,7 +310,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_033", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_033", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "月夜忆舍弟",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "戍鼓断人行，＿＿＿＿＿＿＿。",
@@ -319,7 +319,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_034", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_034", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "月夜忆舍弟",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "寄书长不达，＿＿＿＿＿＿＿。",
@@ -330,7 +330,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 长沙过贾谊宅 =====
   {
-    "id": "chy_rec_035", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_035", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "长沙过贾谊宅",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "汉文有道恩犹薄，＿＿＿＿＿＿＿＿＿。",
@@ -339,7 +339,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
   {
-    "id": "chy_rec_036", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_036", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "长沙过贾谊宅",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "寂寂江山摇落处，＿＿＿＿＿＿＿＿＿。",
@@ -348,7 +348,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
   {
-    "id": "chy_rec_037", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_037", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "长沙过贾谊宅",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "秋草独寻人去后，＿＿＿＿＿＿＿＿＿。",
@@ -359,7 +359,7 @@ const List<Map<String, dynamic>> chineseRecite = [
 
   // ===== 综合默写 =====
   {
-    "id": "chy_rec_038", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_038", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "《岳阳楼记》中描写洞庭湖月夜美景的句子是：浮光跃金，＿＿＿＿＿＿。",
@@ -368,7 +368,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_039", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_039", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 文言名篇", "lesson": "醉翁亭记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "《醉翁亭记》中写朝暮之景的句子：日出而林霏开，＿＿＿＿＿＿＿＿＿。",
@@ -377,7 +377,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_040", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_040", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "《行路难》中运用典故、表达希望被朝廷重用的句子是：＿＿＿＿＿＿＿＿，忽复乘舟梦日边。",
@@ -386,7 +386,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_041", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_041", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "金樽清酒斗十千，＿＿＿＿＿＿＿＿＿。",
@@ -395,7 +395,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_042", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_042", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "停杯投箸不能食，＿＿＿＿＿＿＿＿＿。",
@@ -404,7 +404,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_043", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_043", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "行路难！行路难！多歧路，＿＿＿＿＿？",
@@ -413,7 +413,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_044", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_044", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "酬乐天扬州初逢席上见赠",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "怀旧空吟闻笛赋，＿＿＿＿＿＿＿＿＿。",
@@ -422,7 +422,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
   {
-    "id": "chy_rec_045", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_045", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "不知天上宫阙，＿＿＿＿＿＿＿。",
@@ -431,7 +431,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_046", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_046", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "起舞弄清影，＿＿＿＿＿＿＿。",
@@ -440,7 +440,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_047", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_047", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "我欲乘风归去，＿＿＿＿＿＿＿＿＿，高处不胜寒。",
@@ -449,7 +449,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
   {
-    "id": "chy_rec_048", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_048", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "转朱阁，低绮户，＿＿＿＿＿。",
@@ -458,7 +458,7 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_049", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_049", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "月夜忆舍弟",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "有弟皆分散，＿＿＿＿＿＿＿。",
@@ -467,12 +467,102 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_050", "subject": "chinese", "grade": "九年级",
+    "id": "chy_rec_050", "subject": "chinese", "grade": "九年级上册",
     "unit": "背诵默写 诗词曲", "lesson": "长沙过贾谊宅",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "三年谪宦此栖迟，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "万古惟留楚客悲",
     "analysis": "刘长卿《长沙过贾谊宅》首联，借贾谊谪居起笔。",
     "difficulty": 3
+  },
+  {
+    "id": "chy_rec_051", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "沁园春·雪",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "北国风光，千里冰封，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "万里雪飘",
+    "analysis": "毛泽东《沁园春·雪》开篇，气势雄浑。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_052", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "沁园春·雪",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "山舞银蛇，＿＿＿＿＿＿＿，欲与天公试比高。",
+    "options": [], "answer": "原驰蜡象",
+    "analysis": "《沁园春·雪》，以比喻写雪后群山高原的壮美。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_053", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "沁园春·雪",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "江山如此多娇，＿＿＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "引无数英雄竞折腰",
+    "analysis": "《沁园春·雪》下阕起句，承上启下。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_054", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "沁园春·雪",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "俱往矣，＿＿＿＿＿＿＿＿＿，还看今朝。",
+    "options": [], "answer": "数风流人物",
+    "analysis": "《沁园春·雪》结句，抒发对当代英雄的自信。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_055", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "沁园春·雪",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "须晴日，看红装素裹，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "分外妖娆",
+    "analysis": "《沁园春·雪》，想象晴日雪景之美。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_056", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "我爱这土地",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "为什么我的眼里常含泪水？＿＿＿＿＿＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "因为我对这土地爱得深沉",
+    "analysis": "艾青《我爱这土地》结句，为全诗点睛之笔。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_057", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "我爱这土地",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "假如我是一只鸟，＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "我也应该用嘶哑的喉咙歌唱",
+    "analysis": "艾青《我爱这土地》起句。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_058", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "乡愁",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "而现在，乡愁是一湾浅浅的海峡，我在这头，＿＿＿＿＿＿。",
+    "options": [], "answer": "大陆在那头",
+    "analysis": "余光中《乡愁》结句，把个人乡愁升华为家国之思。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_059", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "乡愁",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "后来啊，乡愁是一方矮矮的坟墓，我在外头，＿＿＿＿＿＿。",
+    "options": [], "answer": "母亲在里头",
+    "analysis": "余光中《乡愁》第三节。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_060", "subject": "chinese", "grade": "九年级上册",
+    "unit": "第一单元 诗歌 · 默写", "lesson": "你是人间的四月天",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "我说你是人间的四月天；＿＿＿＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "笑响点亮了四面风",
+    "analysis": "林徽因《你是人间的四月天》起句，意象轻灵。",
+    "difficulty": 2
   }
 ];

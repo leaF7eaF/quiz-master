@@ -5,7 +5,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_001",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "伟大建党精神",
     "lesson": "第一课 百年大党风华正茂",
@@ -25,7 +25,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_002",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的领导地位",
     "lesson": "第三课 党是领导一切的",
@@ -45,7 +45,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_003",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的初心使命",
     "lesson": "第二课 坚持以人民为中心",
@@ -65,7 +65,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_004",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第一单元 坚持党的全面领导",
     "knowledge": "党的领导地位",
     "lesson": "第三课 党是领导一切的",
@@ -87,7 +87,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_005",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "社会主义初级阶段",
     "lesson": "第四课 新的历史方位",
@@ -107,7 +107,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_006",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的历史方位",
     "lesson": "第四课 新的历史方位",
@@ -127,7 +127,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_007",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "全过程人民民主",
     "lesson": "第六课 中国腾飞谱新篇",
@@ -147,7 +147,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_008",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的成就",
     "lesson": "第六课 中国腾飞谱新篇",
@@ -167,7 +167,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_009",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第二单元 进入新时代",
     "knowledge": "新时代的成就",
     "lesson": "第六课 中国腾飞谱新篇",
@@ -189,7 +189,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_010",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "绿色发展",
     "lesson": "第八课 推动高质量发展",
@@ -209,7 +209,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_011",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "绿色发展",
     "lesson": "第八课 推动高质量发展",
@@ -229,7 +229,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_012",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "绿色发展",
     "lesson": "第八课 推动高质量发展",
@@ -249,7 +249,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_013",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "绿色发展",
     "lesson": "第八课 推动高质量发展",
@@ -269,7 +269,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_014",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "两步走战略",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -289,7 +289,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_015",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "中国式现代化",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -309,7 +309,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_016",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "中国式现代化",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -329,7 +329,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_017",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "中国式现代化",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -349,7 +349,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_018",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "中国式现代化",
     "lesson": "第七课 擘画宏伟蓝图",
@@ -369,7 +369,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_019",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "新发展格局",
     "lesson": "第八课 推动高质量发展",
@@ -389,7 +389,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_020",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "新发展理念",
     "lesson": "第八课 推动高质量发展",
@@ -409,7 +409,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_021",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "绿色发展",
     "lesson": "第八课 推动高质量发展",
@@ -429,7 +429,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_022",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "高质量发展",
     "lesson": "第八课 推动高质量发展",
@@ -449,7 +449,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_023",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第三单元 奋进新征程",
     "knowledge": "改革开放",
     "lesson": "第八课 推动高质量发展",
@@ -471,7 +471,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_024",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "民族团结",
     "lesson": "第九课 凝聚团结伟力",
@@ -491,7 +491,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_025",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "一国两制",
     "lesson": "第九课 凝聚团结伟力",
@@ -511,7 +511,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_026",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "一国两制",
     "lesson": "第九课 凝聚团结伟力",
@@ -531,7 +531,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_027",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "中国梦",
     "lesson": "第十课 实现伟大梦想",
@@ -551,7 +551,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_028",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "中国精神",
     "lesson": "第十课 实现伟大梦想",
@@ -571,7 +571,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_029",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "祖国统一",
     "lesson": "第九课 凝聚团结伟力",
@@ -591,7 +591,7 @@ const List<Map<String, dynamic>> politicsEssential2026 = [
   {
     "id": "pol_ess_030",
     "subject": "politics",
-    "grade": "九年级",
+    "grade": "九年级上册",
     "unit": "第四单元 共圆中国梦",
     "knowledge": "四个自信",
     "lesson": "第十课 实现伟大梦想",

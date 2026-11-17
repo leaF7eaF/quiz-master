@@ -107,6 +107,24 @@ class QuizProvider extends ChangeNotifier {
     return tens * 10 + ones;
   }
 
+  /// 当前科目下有哪些学期（九上/九下）
+  List<String> get grades {
+    final list = currentSubjectQuestions.map((q) => q.grade).toSet().toList();
+    list.sort();
+    return list;
+  }
+
+  /// 某学期下的单元列表
+  List<String> unitsOfGrade(String grade) {
+    final list = currentSubjectQuestions
+        .where((q) => q.grade == grade)
+        .map((q) => q.unit)
+        .toSet()
+        .toList();
+    list.sort((a, b) => cnNumValue(a).compareTo(cnNumValue(b)));
+    return list;
+  }
+
   /// 单元列表，按序号排
   List<String> get units {
     final list = currentSubjectQuestions.map((q) => q.unit).toSet().toList();
@@ -131,6 +149,31 @@ class QuizProvider extends ChangeNotifier {
       currentSubjectQuestions
           .where((q) => q.unit == unit && q.lesson == lesson)
           .toList();
+  /// 某学期某单元下的课
+  List<String> lessonsOfGrade(String grade, String unit) {
+    final list = currentSubjectQuestions
+        .where((q) => q.grade == grade && q.unit == unit && q.lesson.isNotEmpty)
+        .map((q) => q.lesson)
+        .toSet()
+        .toList();
+    list.sort((a, b) => cnNumValue(a).compareTo(cnNumValue(b)));
+    return list;
+  }
+
+  /// 某学期某单元某课的题
+  List<Question> questionsOfLessonGrade(
+          String grade, String unit, String lesson) =>
+      currentSubjectQuestions
+          .where((q) =>
+              q.grade == grade && q.unit == unit && q.lesson == lesson)
+          .toList();
+
+  /// 某学期某单元全部题
+  List<Question> questionsOfUnitGrade(String grade, String unit) =>
+      currentSubjectQuestions
+          .where((q) => q.grade == grade && q.unit == unit)
+          .toList();
+
   /// 知识点列表，按序号排
   List<String> get knowledges {
     final list = currentSubjectQuestions.map((q) => q.knowledge).toSet().toList();
