@@ -262,11 +262,9 @@ class _PracticeScreenState extends State<PracticeScreen> {
       return Padding(
         padding: const EdgeInsets.only(bottom: 10),
         child: PressScale(
-          scaleTo: 0.978,
+          scaleTo: 0.975,
           onTap: _isSubmitted ? null : () => setState(() => _selected[q.id] = i),
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 180),
-            curve: Curves.easeOut,
+          child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 13),
             decoration: BoxDecoration(
               color: bg ?? Colors.white,
