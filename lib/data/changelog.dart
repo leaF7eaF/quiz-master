@@ -7,6 +7,11 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('1.7.1', '2026-11-18', [
+    '速过卡答案与选择题解析改为翻入动画（淡入+上浮+微缩放）',
+    '答题选项加入按压回弹与颜色过渡',
+    '底部导航切换加入淡入过渡',
+  ]),
   ChangelogEntry('1.7.0', '2026-11-18', [
     '视觉改版：轻玻璃质感（卡片半透明 + 背景模糊 + 边缘高光）',
     '背景增加柔和光晕，玻璃层次更明显',

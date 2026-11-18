@@ -29,7 +29,26 @@ class _RootShellState extends State<RootShell> {
       body: Stack(
         children: [
           const _AmbientBackground(),
-          IndexedStack(index: _i, children: _pages),
+          // 切换页面时淡入（保留各页状态用 IndexedStack 的思路改为延迟保活）
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 220),
+            switchInCurve: Curves.easeOut,
+            switchOutCurve: Curves.easeIn,
+            transitionBuilder: (child, anim) => FadeTransition(
+              opacity: anim,
+              child: SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(0, 0.012),
+                  end: Offset.zero,
+                ).animate(anim),
+                child: child,
+              ),
+            ),
+            child: KeyedSubtree(
+              key: ValueKey<int>(_i),
+              child: _pages[_i],
+            ),
+          ),
         ],
       ),
       extendBody: true,

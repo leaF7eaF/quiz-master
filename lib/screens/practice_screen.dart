@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../models/question.dart';
 import '../providers/quiz_provider.dart';
 import '../theme/app_theme.dart';
+import '../widgets/animate.dart';
 
 class PracticeScreen extends StatefulWidget {
   final List<Question> questions;
@@ -157,7 +158,9 @@ class _PracticeScreenState extends State<PracticeScreen> {
           // ===== 答案区 =====
           if (_isFlash) ...[
             if (_isRevealed)
-              Container(
+              RevealIn(
+                key: ValueKey('ans_${q.id}'),
+                child: Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -190,12 +193,16 @@ class _PracticeScreenState extends State<PracticeScreen> {
                   ],
                 ),
               ),
+              ),
           ],
 
           // ===== 选择题解析 =====
           if (!_isFlash && _isSubmitted) ...[
             const SizedBox(height: 6),
-            Container(
+            RevealIn(
+              key: ValueKey('ana_${q.id}'),
+              offsetY: 6,
+              child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -219,6 +226,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
                       style: const TextStyle(fontSize: 14, height: 1.6)),
                 ],
               ),
+            ),
             ),
           ],
           const SizedBox(height: 20),
@@ -253,10 +261,12 @@ class _PracticeScreenState extends State<PracticeScreen> {
       }
       return Padding(
         padding: const EdgeInsets.only(bottom: 10),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(8),
+        child: PressScale(
+          scaleTo: 0.978,
           onTap: _isSubmitted ? null : () => setState(() => _selected[q.id] = i),
-          child: Container(
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 180),
+            curve: Curves.easeOut,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 13),
             decoration: BoxDecoration(
               color: bg ?? Colors.white,
