@@ -5,6 +5,7 @@ import '../data/all_questions.dart';
 import '../theme/app_theme.dart';
 import 'practice_screen.dart';
 import 'browse_screen.dart';
+import 'wrong_pick_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -45,16 +46,8 @@ class HomeScreen extends StatelessWidget {
               child: _QuickBtn(
                 icon: Icons.error_outline,
                 label: '错题重练',
-                onTap: () {
-                  final qs = List.of(p.wrongQuestions)..shuffle();
-                  if (qs.isEmpty) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('当前科目还没有错题')));
-                    return;
-                  }
-                  Navigator.push(context, MaterialPageRoute(
-                      builder: (_) => PracticeScreen(questions: qs, title: '错题重练')));
-                },
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const WrongPickScreen())),
               ),
             ),
           ]),
@@ -125,11 +118,8 @@ class _SubjectRow extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
-        onTap: () {
-          p.selectSubject(meta.key);
-          Navigator.push(context,
-              MaterialPageRoute(builder: (_) => const BrowseScreen(initialPick: true)));
-        },
+        // 点击只切换科目，不自动跳转
+        onTap: () => p.selectSubject(meta.key),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
           decoration: BoxDecoration(
@@ -152,7 +142,35 @@ class _SubjectRow extends StatelessWidget {
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right, color: AppTheme.muted, size: 20),
+              // 明确入口：进入题库（点卡片本身只是切科目）
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+                decoration: BoxDecoration(
+                  color: selected
+                      ? AppTheme.primary
+                      : AppTheme.primary.withOpacity(0.08),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () {
+                    p.selectSubject(meta.key);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const BrowseScreen()));
+                  },
+                  child: Text(
+                    '题库',
+                    style: TextStyle(
+                      fontSize: 12.5,
+                      fontWeight: FontWeight.w600,
+                      color: selected ? Colors.white : AppTheme.primary,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

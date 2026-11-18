@@ -271,6 +271,29 @@ class QuizProvider extends ChangeNotifier {
     return currentSubjectQuestions.where((q) => ids.contains(q.id)).toList();
   }
 
+  /// 指定科目的错题（不依赖当前选中科目）
+  List<Question> wrongQuestionsOf(String subject) {
+    final lastResult = <String, bool>{};
+    for (final r in _records) {
+      if (r.subject != subject) continue;
+      lastResult[r.qid] = r.correct;
+    }
+    final ids =
+        lastResult.entries.where((e) => !e.value).map((e) => e.key).toSet();
+    return _all
+        .where((q) => q.subject == subject && ids.contains(q.id))
+        .toList();
+  }
+
+  /// 各科目错题数量
+  Map<String, int> get wrongCountBySubject {
+    final m = <String, int>{};
+    for (final s in allSubjects) {
+      m[s.key] = wrongQuestionsOf(s.key).length;
+    }
+    return m;
+  }
+
   String _ymd(DateTime d) =>
       '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
 
