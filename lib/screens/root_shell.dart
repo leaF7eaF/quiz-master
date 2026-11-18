@@ -54,10 +54,13 @@ class _RootShellState extends State<RootShell> {
       extendBody: true,
       bottomNavigationBar: GlassBar(
         child: NavigationBar(
-        selectedIndex: _i,
-        onDestinationSelected: (v) => setState(() => _i = v),
-        height: 62,
-        labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          selectedIndex: _i,
+          onDestinationSelected: (v) => setState(() => _i = v),
+          height: 64,
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          // 选中项加个更明显的指示胶囊
+          indicatorColor: AppTheme.primary.withOpacity(0.18),
+          indicatorShape: const StadiumBorder(),
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: '首页'),
           NavigationDestination(icon: Icon(Icons.insights_outlined), selectedIcon: Icon(Icons.insights), label: '统计'),

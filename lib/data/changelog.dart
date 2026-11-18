@@ -7,6 +7,10 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('1.7.3', '2026-11-18', [
+    '导航栏改为微灰面板（#F1EEE6），与纸白背景形成层次',
+    '导航栏加深顶部边线与向上投影，选中项指示更明显',
+  ]),
   ChangelogEntry('1.7.2', '2026-11-18', [
     '导航栏：降低模糊度、加深底色、加顶线与阴影，边界更清晰',
     '动画流畅度：去掉逐帧重建的容器，简化叠加动画层数',
