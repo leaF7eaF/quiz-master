@@ -69,6 +69,7 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
       ..sort((a, b) => a.value.compareTo(b.value));
 
     return Scaffold(
+      backgroundColor: Colors.transparent,
       appBar: AppBar(title: Text(title)),
       body: ListView(
         padding: const EdgeInsets.all(16),

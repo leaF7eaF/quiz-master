@@ -564,5 +564,41 @@ const List<Map<String, dynamic>> chineseRecite = [
     "options": [], "answer": "笑响点亮了四面风",
     "analysis": "林徽因《你是人间的四月天》起句，意象轻灵。",
     "difficulty": 2
-  }
+  },
+  {
+    "id": "chy_rec_61", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "朝天子·咏喇叭",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "喇叭，唢呐，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "曲儿小腔儿大",
+    "analysis": "王磐《朝天子·咏喇叭》起句，以喇叭喻宦官。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_62", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "朝天子·咏喇叭",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "官船来往乱如麻，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "全仗你抬声价",
+    "analysis": "王磐曲，讽刺宦官依仗权势横行。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_63", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "朝天子·咏喇叭",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "军听了军愁，民听了民怕。＿＿＿＿＿＿＿＿＿？",
+    "options": [], "answer": "哪里去辨甚么真共假",
+    "analysis": "王磐曲，写喇叭扰民的危害。",
+    "difficulty": 3
+  },
+  {
+    "id": "chy_rec_64", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "朝天子·咏喇叭",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "眼见的吹翻了这家，吹伤了那家，＿＿＿＿＿＿＿＿＿！",
+    "options": [], "answer": "只吹的水尽鹅飞罢",
+    "analysis": "王磐曲结句，写宦官搜刮致使民穷财尽。",
+    "difficulty": 3
+  },
 ];

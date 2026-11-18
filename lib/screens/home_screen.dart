@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../providers/quiz_provider.dart';
 import '../data/all_questions.dart';
 import '../theme/app_theme.dart';
+import '../widgets/glass.dart';
 import 'practice_screen.dart';
 import 'browse_screen.dart';
 import 'wrong_pick_screen.dart';
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = context.watch<QuizProvider>();
     return Scaffold(
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         title: const Text('刷题本'),
       ),
@@ -118,15 +120,19 @@ class _SubjectRow extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
-        // 点击只切换科目，不自动跳转
-        onTap: () => p.selectSubject(meta.key),
-        child: Container(
+        // 点科目 = 我要去做这科的题，直接跳转选题页
+        onTap: () {
+          p.selectSubject(meta.key);
+          Navigator.push(context,
+              MaterialPageRoute(builder: (_) => const BrowseScreen()));
+        },
+        child: GlassCard(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
-          decoration: BoxDecoration(
-            color: selected ? AppTheme.primary.withOpacity(0.06) : Colors.white,
-            border: Border.all(color: selected ? AppTheme.primary : AppTheme.line),
-            borderRadius: BorderRadius.circular(10),
-          ),
+          radius: 12,
+          tint: selected
+              ? AppTheme.primary.withOpacity(0.10)
+              : Colors.white.withOpacity(0.55),
+          bordered: false,
           child: Row(
             children: [
               Text(meta.icon, style: const TextStyle(fontSize: 22)),
@@ -142,35 +148,8 @@ class _SubjectRow extends StatelessWidget {
                   ],
                 ),
               ),
-              // 明确入口：进入题库（点卡片本身只是切科目）
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
-                decoration: BoxDecoration(
-                  color: selected
-                      ? AppTheme.primary
-                      : AppTheme.primary.withOpacity(0.08),
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onTap: () {
-                    p.selectSubject(meta.key);
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const BrowseScreen()));
-                  },
-                  child: Text(
-                    '题库',
-                    style: TextStyle(
-                      fontSize: 12.5,
-                      fontWeight: FontWeight.w600,
-                      color: selected ? Colors.white : AppTheme.primary,
-                    ),
-                  ),
-                ),
-              ),
+              const Icon(Icons.chevron_right,
+                  color: AppTheme.muted, size: 20),
             ],
           ),
         ),
@@ -189,13 +168,10 @@ class _QuickBtn extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: onTap,
-      child: Container(
+      child: GlassCard(
         padding: const EdgeInsets.symmetric(vertical: 16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: AppTheme.line),
-          borderRadius: BorderRadius.circular(10),
-        ),
+        radius: 12,
+        bordered: false,
         child: Column(children: [
           Icon(icon, color: AppTheme.primary, size: 22),
           const SizedBox(height: 6),

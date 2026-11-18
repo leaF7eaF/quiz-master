@@ -17,8 +17,10 @@ class AppTheme {
       scaffoldBackgroundColor: paper,
     );
     return base.copyWith(
-      appBarTheme: const AppBarTheme(
-        backgroundColor: paper,
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        scrolledUnderElevation: 0,
         foregroundColor: ink,
         elevation: 0,
         centerTitle: false,

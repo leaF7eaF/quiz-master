@@ -13,6 +13,7 @@ class WrongScreen extends StatelessWidget {
     final wrongs = p.wrongQuestions;
 
     return Scaffold(
+      backgroundColor: Colors.transparent,
       appBar: AppBar(title: const Text('错题本')),
       body: wrongs.isEmpty
           ? const Center(

@@ -15,6 +15,7 @@ class StatsScreen extends StatelessWidget {
       ..sort((a, b) => b.value.compareTo(a.value));
 
     return Scaffold(
+      backgroundColor: Colors.transparent,
       appBar: AppBar(title: const Text('学习统计'), actions: [
         IconButton(
           tooltip: '存档备份',

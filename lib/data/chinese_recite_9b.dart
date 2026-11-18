@@ -292,39 +292,57 @@ const List<Map<String, dynamic>> chineseRecite9B = [
     "difficulty": 3
   },
   {
-    "id": "r9b_033", "subject": "chinese", "grade": "九年级下册",
-    "unit": "诗词曲五首", "lesson": "朝天子·咏喇叭",
+    "id": "r9b_037", "subject": "chinese", "grade": "九年级下册",
+    "unit": "诗词曲五首", "lesson": "十五从军征",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "喇叭，唢呐，＿＿＿＿＿＿＿＿＿。",
-    "options": [], "answer": "曲儿小腔儿大",
-    "analysis": "王磐《朝天子·咏喇叭》起句，以喇叭喻宦官。",
+    "stem": "十五从军征，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "八十始得归",
+    "analysis": "《十五从军征》开篇，以悬殊年岁对比揭露兵役之苦。",
+    "difficulty": 1
+  },
+  {
+    "id": "r9b_038", "subject": "chinese", "grade": "九年级下册",
+    "unit": "诗词曲五首", "lesson": "十五从军征",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "道逢乡里人：“＿＿＿＿＿＿＿？”",
+    "options": [], "answer": "家中有阿谁",
+    "analysis": "《十五从军征》，老兵归乡急切询问家人。",
     "difficulty": 2
   },
   {
-    "id": "r9b_034", "subject": "chinese", "grade": "九年级下册",
-    "unit": "诗词曲五首", "lesson": "朝天子·咏喇叭",
+    "id": "r9b_039", "subject": "chinese", "grade": "九年级下册",
+    "unit": "诗词曲五首", "lesson": "十五从军征",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "官船来往乱如麻，＿＿＿＿＿＿＿＿＿。",
-    "options": [], "answer": "全仗你抬声价",
-    "analysis": "王磐曲，讽刺宦官依仗权势横行。",
+    "stem": "遥看是君家，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "松柏冢累累",
+    "analysis": "《十五从军征》，乡人遥指其家，已是坟冢累累。",
     "difficulty": 2
   },
   {
-    "id": "r9b_035", "subject": "chinese", "grade": "九年级下册",
-    "unit": "诗词曲五首", "lesson": "朝天子·咏喇叭",
+    "id": "r9b_040", "subject": "chinese", "grade": "九年级下册",
+    "unit": "诗词曲五首", "lesson": "十五从军征",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "军听了军愁，民听了民怕。＿＿＿＿＿＿＿＿＿？",
-    "options": [], "answer": "哪里去辨甚么真共假",
-    "analysis": "王磐曲，写喇叭扰民的危害。",
+    "stem": "兔从狗窦入，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "雉从梁上飞",
+    "analysis": "《十五从军征》，写家园荒废、野物栖息的凄凉景象。",
+    "difficulty": 2
+  },
+  {
+    "id": "r9b_041", "subject": "chinese", "grade": "九年级下册",
+    "unit": "诗词曲五首", "lesson": "十五从军征",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "羹饭一时熟，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "不知贻阿谁",
+    "analysis": "《十五从军征》，做好饭菜却无人可送，孤苦无依。",
     "difficulty": 3
   },
   {
-    "id": "r9b_036", "subject": "chinese", "grade": "九年级下册",
-    "unit": "诗词曲五首", "lesson": "朝天子·咏喇叭",
+    "id": "r9b_042", "subject": "chinese", "grade": "九年级下册",
+    "unit": "诗词曲五首", "lesson": "十五从军征",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "眼见的吹翻了这家，吹伤了那家，＿＿＿＿＿＿＿＿＿！",
-    "options": [], "answer": "只吹的水尽鹅飞罢",
-    "analysis": "王磐曲结句，写宦官搜刮致使民穷财尽。",
-    "difficulty": 3
+    "stem": "出门东向看，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "泪落沾我衣",
+    "analysis": "《十五从军征》结句，以泪湿衣襟收束全诗悲情。",
+    "difficulty": 1
   }
 ];
