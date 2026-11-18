@@ -46,11 +46,6 @@ jobs:
           done
           sed -i 's/android:label="quiz_master"/android:label="刷题本"/' \
             android/app/src/main/AndroidManifest.xml || true
-          # 启用 Impeller（更流畅的渲染后端）
-          if ! grep -q "io.flutter.embedding.android.EnableImpeller" android/app/src/main/AndroidManifest.xml; then
-            sed -i 's|<application|<application\n        <meta-data android:name="io.flutter.embedding.android.EnableImpeller" android:value="true" />|' \
-              android/app/src/main/AndroidManifest.xml || true
-          fi
 
       - name: 配置固定签名
         run: |
