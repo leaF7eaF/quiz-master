@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../providers/english_provider.dart';
 import '../theme/app_theme.dart';
 import '../widgets/animate.dart';
+import '../widgets/glass.dart';
 
 /// 总复习：英文→选中文
 /// 答对 → 标记掌握，移出队列

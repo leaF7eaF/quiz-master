@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../providers/english_provider.dart';
 import '../theme/app_theme.dart';
 import '../widgets/animate.dart';
+import '../widgets/glass.dart';
 
 /// 新学：一批短语走三轮
 /// 第1轮 英→中（带例句提示）
