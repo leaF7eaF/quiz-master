@@ -155,6 +155,29 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
               ),
             ),
           ),
+          // 第 1 轮带例句提示
+          if (_round == 1 && _p.ex.isNotEmpty) ...[
+            const SizedBox(height: 18),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.6),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: AppTheme.line),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(_p.ex,
+                      style: const TextStyle(
+                          fontSize: 14, height: 1.5, fontStyle: FontStyle.italic)),
+                  const SizedBox(height: 4),
+                  Text(_p.exCn,
+                      style: TextStyle(fontSize: 12.5, color: AppTheme.muted)),
+                ],
+              ),
+            ),
+          ],
           const SizedBox(height: 28),
 
           // 选项
@@ -254,6 +277,17 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
                     Text('模块 ${_p.module}',
                         style: TextStyle(
                             fontSize: 11.5, color: AppTheme.muted)),
+                    if (_round != 1 && _p.ex.isNotEmpty) ...[
+                      const SizedBox(height: 8),
+                      Text(_p.ex,
+                          style: const TextStyle(
+                              fontSize: 13,
+                              height: 1.45,
+                              fontStyle: FontStyle.italic)),
+                      Text(_p.exCn,
+                          style: TextStyle(
+                              fontSize: 11.5, color: AppTheme.muted)),
+                    ],
                   ],
                 ),
               ),

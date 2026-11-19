@@ -11,12 +11,16 @@ class Phrase {
   final String en;
   final String module;
   final bool star;
+  final String ex;    // 英文例句
+  final String exCn;  // 例句翻译
   const Phrase({
     required this.id,
     required this.cn,
     required this.en,
     required this.module,
     this.star = false,
+    this.ex = '',
+    this.exCn = '',
   });
 
   factory Phrase.fromJson(Map<String, dynamic> j) => Phrase(
@@ -25,6 +29,8 @@ class Phrase {
         en: j['en'],
         module: j['module'] ?? '',
         star: j['star'] == true,
+        ex: j['ex'] ?? '',
+        exCn: j['exCn'] ?? '',
       );
 }
 
