@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/quiz_provider.dart';
+import '../providers/english_provider.dart';
+import 'phrase_home_screen.dart';
 import '../data/all_questions.dart';
 import '../theme/app_theme.dart';
 import '../widgets/glass.dart';
@@ -108,13 +110,20 @@ class _SubjectRow extends StatelessWidget {
   final QuizProvider p;
   const _SubjectRow({required this.meta, required this.p});
 
+  bool get _isEnglish => meta.key == 'english';
+
   @override
   Widget build(BuildContext context) {
-    final total = p.all.where((q) => q.subject == meta.key).length;
-    final done = p.records.where((r) => r.subject == meta.key).length;
+    final eng = context.watch<EnglishProvider>();
+    final total = _isEnglish
+        ? eng.total
+        : p.all.where((q) => q.subject == meta.key).length;
+    final done = _isEnglish
+        ? eng.learnedCount
+        : p.records.where((r) => r.subject == meta.key).length;
     final correct = p.records.where((r) => r.subject == meta.key && r.correct).length;
     final acc = done == 0 ? 0.0 : correct / done;
-    final selected = p.subject == meta.key;
+    final selected = !_isEnglish && p.subject == meta.key;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
@@ -122,9 +131,16 @@ class _SubjectRow extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         // 点科目 = 我要去做这科的题，直接跳转选题页
         onTap: () {
-          p.selectSubject(meta.key);
-          Navigator.push(context,
-              MaterialPageRoute(builder: (_) => const BrowseScreen()));
+          if (_isEnglish) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => const PhraseHomeScreen()));
+          } else {
+            p.selectSubject(meta.key);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const BrowseScreen()));
+          }
         },
         child: GlassCard(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
@@ -143,7 +159,10 @@ class _SubjectRow extends StatelessWidget {
                   children: [
                     Text(meta.label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                     const SizedBox(height: 3),
-                    Text('$total 题 · 已做 $done 题 · 正确率 ${(acc * 100).toStringAsFixed(0)}%',
+                    Text(
+                        _isEnglish
+                            ? '$total 个短语 · 已学 $done 个'
+                            : '$total 题 · 已做 $done 题 · 正确率 ${(acc * 100).toStringAsFixed(0)}%',
                         style: const TextStyle(fontSize: 12, color: AppTheme.muted)),
                   ],
                 ),

@@ -170,4 +170,9 @@ const List<SubjectMeta> allSubjects = [
   SubjectMeta('history', '历史', '📜'),
   SubjectMeta('chinese', '语文', '📖'),
   SubjectMeta('chemistry', '化学', '⚗️'),
+  SubjectMeta('english', '英语短语', '🔤'),
 ];
+
+/// 只含选择题科目（英语短语单独走自己的模块）
+final List<SubjectMeta> quizSubjects =
+    allSubjects.where((s) => s.key != 'english').toList();

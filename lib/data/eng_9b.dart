@@ -1,0 +1,26 @@
+// 外研版九年级下册 短语（23条，来自六册词组背诵表）
+const List<Map<String, dynamic>> engPhrases9B = [
+  {"id": "e9b_001", "cn": "因为；由于", "en": "because of", "module": "M1", "star": true},
+  {"id": "e9b_002", "cn": "只要", "en": "as long as", "module": "M1", "star": true},
+  {"id": "e9b_003", "cn": "多保重", "en": "take care", "module": "M1", "star": true},
+  {"id": "e9b_004", "cn": "脱去", "en": "take off", "module": "M1", "star": true},
+  {"id": "e9b_005", "cn": "中学", "en": "secondary school", "module": "M1", "star": false},
+  {"id": "e9b_006", "cn": "过去常常做某事", "en": "used to", "module": "M1", "star": true},
+  {"id": "e9b_007", "cn": "业余时间；闲暇", "en": "spare time", "module": "M1", "star": false},
+  {"id": "e9b_008", "cn": "大点声说", "en": "speak up", "module": "M1", "star": true},
+  {"id": "e9b_009", "cn": "动身；出发", "en": "set off", "module": "M2", "star": true},
+  {"id": "e9b_010", "cn": "离开", "en": "go off", "module": "M2", "star": true},
+  {"id": "e9b_011", "cn": "一口气；一下子", "en": "in one go", "module": "M2", "star": true},
+  {"id": "e9b_012", "cn": "攀岩", "en": "rock climbing", "module": "M2", "star": false},
+  {"id": "e9b_013", "cn": "入睡；睡着", "en": "fall asleep", "module": "M2", "star": true},
+  {"id": "e9b_014", "cn": "赶上", "en": "catch up", "module": "M2", "star": true},
+  {"id": "e9b_015", "cn": "取消；决定终止", "en": "call off", "module": "M2", "star": true},
+  {"id": "e9b_016", "cn": "多亏；归功于", "en": "thanks to", "module": "M2", "star": true},
+  {"id": "e9b_017", "cn": "医疗保健（服务）", "en": "health care", "module": "M2", "star": false},
+  {"id": "e9b_018", "cn": "偶尔；有时；间或", "en": "once in a while", "module": "M2", "star": true},
+  {"id": "e9b_019", "cn": "使变热；给……加热", "en": "heat up", "module": "M2", "star": false},
+  {"id": "e9b_020", "cn": "随便做吧；请自便", "en": "help yourself", "module": "M2", "star": true},
+  {"id": "e9b_021", "cn": "嘲笑；对……一笑置之", "en": "laugh at", "module": "M3", "star": true},
+  {"id": "e9b_022", "cn": "放弃（努力）", "en": "give up", "module": "M3", "star": true},
+  {"id": "e9b_023", "cn": "尽某人最大的努力", "en": "try one's best", "module": "M3", "star": true}
+];

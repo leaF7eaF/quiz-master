@@ -48,7 +48,7 @@ class WrongPickScreen extends StatelessWidget {
                 ),
                 onPressed: () {
                   final qs = <Question>[];
-                  for (final s in allSubjects) {
+                  for (final s in quizSubjects) {
                     qs.addAll(p.wrongQuestionsOf(s.key));
                   }
                   Navigator.push(
@@ -68,7 +68,7 @@ class WrongPickScreen extends StatelessWidget {
                 style:
                     TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
             const SizedBox(height: 8),
-            ...allSubjects.map((s) {
+            ...quizSubjects.map((s) {
               final c = counts[s.key] ?? 0;
               final enabled = c > 0;
               return Padding(

@@ -288,7 +288,7 @@ class QuizProvider extends ChangeNotifier {
   /// 各科目错题数量
   Map<String, int> get wrongCountBySubject {
     final m = <String, int>{};
-    for (final s in allSubjects) {
+    for (final s in quizSubjects) {
       m[s.key] = wrongQuestionsOf(s.key).length;
     }
     return m;

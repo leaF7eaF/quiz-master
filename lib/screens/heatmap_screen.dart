@@ -56,7 +56,7 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
 
     final title = _filterSubject == null
         ? '做题热力图 · 全部科目'
-        : '${allSubjects.firstWhere((s) => s.key == _filterSubject).label} · 做题热力图';
+        : '${quizSubjects.firstWhere((s) => s.key == _filterSubject).label} · 做题热力图';
 
     // 薄弱知识点跟随筛选科目
     final weakSource = _filterSubject ?? p.subject;
@@ -81,7 +81,7 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
               scrollDirection: Axis.horizontal,
               children: [
                 _chip('全部科目', null),
-                ...allSubjects.map((s) => _chip(s.label, s.key)),
+                ...quizSubjects.map((s) => _chip(s.label, s.key)),
               ],
             ),
           ),
@@ -139,7 +139,7 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
           Text(
             _filterSubject == null
                 ? '全部科目 · 正确率低于 60% 的考点'
-                : '${allSubjects.firstWhere((s) => s.key == _filterSubject).label} · 正确率低于 60% 的考点',
+                : '${quizSubjects.firstWhere((s) => s.key == _filterSubject).label} · 正确率低于 60% 的考点',
             style: const TextStyle(fontSize: 12, color: AppTheme.muted),
           ),
           const SizedBox(height: 10),
