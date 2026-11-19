@@ -1,6 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../data/eng_7a.dart';
+import '../data/eng_7b.dart';
+import '../data/eng_8a.dart';
+import '../data/eng_8b.dart';
 import '../data/eng_9a.dart';
 import '../data/eng_9b.dart';
 
@@ -11,8 +15,8 @@ class Phrase {
   final String en;
   final String module;
   final bool star;
-  final String ex;    // 英文例句
-  final String exCn;  // 例句翻译
+  final String ex;
+  final String exCn;
   const Phrase({
     required this.id,
     required this.cn,
@@ -34,20 +38,12 @@ class Phrase {
       );
 }
 
-/// 一个短语的学习状态
+/// 一个短语的学习状态（全局共享，与词书无关）
 class PhraseState {
   final String id;
-  /// 已完成的新学轮次：0=未学，1=过完第1轮，2=过完第2轮，3=新学完成
-  final int round;
-  /// 总复习是否已通过
+  final int round; // 0未学 1/2/3 已完成轮次
   final bool mastered;
-
-  const PhraseState({
-    required this.id,
-    this.round = 0,
-    this.mastered = false,
-  });
-
+  const PhraseState({required this.id, this.round = 0, this.mastered = false});
   PhraseState copyWith({int? round, bool? mastered}) => PhraseState(
         id: id,
         round: round ?? this.round,
@@ -55,23 +51,49 @@ class PhraseState {
       );
 }
 
-class EnglishProvider extends ChangeNotifier {
-  static const _kStates = 'phrase_states_v1';
-  static const _kDaily = 'phrase_daily_v1';
+/// 词书
+class PhraseBook {
+  final String key;
+  final String label;
+  final String desc;
+  final List<String> grades; // 包含的册别
+  const PhraseBook(this.key, this.label, this.desc, this.grades);
+}
 
-  List<Phrase> _all = [];
+const List<PhraseBook> phraseBooks = [
+  PhraseBook('g7', '七年级', '七年级上下册', ['7A', '7B']),
+  PhraseBook('g8', '八年级', '八年级上下册', ['8A', '8B']),
+  PhraseBook('g9', '九年级', '九年级上下册', ['9A', '9B']),
+  PhraseBook('all', '初中汇总', '七至九年级全部', ['7A', '7B', '8A', '8B', '9A', '9B']),
+];
+
+class EnglishProvider extends ChangeNotifier {
+  static const _kStates = 'phrase_states_v2';
+  static const _kBook = 'phrase_current_book';
+
+  /// 全量短语（带册别标记）
+  final Map<String, List<Phrase>> _byGrade = {};
   Map<String, PhraseState> _states = {};
+  String _bookKey = 'g9';
   int _newPerDay = 5;
 
-  List<Phrase> get all => _all;
   int get newPerDay => _newPerDay;
+  String get bookKey => _bookKey;
+
+  PhraseBook get currentBook =>
+      phraseBooks.firstWhere((b) => b.key == _bookKey,
+          orElse: () => phraseBooks.last);
 
   Future<void> init() async {
-    _all = [
-      ...engPhrases9A.map(Phrase.fromJson),
-      ...engPhrases9B.map(Phrase.fromJson),
-    ];
+    _byGrade['7A'] = engPhrases7A.map(Phrase.fromJson).toList();
+    _byGrade['7B'] = engPhrases7B.map(Phrase.fromJson).toList();
+    _byGrade['8A'] = engPhrases8A.map(Phrase.fromJson).toList();
+    _byGrade['8B'] = engPhrases8B.map(Phrase.fromJson).toList();
+    _byGrade['9A'] = engPhrases9A.map(Phrase.fromJson).toList();
+    _byGrade['9B'] = engPhrases9B.map(Phrase.fromJson).toList();
+
     final sp = await SharedPreferences.getInstance();
+    _bookKey = sp.getString(_kBook) ?? 'g9';
     final raw = sp.getString(_kStates);
     if (raw != null && raw.isNotEmpty) {
       try {
@@ -93,43 +115,71 @@ class EnglishProvider extends ChangeNotifier {
     final sp = await SharedPreferences.getInstance();
     final m = _states.map((k, v) => MapEntry(k, {'r': v.round, 'm': v.mastered}));
     await sp.setString(_kStates, jsonEncode(m));
+    await sp.setString(_kBook, _bookKey);
   }
 
-  PhraseState stateOf(String id) =>
-      _states[id] ?? PhraseState(id: id);
+  Future<void> selectBook(String key) async {
+    _bookKey = key;
+    notifyListeners();
+    await _persist();
+  }
 
-  // ===== 统计 =====
-  int get total => _all.length;
-  int get learnedCount =>
-      _all.where((p) => stateOf(p.id).round >= 3).length;
-  bool get allLearned => learnedCount >= total;
+  PhraseState stateOf(String id) => _states[id] ?? PhraseState(id: id);
 
-  /// 待新学（还没过完三轮）
+  /// 某本词书包含的全部短语（按册别顺序）
+  List<Phrase> phrasesOf(String bookKey) {
+    final book = phraseBooks.firstWhere((b) => b.key == bookKey,
+        orElse: () => phraseBooks.last);
+    final out = <Phrase>[];
+    for (final g in book.grades) {
+      out.addAll(_byGrade[g] ?? const []);
+    }
+    return out;
+  }
+
+  /// 当前词书的短语
+  List<Phrase> get pool => phrasesOf(_bookKey);
+
+  /// 全部短语（干扰项用）
+  List<Phrase> get allPhrases {
+    final out = <Phrase>[];
+    for (final g in ['7A', '7B', '8A', '8B', '9A', '9B']) {
+      out.addAll(_byGrade[g] ?? const []);
+    }
+    return out;
+  }
+
+  // ===== 统计（基于当前词书） =====
+  int get total => pool.length;
+  int get learnedCount => pool.where((p) => stateOf(p.id).round >= 3).length;
+  bool get allLearned => total > 0 && learnedCount >= total;
+
   List<Phrase> get pending =>
-      _all.where((p) => stateOf(p.id).round < 3).toList();
+      pool.where((p) => stateOf(p.id).round < 3).toList();
 
-  /// 今日新学进度（简化为本次会话计数）
-  int todayNew = 0;
-
-  /// 总复习池：已学完但未掌握的
-  List<Phrase> get reviewPool =>
-      _all.where((p) {
+  List<Phrase> get reviewPool => pool.where((p) {
         final s = stateOf(p.id);
         return s.round >= 3 && !s.mastered;
       }).toList();
 
-  List<Phrase> get masteredList =>
-      _all.where((p) => stateOf(p.id).mastered).toList();
+  int get masteredCount =>
+      pool.where((p) => stateOf(p.id).mastered).length;
+
+  /// 某本词书的已学数（首页展示用）
+  int learnedOf(String bookKey) {
+    final list = phrasesOf(bookKey);
+    return list.where((p) => stateOf(p.id).round >= 3).length;
+  }
+
+  int totalOf(String bookKey) => phrasesOf(bookKey).length;
 
   // ===== 新学 =====
-  /// 取下一批要学的短语
   List<Phrase> nextBatch() {
     final p = pending;
     if (p.isEmpty) return [];
     return p.take(_newPerDay).toList();
   }
 
-  /// 完成一轮（1/2/3）后更新状态
   Future<void> advanceRound(List<Phrase> batch, int doneRound) async {
     for (final ph in batch) {
       final cur = stateOf(ph.id);
@@ -142,25 +192,23 @@ class EnglishProvider extends ChangeNotifier {
   }
 
   // ===== 总复习 =====
-  /// 总复习答对：标记掌握
   Future<void> markMastered(String id) async {
-    final cur = stateOf(id);
-    _states[id] = cur.copyWith(mastered: true);
+    _states[id] = stateOf(id).copyWith(mastered: true);
     notifyListeners();
     await _persist();
   }
 
-  /// 重置全部进度
-  Future<void> resetAll() async {
-    _states = {};
-    todayNew = 0;
+  Future<void> resetBook() async {
+    for (final p in pool) {
+      _states.remove(p.id);
+    }
     notifyListeners();
     await _persist();
   }
 
-  /// 生成干扰项：从全部短语里取 3 个不同的中文释义
+  // ===== 干扰项 =====
   List<String> distractors(Phrase target, int seed) {
-    final pool = _all.where((p) => p.cn != target.cn).toList();
+    final pool = allPhrases.where((p) => p.cn != target.cn).toList();
     if (pool.isEmpty) return [];
     final out = <String>[];
     var k = 1;
@@ -172,9 +220,8 @@ class EnglishProvider extends ChangeNotifier {
     return out;
   }
 
-  /// 生成干扰项：英文
   List<String> distractorsEn(Phrase target, int seed) {
-    final pool = _all.where((p) => p.en != target.en).toList();
+    final pool = allPhrases.where((p) => p.en != target.en).toList();
     if (pool.isEmpty) return [];
     final out = <String>[];
     var k = 1;
