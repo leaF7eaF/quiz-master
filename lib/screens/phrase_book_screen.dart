@@ -17,7 +17,7 @@ class PhraseBookScreen extends StatelessWidget {
     final learned = p.learnedCount;
     final finished = p.allLearned;
     final reviewLeft = p.reviewPool.length;
-    final mastered = p.masteredList.length;
+    final mastered = p.masteredCount;
 
     return Scaffold(
       backgroundColor: Colors.transparent,
