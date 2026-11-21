@@ -27,7 +27,7 @@ class PhraseBookScreen extends StatelessWidget {
         children: [
           // 总进度
           GlassCard(
-            bordered: false,
+            bordered: true,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -99,7 +99,7 @@ class PhraseBookScreen extends StatelessWidget {
               ),
             ] else ...[
               GlassCard(
-                bordered: false,
+                bordered: true,
                 child: Column(
                   children: [
                     const Icon(Icons.verified, size: 40, color: AppTheme.primary),
@@ -120,7 +120,7 @@ class PhraseBookScreen extends StatelessWidget {
           const SizedBox(height: 22),
           // 统计
           GlassCard(
-            bordered: false,
+            bordered: true,
             child: Column(
               children: [
                 _statRow('短语总数', '$total'),

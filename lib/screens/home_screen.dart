@@ -66,36 +66,56 @@ class _TodayCard extends StatelessWidget {
   const _TodayCard({required this.p});
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        color: AppTheme.primary,
-        borderRadius: BorderRadius.circular(12),
-      ),
+    // 液态玻璃 + 墨绿染色：保留强调感，又和整体玻璃风格统一
+    return GlassCard(
+      padding: const EdgeInsets.all(20),
+      radius: 24,
+      blur: 30,
+      tint: AppTheme.primary.withOpacity(0.88),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('今日已练', style: TextStyle(color: Colors.white70, fontSize: 13)),
-          const SizedBox(height: 6),
+          Row(
+            children: [
+              const Text('今日已练',
+                  style: TextStyle(color: Colors.white70, fontSize: 13)),
+              const Spacer(),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.18),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text('连续 ${p.streak} 天',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 11.5,
+                        fontWeight: FontWeight.w600)),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text('${p.todayCount}',
-                  style: const TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w700, height: 1)),
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 44,
+                      fontWeight: FontWeight.w700,
+                      height: 1)),
               const Padding(
-                padding: EdgeInsets.only(bottom: 6, left: 4),
-                child: Text('题', style: TextStyle(color: Colors.white70, fontSize: 15)),
+                padding: EdgeInsets.only(bottom: 7, left: 5),
+                child: Text('题',
+                    style: TextStyle(color: Colors.white70, fontSize: 15)),
               ),
               const Spacer(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text('连续 ${p.streak} 天',
-                      style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600)),
-                  const SizedBox(height: 2),
-                  Text('累计正确率 ${(p.accuracy * 100).toStringAsFixed(0)}%',
-                      style: const TextStyle(color: Colors.white70, fontSize: 12)),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Text('累计正确率 ${(p.accuracy * 100).toStringAsFixed(0)}%',
+                    style: const TextStyle(
+                        color: Colors.white70, fontSize: 12)),
               ),
             ],
           ),
@@ -148,7 +168,7 @@ class _SubjectRow extends StatelessWidget {
           tint: selected
               ? AppTheme.primary.withOpacity(0.10)
               : Colors.white.withOpacity(0.55),
-          bordered: false,
+          bordered: true,
           child: Row(
             children: [
               Text(meta.icon, style: const TextStyle(fontSize: 22)),
@@ -190,7 +210,7 @@ class _QuickBtn extends StatelessWidget {
       child: GlassCard(
         padding: const EdgeInsets.symmetric(vertical: 16),
         radius: 12,
-        bordered: false,
+        bordered: true,
         child: Column(children: [
           Icon(icon, color: AppTheme.primary, size: 22),
           const SizedBox(height: 6),

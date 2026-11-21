@@ -45,7 +45,7 @@ class PhraseHomeScreen extends StatelessWidget {
                   );
                 },
                 child: GlassCard(
-                  bordered: false,
+                  bordered: true,
                   tint: isCurrent
                       ? AppTheme.primary.withOpacity(0.10)
                       : Colors.white.withOpacity(0.55),
@@ -109,7 +109,7 @@ class PhraseHomeScreen extends StatelessWidget {
           }),
           const SizedBox(height: 18),
           GlassCard(
-            bordered: false,
+            bordered: true,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

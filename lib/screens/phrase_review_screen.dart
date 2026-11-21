@@ -212,7 +212,7 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
             RevealIn(
               key: ValueKey('rev_${_p.id}_$_idx'),
               child: GlassCard(
-                bordered: false,
+                bordered: true,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

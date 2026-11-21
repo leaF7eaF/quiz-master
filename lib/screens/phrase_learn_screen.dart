@@ -269,7 +269,7 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
             RevealIn(
               key: ValueKey('hint_${_p.id}_$_round'),
               child: GlassCard(
-                bordered: false,
+                bordered: true,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
