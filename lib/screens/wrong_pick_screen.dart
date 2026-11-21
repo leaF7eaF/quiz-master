@@ -100,7 +100,11 @@ class WrongPickScreen extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Text(s.icon, style: const TextStyle(fontSize: 20)),
+                        Icon(s.icon,
+                            size: 20,
+                            color: enabled
+                                ? AppTheme.ink
+                                : AppTheme.muted),
                         const SizedBox(width: 12),
                         Expanded(
                           child: Text(
