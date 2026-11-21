@@ -46,11 +46,19 @@ class PhraseState {
   final String id;
   final int round; // 0未学 1/2/3 已完成轮次
   final bool mastered;
-  const PhraseState({required this.id, this.round = 0, this.mastered = false});
-  PhraseState copyWith({int? round, bool? mastered}) => PhraseState(
+  /// 学完第 3 轮的时间戳（毫秒），用于滚动复习排序
+  final int at;
+  const PhraseState({
+    required this.id,
+    this.round = 0,
+    this.mastered = false,
+    this.at = 0,
+  });
+  PhraseState copyWith({int? round, bool? mastered, int? at}) => PhraseState(
         id: id,
         round: round ?? this.round,
         mastered: mastered ?? this.mastered,
+        at: at ?? this.at,
       );
 }
 
@@ -140,6 +148,7 @@ class EnglishProvider extends ChangeNotifier {
                 id: k,
                 round: (v['r'] ?? 0) as int,
                 mastered: (v['m'] ?? false) as bool,
+                at: (v['a'] ?? 0) as int,
               ),
             ));
       } catch (_) {}
@@ -149,7 +158,8 @@ class EnglishProvider extends ChangeNotifier {
 
   Future<void> _persist() async {
     final sp = await SharedPreferences.getInstance();
-    final m = _states.map((k, v) => MapEntry(k, {'r': v.round, 'm': v.mastered}));
+    final m = _states
+        .map((k, v) => MapEntry(k, {'r': v.round, 'm': v.mastered, 'a': v.at}));
     await sp.setString(_kStates, jsonEncode(m));
     await sp.setString(_kBook, _bookKey);
     await sp.setInt(_kPerDay, _newPerDay);
@@ -239,7 +249,10 @@ class EnglishProvider extends ChangeNotifier {
     for (final ph in batch) {
       final cur = stateOf(ph.id);
       if (cur.round < doneRound) {
-        _states[ph.id] = cur.copyWith(round: doneRound);
+        final stamp = (doneRound >= 3 && cur.round < 3)
+            ? DateTime.now().millisecondsSinceEpoch
+            : cur.at;
+        _states[ph.id] = cur.copyWith(round: doneRound, at: stamp);
         if (doneRound >= 3 && cur.round < 3) newlyDone++;
       }
     }
@@ -254,6 +267,17 @@ class EnglishProvider extends ChangeNotifier {
 
   String _ymd(DateTime d) =>
       '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
+
+  /// 最近学过的 n 个短语（用于滚动复习，最近的排前面）
+  List<Phrase> recentLearned(int n) {
+    final list = pool.where((p) => stateOf(p.id).round >= 3).toList()
+      ..sort((a, b) => stateOf(b.id).at.compareTo(stateOf(a.id).at));
+    return list.take(n).toList();
+  }
+
+  /// 已学完总数（当前词书）
+  int get learnedInBook =>
+      pool.where((p) => stateOf(p.id).round >= 3).length;
 
   /// 今日学完数量
   int get todayLearned => _daily[_ymd(DateTime.now())] ?? 0;

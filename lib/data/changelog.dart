@@ -7,6 +7,10 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.7.0', '2026-11-22', [
+    '新增滚动复习：学新短语时也能复习最近学过的那些',
+    '记录每个短语学完第3轮的时间，按时间倒序排复习队列',
+  ]),
   ChangelogEntry('2.6.1', '2026-11-21', [
     '学习数据增加时长统计：今日时长、累计时长（自动记录学习页停留时间）',
   ]),

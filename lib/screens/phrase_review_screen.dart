@@ -18,7 +18,11 @@ class _C {
 
 /// 总复习：英文 → 选中文，答错重来直到全对
 class PhraseReviewScreen extends StatefulWidget {
-  const PhraseReviewScreen({super.key});
+  /// 指定复习队列；为 null 时是「总复习」（清空 reviewPool 并标记掌握）
+  final List<Phrase>? queue;
+  final String title;
+
+  const PhraseReviewScreen({super.key, this.queue, this.title = '总复习'});
 
   @override
   State<PhraseReviewScreen> createState() => _PhraseReviewScreenState();
@@ -41,7 +45,7 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
     super.initState();
     _provider = context.read<EnglishProvider>();
     _sessionStart = DateTime.now();
-    _queue = List.of(_provider.reviewPool);
+    _queue = List.of(widget.queue ?? _provider.reviewPool);
     _totalAtStart = _queue.length;
   }
 
@@ -77,7 +81,10 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
     final p = context.read<EnglishProvider>();
     if (_isCorrect) {
       _correctCount++;
-      await p.markMastered(_p.id);
+      if (widget.queue == null) {
+        // 总复习：答对即标记掌握
+        await p.markMastered(_p.id);
+      }
       if (_idx < _queue.length - 1) {
         setState(() {
           _idx++;
@@ -138,7 +145,7 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           foregroundColor: _C.ink,
-          title: const Text('总复习'),
+          title: Text(widget.title),
           elevation: 0,
         ),
         body: const Center(
@@ -177,8 +184,9 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
                                 size: 18, color: _C.sub),
                             onPressed: () => Navigator.pop(context),
                           ),
-                          const Text('总复习',
-                              style: TextStyle(color: _C.sub, fontSize: 13)),
+                          Text(widget.title,
+                              style: const TextStyle(
+                                  color: _C.sub, fontSize: 13)),
                           const Spacer(),
                           Text('${_idx + 1}/${_queue.length}',
                               style: const TextStyle(

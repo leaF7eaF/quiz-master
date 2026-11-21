@@ -84,6 +84,27 @@ class PhraseBookScreen extends StatelessWidget {
                 );
               },
             ),
+            const SizedBox(height: 10),
+            // 滚动复习：复习最近学过的
+            if (learned > 0)
+              _BigButton(
+                title: '滚动复习',
+                subtitle: '复习最近学过的 ${learned < p.newPerDay ? learned : p.newPerDay} 个',
+                icon: Icons.replay,
+                subtle: true,
+                onTap: () {
+                  final n = learned < p.newPerDay ? learned : p.newPerDay;
+                  final qs = p.recentLearned(n);
+                  if (qs.isEmpty) return;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          PhraseReviewScreen(queue: qs, title: '滚动复习'),
+                    ),
+                  );
+                },
+              ),
             const SizedBox(height: 12),
             // 学习计划
             DarkPanel(
@@ -270,44 +291,57 @@ class _BigButton extends StatelessWidget {
   final String subtitle;
   final IconData icon;
   final VoidCallback onTap;
+
+  /// 低调样式（用于次要入口）
+  final bool subtle;
+
   const _BigButton({
     required this.title,
     required this.subtitle,
     required this.icon,
     required this.onTap,
+    this.subtle = false,
   });
 
   @override
   Widget build(BuildContext context) {
+    final accent = subtle ? DarkC.ink : DarkC.green;
+    final bgc = subtle
+        ? Colors.white.withOpacity(0.07)
+        : DarkC.green.withOpacity(0.18);
+    final bdc = subtle
+        ? Colors.white.withOpacity(0.12)
+        : DarkC.green.withOpacity(0.45);
+
     return Material(
-      color: DarkC.green.withOpacity(0.18),
+      color: bgc,
       borderRadius: BorderRadius.circular(18),
       child: InkWell(
         borderRadius: BorderRadius.circular(18),
         onTap: onTap,
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+          padding: EdgeInsets.symmetric(
+              horizontal: 18, vertical: subtle ? 15 : 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: DarkC.green.withOpacity(0.45)),
+            border: Border.all(color: bdc),
           ),
           child: Row(
             children: [
-              Icon(icon, color: DarkC.green, size: 26),
+              Icon(icon, color: accent, size: subtle ? 20 : 26),
               const SizedBox(width: 14),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(title,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: DarkC.ink,
-                            fontSize: 17,
+                            fontSize: subtle ? 15 : 17,
                             fontWeight: FontWeight.w700)),
                     const SizedBox(height: 3),
                     Text(subtitle,
-                        style:
-                            TextStyle(fontSize: 12, color: DarkC.sub)),
+                        style: TextStyle(fontSize: 12, color: DarkC.sub)),
                   ],
                 ),
               ),
