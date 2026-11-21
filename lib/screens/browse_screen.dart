@@ -43,7 +43,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
     return Scaffold(
       backgroundColor: DarkC.bg,
       extendBody: true,
-      appBar: _darkAppBar(_dim == BrowseDim.all
+      appBar: darkAppBar(_dim == BrowseDim.all
           ? '全部题目'
           : (_dim == BrowseDim.unit ? '按目录' : '按来源')),
       body: Column(
@@ -228,10 +228,10 @@ class _LessonPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: DarkC.bg,
       extendBody: true,
-      appBar: _darkAppBar(
+      appBar: darkAppBar(
+        unit,
         leading: IconButton(
             icon: const Icon(Icons.arrow_back), onPressed: onBack),
-        title: Text(unit, style: const TextStyle(fontSize: 15)),
       ),
       body: Column(
         children: [
@@ -305,17 +305,19 @@ class _LessonPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  PreferredSizeWidget _darkAppBar(String title) {
-    return AppBar(
-      backgroundColor: DarkC.bg,
-      surfaceTintColor: Colors.transparent,
-      elevation: 0,
-      foregroundColor: DarkC.ink,
-      title: Text(title,
-          style: const TextStyle(
-              color: DarkC.ink, fontSize: 19, fontWeight: FontWeight.w600)),
-      iconTheme: const IconThemeData(color: DarkC.sub),
-    );
-  }
+/// 统一的深色 AppBar
+PreferredSizeWidget darkAppBar(String title, {Widget? leading}) {
+  return AppBar(
+    backgroundColor: DarkC.bg,
+    surfaceTintColor: Colors.transparent,
+    elevation: 0,
+    foregroundColor: DarkC.ink,
+    leading: leading,
+    title: Text(title,
+        style: const TextStyle(
+            color: DarkC.ink, fontSize: 19, fontWeight: FontWeight.w600)),
+    iconTheme: const IconThemeData(color: DarkC.sub),
+  );
 }
