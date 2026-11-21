@@ -7,6 +7,11 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.4.0', '2026-11-21', [
+    '背景图扩展到 22 张：海岸、冰川、极光、银河、沙漠、雾湖等',
+    '首页简化：去掉今日练卡片、科目图标、正确率与题数',
+    '科目名改英文大字（POLITICS / HISTORY / CHINESE ...），中文作小字',
+  ]),
   ChangelogEntry('2.3.1', '2026-11-21', [
     '英语词书列表与词书详情改深色',
     '热力图筛选按钮修复（之前白底白字看不见）',

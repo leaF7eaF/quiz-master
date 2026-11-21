@@ -11,6 +11,24 @@ class ScenicBackground extends StatelessWidget {
     'assets/images/scenic_2.jpg', // 云海日出
     'assets/images/scenic_3.jpg', // 晨雾森林
     'assets/images/scenic_4.jpg', // 星空雪山
+    'assets/images/scenic_5.jpg', // 海浪航拍
+    'assets/images/scenic_6.jpg', // 沙漠峡谷
+    'assets/images/scenic_7.jpg', // 极光雪原
+    'assets/images/scenic_8.jpg', // 雾湖金树
+    'assets/images/scenic_9.jpg', // 深空星云
+    'assets/images/scenic_10.jpg', // 雪山湖泊
+    'assets/images/scenic_11.jpg', // 草原落日
+    'assets/images/scenic_12.jpg', // 层叠远山
+    'assets/images/scenic_13.jpg', // 海岸日落
+    'assets/images/scenic_14.jpg', // 冰川森林
+    'assets/images/scenic_15.jpg', // 雾中孤山
+    'assets/images/scenic_16.jpg', // 红岩日落
+    'assets/images/scenic_17.jpg', // 雪山高崖
+    'assets/images/scenic_18.jpg', // 海面云霞
+    'assets/images/scenic_19.jpg', // 湖山暮色
+    'assets/images/scenic_20.jpg', // 碧湖小船
+    'assets/images/scenic_21.jpg', // 雨林栈道
+    'assets/images/scenic_22.jpg', // 银河
   ];
 
   /// App 生命周期内只随机一次，避免每次重建换图

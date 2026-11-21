@@ -44,9 +44,7 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 12.5,
                   ),
                 ),
-                const SizedBox(height: 26),
-                _TodayCard(p: p),
-                const SizedBox(height: 26),
+                const SizedBox(height: 34),
                 _sectionLabel('选择科目'),
                 const SizedBox(height: 10),
                 ...allSubjects.map((s) => _SubjectRow(meta: s, p: p)),
@@ -108,71 +106,6 @@ class HomeScreen extends StatelessWidget {
       );
 }
 
-class _TodayCard extends StatelessWidget {
-  final QuizProvider p;
-  const _TodayCard({required this.p});
-
-  @override
-  Widget build(BuildContext context) {
-    return DarkGlass(
-      padding: const EdgeInsets.fromLTRB(20, 18, 20, 18),
-      radius: 20,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Text('今日已练',
-                  style: TextStyle(
-                      color: Colors.white.withOpacity(0.65), fontSize: 12.5)),
-              const Spacer(),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.14),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text('连续 ${p.streak} 天',
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 11.5,
-                        fontWeight: FontWeight.w600)),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text('${p.todayCount}',
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 46,
-                      fontWeight: FontWeight.w700,
-                      height: 1)),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 8, left: 6),
-                child: Text('题',
-                    style: TextStyle(
-                        color: Colors.white54, fontSize: 14)),
-              ),
-              const Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Text(
-                    '累计正确率 ${(p.accuracy * 100).toStringAsFixed(0)}%',
-                    style: const TextStyle(
-                        color: Colors.white54, fontSize: 12)),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class _SubjectRow extends StatelessWidget {
   final SubjectMeta meta;
   final QuizProvider p;
@@ -182,17 +115,6 @@ class _SubjectRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final eng = context.watch<EnglishProvider>();
-    final total = _isEnglish
-        ? eng.total
-        : p.all.where((q) => q.subject == meta.key).length;
-    final done = _isEnglish
-        ? eng.learnedCount
-        : p.records.where((r) => r.subject == meta.key).length;
-    final correct =
-        p.records.where((r) => r.subject == meta.key && r.correct).length;
-    final acc = done == 0 ? 0.0 : correct / done;
-
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: DarkGlass(
@@ -210,30 +132,27 @@ class _SubjectRow extends StatelessWidget {
         },
         child: Row(
           children: [
-            Icon(meta.icon, size: 22, color: Colors.white.withOpacity(0.85)),
-            const SizedBox(width: 14),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(meta.label,
+                  Text(meta.enLabel,
                       style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 15.5,
-                          fontWeight: FontWeight.w600)),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.2)),
                   const SizedBox(height: 3),
-                  Text(
-                    _isEnglish
-                        ? '$total 个短语 · 已学 $done'
-                        : '$total 题 · 已做 $done · 正确率 ${(acc * 100).toStringAsFixed(0)}%',
-                    style: TextStyle(
-                        color: Colors.white.withOpacity(0.5), fontSize: 11.5),
-                  ),
+                  Text(meta.label,
+                      style: TextStyle(
+                          color: Colors.white.withOpacity(0.42),
+                          fontSize: 11.5,
+                          letterSpacing: 0.5)),
                 ],
               ),
             ),
             Icon(Icons.chevron_right,
-                color: Colors.white.withOpacity(0.4), size: 20),
+                color: Colors.white.withOpacity(0.30), size: 18),
           ],
         ),
       ),

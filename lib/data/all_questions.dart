@@ -163,15 +163,16 @@ class SubjectMeta {
   final String key;
   final String label;
   final IconData icon;
-  const SubjectMeta(this.key, this.label, this.icon);
+  final String enLabel;
+  const SubjectMeta(this.key, this.label, this.icon, this.enLabel);
 }
 
 const List<SubjectMeta> allSubjects = [
-  SubjectMeta('politics', '道德与法治', Icons.balance_outlined),
-  SubjectMeta('history', '历史', Icons.history_edu_outlined),
-  SubjectMeta('chinese', '语文', Icons.menu_book_outlined),
-  SubjectMeta('chemistry', '化学', Icons.science_outlined),
-  SubjectMeta('english', '英语短语', Icons.translate_outlined),
+  SubjectMeta('politics', '道德与法治', Icons.balance_outlined, 'POLITICS'),
+  SubjectMeta('history', '历史', Icons.history_edu_outlined, 'HISTORY'),
+  SubjectMeta('chinese', '语文', Icons.menu_book_outlined, 'CHINESE'),
+  SubjectMeta('chemistry', '化学', Icons.science_outlined, 'CHEMISTRY'),
+  SubjectMeta('english', '英语短语', Icons.translate_outlined, 'ENGLISH'),
 ];
 
 /// 只含选择题科目（英语短语单独走自己的模块）
