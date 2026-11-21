@@ -168,9 +168,10 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
                   child: LayoutBuilder(
                     builder: (context, constraints) => SingleChildScrollView(
                       padding: const EdgeInsets.fromLTRB(22, 0, 22, 16),
+                      physics: const ClampingScrollPhysics(),
                       child: ConstrainedBox(
-                        constraints:
-                            BoxConstraints(minHeight: constraints.maxHeight),
+                        constraints: BoxConstraints(
+                            minHeight: constraints.maxHeight - 16),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -279,7 +280,6 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
                   ),
                 ),
                 // 底部占位，保持布局稳定
-                const SizedBox(height: 74),
               ],
             ),
                 // 答错：底部浮层显示正确答案

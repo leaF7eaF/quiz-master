@@ -193,9 +193,10 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
                       child: LayoutBuilder(
                         builder: (context, constraints) => SingleChildScrollView(
                           padding: const EdgeInsets.fromLTRB(22, 0, 22, 16),
+                          physics: const ClampingScrollPhysics(),
                           child: ConstrainedBox(
-                            constraints:
-                                BoxConstraints(minHeight: constraints.maxHeight),
+                            constraints: BoxConstraints(
+                                minHeight: constraints.maxHeight - 16),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -277,8 +278,7 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 74),
-                  ],
+                      ],
                 ),
                 if (_answered)
                   Positioned(

@@ -150,7 +150,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 26),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: const Color(0xFF14211A),
                 border: Border.all(color: AppTheme.line),
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -217,7 +217,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
               child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: const Color(0xFF14211A),
                 border: Border.all(color: AppTheme.line),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -279,7 +279,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 13),
             decoration: BoxDecoration(
-              color: bg ?? Colors.white,
+              color: bg ?? const Color(0xFF14211A),
               border: Border.all(
                   color: border,
                   width: selected || (_isSubmitted && correct) ? 1.6 : 1),

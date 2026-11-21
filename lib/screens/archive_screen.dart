@@ -110,7 +110,7 @@ class _ArchiveScreenState extends State<ArchiveScreen> {
                     decoration: InputDecoration(
                       hintText: '长按此处粘贴存档内容…',
                       filled: true,
-                      fillColor: Colors.white,
+                      fillColor: const Color(0xFF14211A),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide: const BorderSide(color: AppTheme.line)),

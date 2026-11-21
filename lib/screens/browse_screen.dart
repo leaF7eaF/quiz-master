@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/quiz_provider.dart';
-import '../theme/app_theme.dart';
+import '../widgets/dark_ui.dart';
 import '../models/question.dart';
 import 'practice_screen.dart';
 
@@ -41,34 +41,28 @@ class _BrowseScreenState extends State<BrowseScreen> {
     final curGrade = _grade ?? (grades.isEmpty ? '' : grades.first);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_dim == BrowseDim.all
-            ? '全部题目'
-            : (_dim == BrowseDim.unit ? '按目录' : '按来源')),
-      ),
+      backgroundColor: DarkC.bg,
+      extendBody: true,
+      appBar: _darkAppBar(_dim == BrowseDim.all
+          ? '全部题目'
+          : (_dim == BrowseDim.unit ? '按目录' : '按来源')),
       body: Column(
         children: [
           // 维度切换（去掉知识点）
           Container(
-            color: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             child: Row(
               children: BrowseDim.values.map((d) {
                 final sel = d == _dim;
                 return Padding(
                   padding: const EdgeInsets.only(right: 8),
-                  child: ChoiceChip(
-                    label: Text(_dimLabel(d)),
+                  child: DarkChip(
+                    label: _dimLabel(d),
                     selected: sel,
-                    onSelected: (_) => setState(() {
+                    onTap: () => setState(() {
                       _dim = d;
                       _openUnit = null;
                     }),
-                    showCheckmark: false,
-                    selectedColor: AppTheme.primary.withOpacity(0.14),
-                    labelStyle: TextStyle(
-                        color: sel ? AppTheme.primary : AppTheme.ink,
-                        fontWeight: sel ? FontWeight.w600 : FontWeight.normal),
                   ),
                 );
               }).toList(),
@@ -77,27 +71,20 @@ class _BrowseScreenState extends State<BrowseScreen> {
           // 学期切换（仅目录维度）
           if (_dim == BrowseDim.unit && grades.length > 1)
             Container(
-              color: Colors.white,
               padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
               child: Row(
                 children: grades.map((g) {
                   final sel = g == curGrade;
                   return Padding(
                     padding: const EdgeInsets.only(right: 8),
-                    child: ChoiceChip(
-                      label: Text(g),
+                    child: DarkChip(
+                      label: g,
                       selected: sel,
-                      onSelected: (_) => setState(() {
+                      fontSize: 12.5,
+                      onTap: () => setState(() {
                         _grade = g;
                         _openUnit = null;
                       }),
-                      showCheckmark: false,
-                      selectedColor: AppTheme.primary.withOpacity(0.16),
-                      labelStyle: TextStyle(
-                          fontSize: 12.5,
-                          color: sel ? AppTheme.primary : AppTheme.ink,
-                          fontWeight:
-                              sel ? FontWeight.w600 : FontWeight.normal),
                     ),
                   );
                 }).toList(),
@@ -123,7 +110,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
           padding: const EdgeInsets.all(12),
           child: Row(children: [
             Text('共 ${list.length} 题',
-                style: const TextStyle(color: AppTheme.muted, fontSize: 13)),
+                style: const TextStyle(color: DarkC.sub, fontSize: 13)),
             const Spacer(),
             FilledButton.tonal(
               onPressed: list.isEmpty
@@ -196,7 +183,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
               style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
           subtitle: Text(sub, style: const TextStyle(fontSize: 12)),
           trailing:
-              const Icon(Icons.chevron_right, size: 20, color: AppTheme.muted),
+              const Icon(Icons.chevron_right, size: 20, color: DarkC.sub),
           onTap: () {
             if (_dim == BrowseDim.unit) {
               setState(() => _openUnit = k);
@@ -239,7 +226,9 @@ class _LessonPage extends StatelessWidget {
     final total = p.questionsOfUnitGrade(grade, unit).length;
 
     return Scaffold(
-      appBar: AppBar(
+      backgroundColor: DarkC.bg,
+      extendBody: true,
+      appBar: _darkAppBar(
         leading: IconButton(
             icon: const Icon(Icons.arrow_back), onPressed: onBack),
         title: Text(unit, style: const TextStyle(fontSize: 15)),
@@ -255,7 +244,7 @@ class _LessonPage extends StatelessWidget {
                 icon: const Icon(Icons.playlist_play, size: 20),
                 label: Text('整单元练习（$total 题）'),
                 style: FilledButton.styleFrom(
-                  backgroundColor: AppTheme.primary,
+                  backgroundColor: DarkC.green,
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
                 onPressed: () {
@@ -285,11 +274,11 @@ class _LessonPage extends StatelessWidget {
                         leading: CircleAvatar(
                           radius: 14,
                           backgroundColor:
-                              AppTheme.primary.withOpacity(0.12),
+                              DarkC.green.withOpacity(0.12),
                           child: Text('${i + 1}',
                               style: const TextStyle(
                                   fontSize: 12,
-                                  color: AppTheme.primary,
+                                  color: DarkC.green,
                                   fontWeight: FontWeight.w600)),
                         ),
                         title: Text(les,
@@ -298,7 +287,7 @@ class _LessonPage extends StatelessWidget {
                         subtitle: Text('${qs.length} 题',
                             style: const TextStyle(fontSize: 12)),
                         trailing: const Icon(Icons.play_arrow,
-                            size: 22, color: AppTheme.primary),
+                            size: 22, color: DarkC.green),
                         onTap: () {
                           if (qs.isEmpty) return;
                           Navigator.push(
@@ -314,6 +303,19 @@ class _LessonPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  PreferredSizeWidget _darkAppBar(String title) {
+    return AppBar(
+      backgroundColor: DarkC.bg,
+      surfaceTintColor: Colors.transparent,
+      elevation: 0,
+      foregroundColor: DarkC.ink,
+      title: Text(title,
+          style: const TextStyle(
+              color: DarkC.ink, fontSize: 19, fontWeight: FontWeight.w600)),
+      iconTheme: const IconThemeData(color: DarkC.sub),
     );
   }
 }

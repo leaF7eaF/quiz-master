@@ -93,8 +93,8 @@ class WrongPickScreen extends StatelessWidget {
                         horizontal: 14, vertical: 14),
                     decoration: BoxDecoration(
                       color: enabled
-                          ? Colors.white
-                          : Colors.white.withOpacity(0.5),
+                          ? const Color(0xFF14211A)
+                          : const Color(0xFF14211A).withOpacity(0.5),
                       border: Border.all(color: AppTheme.line),
                       borderRadius: BorderRadius.circular(10),
                     ),

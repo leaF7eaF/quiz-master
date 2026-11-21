@@ -110,3 +110,98 @@ class DarkPanel extends StatelessWidget {
     );
   }
 }
+
+/// 深色筛选 chip
+class DarkChip extends StatelessWidget {
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  final double fontSize;
+
+  const DarkChip({
+    super.key,
+    required this.label,
+    required this.selected,
+    required this.onTap,
+    this.fontSize = 13,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+        decoration: BoxDecoration(
+          color: selected
+              ? DarkC.green.withOpacity(0.20)
+              : Colors.white.withOpacity(0.10),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: selected
+                ? DarkC.green.withOpacity(0.55)
+                : Colors.white.withOpacity(0.14),
+            width: 1,
+          ),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            color: selected ? DarkC.green : DarkC.ink,
+            fontSize: fontSize,
+            fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// 深色主题包装：让 ListTile / Divider / 默认文字自动适配深色
+class DarkTheme extends StatelessWidget {
+  final Widget child;
+  const DarkTheme({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    final base = ThemeData(
+      useMaterial3: true,
+      brightness: Brightness.dark,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: DarkC.green,
+        brightness: Brightness.dark,
+      ),
+      scaffoldBackgroundColor: DarkC.bg,
+    );
+    return Theme(
+      data: base.copyWith(
+        dividerTheme: DividerThemeData(
+          color: Colors.white.withOpacity(0.08),
+          thickness: 1,
+          space: 1,
+        ),
+        listTileTheme: ListTileThemeData(
+          textColor: DarkC.ink,
+          iconColor: DarkC.sub,
+          subtitleTextStyle:
+              const TextStyle(color: DarkC.sub, fontSize: 11.5),
+        ),
+        textTheme: base.textTheme.apply(
+          bodyColor: DarkC.ink,
+          displayColor: DarkC.ink,
+        ),
+        dialogTheme: DialogTheme(
+          backgroundColor: const Color(0xFF1E2C24),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(22),
+          ),
+        ),
+        snackBarTheme: const SnackBarThemeData(
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Color(0xFF2A3A31),
+        ),
+      ),
+      child: child,
+    );
+  }
+}
