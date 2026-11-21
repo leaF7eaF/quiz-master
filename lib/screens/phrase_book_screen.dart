@@ -71,7 +71,13 @@ class PhraseBookScreen extends StatelessWidget {
           if (!finished) ...[
             _BigButton(
               title: '学习新短语',
-              subtitle: '每次 ${p.newPerDay} 个 · 三轮过关',
+              subtitle: (() {
+                final done = p.todayLearned;
+                final target = p.newPerDay;
+                return done >= target
+                    ? '今日已完成 $done/$target · 可继续学'
+                    : '今日 $done/$target · 三轮过关';
+              })(),
               icon: Icons.school_outlined,
               onTap: () {
                 final batch = p.nextBatch();
@@ -87,24 +93,30 @@ class PhraseBookScreen extends StatelessWidget {
             const SizedBox(height: 10),
             // 滚动复习：复习最近学过的
             if (learned > 0)
-              _BigButton(
-                title: '滚动复习',
-                subtitle: '复习最近学过的 ${learned < p.newPerDay ? learned : p.newPerDay} 个',
-                icon: Icons.replay,
-                subtle: true,
-                onTap: () {
-                  final n = learned < p.newPerDay ? learned : p.newPerDay;
-                  final qs = p.recentLearned(n);
-                  if (qs.isEmpty) return;
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) =>
-                          PhraseReviewScreen(queue: qs, title: '滚动复习'),
-                    ),
-                  );
-                },
-              ),
+              Builder(builder: (context) {
+                final canReview = p.reviewableToday;
+                final n = canReview < p.newPerDay ? canReview : p.newPerDay;
+                return _BigButton(
+                  title: '滚动复习',
+                  subtitle: canReview == 0
+                      ? '今日复习已完成'
+                      : '复习最近学过的 $n 个（今日可复习 $canReview 个）',
+                  icon: Icons.replay,
+                  subtle: true,
+                  enabled: canReview > 0,
+                  onTap: () {
+                    final qs = p.recentLearned(n);
+                    if (qs.isEmpty) return;
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            PhraseReviewScreen(queue: qs, title: '滚动复习'),
+                      ),
+                    );
+                  },
+                );
+              }),
             const SizedBox(height: 12),
             // 学习计划
             DarkPanel(
@@ -295,12 +307,16 @@ class _BigButton extends StatelessWidget {
   /// 低调样式（用于次要入口）
   final bool subtle;
 
+  /// 是否可点（false 时变灰）
+  final bool enabled;
+
   const _BigButton({
     required this.title,
     required this.subtitle,
     required this.icon,
     required this.onTap,
     this.subtle = false,
+    this.enabled = true,
   });
 
   @override
@@ -313,12 +329,14 @@ class _BigButton extends StatelessWidget {
         ? Colors.white.withOpacity(0.12)
         : DarkC.green.withOpacity(0.45);
 
-    return Material(
+    return Opacity(
+      opacity: enabled ? 1 : 0.45,
+      child: Material(
       color: bgc,
       borderRadius: BorderRadius.circular(18),
       child: InkWell(
         borderRadius: BorderRadius.circular(18),
-        onTap: onTap,
+        onTap: enabled ? onTap : null,
         child: Container(
           padding: EdgeInsets.symmetric(
               horizontal: 18, vertical: subtle ? 15 : 20),
@@ -350,6 +368,7 @@ class _BigButton extends StatelessWidget {
           ),
         ),
       ),
+    ),
     );
   }
 }

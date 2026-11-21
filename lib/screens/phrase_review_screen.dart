@@ -79,6 +79,10 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
 
   Future<void> _next() async {
     final p = context.read<EnglishProvider>();
+    // 滚动复习：本轮看过的词当天不再出现
+    if (widget.queue != null) {
+      await p.markReviewed(_p.id);
+    }
     if (_isCorrect) {
       _correctCount++;
       if (widget.queue == null) {

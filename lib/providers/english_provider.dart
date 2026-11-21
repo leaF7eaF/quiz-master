@@ -48,17 +48,22 @@ class PhraseState {
   final bool mastered;
   /// 学完第 3 轮的时间戳（毫秒），用于滚动复习排序
   final int at;
+  /// 最后一次复习的时间戳（毫秒），当天复习过的不再进复习队列
+  final int rv;
   const PhraseState({
     required this.id,
     this.round = 0,
     this.mastered = false,
     this.at = 0,
+    this.rv = 0,
   });
-  PhraseState copyWith({int? round, bool? mastered, int? at}) => PhraseState(
+  PhraseState copyWith({int? round, bool? mastered, int? at, int? rv}) =>
+      PhraseState(
         id: id,
         round: round ?? this.round,
         mastered: mastered ?? this.mastered,
         at: at ?? this.at,
+        rv: rv ?? this.rv,
       );
 }
 
@@ -149,6 +154,7 @@ class EnglishProvider extends ChangeNotifier {
                 round: (v['r'] ?? 0) as int,
                 mastered: (v['m'] ?? false) as bool,
                 at: (v['a'] ?? 0) as int,
+                rv: (v['v'] ?? 0) as int,
               ),
             ));
       } catch (_) {}
@@ -159,7 +165,8 @@ class EnglishProvider extends ChangeNotifier {
   Future<void> _persist() async {
     final sp = await SharedPreferences.getInstance();
     final m = _states
-        .map((k, v) => MapEntry(k, {'r': v.round, 'm': v.mastered, 'a': v.at}));
+        .map((k, v) =>
+            MapEntry(k, {'r': v.round, 'm': v.mastered, 'a': v.at, 'v': v.rv}));
     await sp.setString(_kStates, jsonEncode(m));
     await sp.setString(_kBook, _bookKey);
     await sp.setInt(_kPerDay, _newPerDay);
@@ -270,9 +277,30 @@ class EnglishProvider extends ChangeNotifier {
 
   /// 最近学过的 n 个短语（用于滚动复习，最近的排前面）
   List<Phrase> recentLearned(int n) {
-    final list = pool.where((p) => stateOf(p.id).round >= 3).toList()
+    final today = _ymd(DateTime.now());
+    final list = pool.where((p) {
+      final st = stateOf(p.id);
+      if (st.round < 3) return false;
+      // 今天已经复习过的不再重复
+      if (st.rv > 0) {
+        final d = DateTime.fromMillisecondsSinceEpoch(st.rv);
+        if (_ymd(d) == today) return false;
+      }
+      return true;
+    }).toList()
       ..sort((a, b) => stateOf(b.id).at.compareTo(stateOf(a.id).at));
     return list.take(n).toList();
+  }
+
+  /// 今天还能复习的数量（未在今日复习过）
+  int get reviewableToday => recentLearned(9999).length;
+
+  /// 标记为今天已复习
+  Future<void> markReviewed(String id) async {
+    _states[id] = stateOf(id)
+        .copyWith(rv: DateTime.now().millisecondsSinceEpoch);
+    notifyListeners();
+    await _persist();
   }
 
   /// 已学完总数（当前词书）
