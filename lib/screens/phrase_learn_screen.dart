@@ -268,8 +268,7 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
             const SizedBox(height: 8),
             RevealIn(
               key: ValueKey('hint_${_p.id}_$_round'),
-              child: GlassCard(
-                bordered: true,
+              child: MdCard(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

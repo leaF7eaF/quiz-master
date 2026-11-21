@@ -114,6 +114,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
   Widget build(BuildContext context) {
     final q = _q;
     return Scaffold(
+      backgroundColor: AppTheme.paper,
       appBar: AppBar(
         title: Text('${widget.title}  ${_index + 1}/${widget.questions.length}'),
         bottom: PreferredSize(

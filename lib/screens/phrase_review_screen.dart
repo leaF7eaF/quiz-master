@@ -211,8 +211,7 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
             const SizedBox(height: 8),
             RevealIn(
               key: ValueKey('rev_${_p.id}_$_idx'),
-              child: GlassCard(
-                bordered: true,
+              child: MdCard(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
