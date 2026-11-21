@@ -139,9 +139,14 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
           ),
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
-        children: [
+      body: LayoutBuilder(
+        builder: (context, constraints) => SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: constraints.maxHeight - 40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
           // 提示
           Center(
             child: Container(
@@ -170,42 +175,29 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
               ),
             ),
           ),
-          // 第 1 轮给提示：有例句显示例句，没例句显示模块
-          if (_round == 1) ...[
+          // 第 1 轮：有例句才显示例句卡
+          if (_round == 1 && _p.ex.isNotEmpty) ...[
             const SizedBox(height: 18),
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.6),
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: AppTheme.line),
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(14),
               ),
-              child: _p.ex.isNotEmpty
-                  ? Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(_p.ex,
-                            style: const TextStyle(
-                                fontSize: 14,
-                                height: 1.5,
-                                fontStyle: FontStyle.italic)),
-                        const SizedBox(height: 4),
-                        Text(_p.exCn,
-                            style: TextStyle(
-                                fontSize: 12.5, color: AppTheme.muted)),
-                      ],
-                    )
-                  : Row(
-                      children: [
-                        const Icon(Icons.info_outline,
-                            size: 15, color: AppTheme.muted),
-                        const SizedBox(width: 6),
-                        Text('模块 ${_p.module}',
-                            style: TextStyle(
-                                fontSize: 12.5, color: AppTheme.muted)),
-                      ],
-                    ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(_p.ex,
+                      style: const TextStyle(
+                          fontSize: 14,
+                          height: 1.5,
+                          fontStyle: FontStyle.italic)),
+                  const SizedBox(height: 4),
+                  Text(_p.exCn,
+                      style: TextStyle(fontSize: 12.5, color: AppTheme.muted)),
+                ],
+              ),
             ),
           ],
           const SizedBox(height: 28),
@@ -229,25 +221,28 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
               bg = AppTheme.primary.withOpacity(0.08);
             }
             return Padding(
-              padding: const EdgeInsets.only(bottom: 10),
+              padding: const EdgeInsets.only(bottom: 14),
               child: Material(
-                color: bg ?? Colors.white.withOpacity(0.6),
-                borderRadius: BorderRadius.circular(10),
+                color: bg ?? Colors.white,
+                borderRadius: BorderRadius.circular(16),
                 child: InkWell(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(16),
                   onTap: _answered ? null : () => _pick(i),
                   child: Container(
+                    constraints: const BoxConstraints(minHeight: 64),
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 15),
+                        horizontal: 20, vertical: 20),
                     decoration: BoxDecoration(
-                      border: Border.all(color: border, width: picked || (_answered && isCorrect) ? 1.6 : 1),
-                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                          color: border,
+                          width: picked || (_answered && isCorrect) ? 2 : 1),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(opts[i],
-                              style: const TextStyle(fontSize: 15.5)),
+                              style: const TextStyle(fontSize: 16.5)),
                         ),
                         if (_answered && isCorrect)
                           const Icon(Icons.check_circle,
@@ -305,8 +300,11 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
               ),
             ),
           ],
-          const SizedBox(height: 20),
-        ],
+                const SizedBox(height: 20),
+              ],
+            ),
+          ),
+        ),
       ),
       bottomNavigationBar: _answered
           ? SafeArea(

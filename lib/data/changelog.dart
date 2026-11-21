@@ -7,6 +7,10 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.1.1', '2026-11-21', [
+    '去掉「模块 M1」提示（新版资料已不按模块划分）',
+    '第1轮只在有例句时显示例句卡',
+  ]),
   ChangelogEntry('2.1.0', '2026-11-21', [
     '卡片按 Google Material You 重做：纯色块，无边框、无阴影、无半透明',
     '移除背景光晕与玻璃模糊，改用 M3 表面色分层',
