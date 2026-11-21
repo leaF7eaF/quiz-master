@@ -7,6 +7,9 @@ import '../data/eng_8a.dart';
 import '../data/eng_8b.dart';
 import '../data/eng_9a.dart';
 import '../data/eng_9b.dart';
+import '../data/eng_9c.dart';
+import '../data/eng_9d.dart';
+import '../data/eng_9s.dart';
 
 /// 短语
 class Phrase {
@@ -63,8 +66,8 @@ class PhraseBook {
 const List<PhraseBook> phraseBooks = [
   PhraseBook('g7', '七年级', '七年级上下册', ['7A', '7B']),
   PhraseBook('g8', '八年级', '八年级上下册', ['8A', '8B']),
-  PhraseBook('g9', '九年级', '九年级上下册', ['9A', '9B']),
-  PhraseBook('all', '初中汇总', '七至九年级全部', ['7A', '7B', '8A', '8B', '9A', '9B']),
+  PhraseBook('g9', '九年级', '新版重点短语 M1-M11', ['9']),
+  PhraseBook('all', '初中汇总', '七至九年级全部', ['7A', '7B', '8A', '8B', '9']),
 ];
 
 class EnglishProvider extends ChangeNotifier {
@@ -89,8 +92,21 @@ class EnglishProvider extends ChangeNotifier {
     _byGrade['7B'] = engPhrases7B.map(Phrase.fromJson).toList();
     _byGrade['8A'] = engPhrases8A.map(Phrase.fromJson).toList();
     _byGrade['8B'] = engPhrases8B.map(Phrase.fromJson).toList();
-    _byGrade['9A'] = engPhrases9A.map(Phrase.fromJson).toList();
-    _byGrade['9B'] = engPhrases9B.map(Phrase.fromJson).toList();
+    // 九年级：新版重点短语总结 M1-M11 + 旧版补充，合并去重
+    final nine = <Phrase>[
+      ...engPhrases9A.map(Phrase.fromJson),
+      ...engPhrases9B.map(Phrase.fromJson),
+      ...engPhrases9C.map(Phrase.fromJson),
+      ...engPhrases9D.map(Phrase.fromJson),
+      ...engPhrases9S.map(Phrase.fromJson),
+    ];
+    final seen = <String>{};
+    _byGrade['9'] = nine.where((p) {
+      final k = p.en.toLowerCase().trim();
+      if (seen.contains(k)) return false;
+      seen.add(k);
+      return true;
+    }).toList();
 
     final sp = await SharedPreferences.getInstance();
     _bookKey = sp.getString(_kBook) ?? 'g9';
@@ -143,7 +159,7 @@ class EnglishProvider extends ChangeNotifier {
   /// 全部短语（干扰项用）
   List<Phrase> get allPhrases {
     final out = <Phrase>[];
-    for (final g in ['7A', '7B', '8A', '8B', '9A', '9B']) {
+    for (final g in ['7A', '7B', '8A', '8B', '9']) {
       out.addAll(_byGrade[g] ?? const []);
     }
     return out;

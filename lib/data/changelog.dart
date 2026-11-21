@@ -7,6 +7,11 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('1.9.1', '2026-11-21', [
+    '英语九年级短语换用新版资料：MODULE 1-11 共 386 条',
+    '合并旧资料独有短语 58 条，去重后九年级约 430 条',
+    '214 条重点短语带例句，第1轮显示例句',
+  ]),
   ChangelogEntry('1.9.0', '2026-11-21', [
     '新增答题音效：答对上行三音、答错下行两音、完成四音',
     '修复英语模块页面黑底问题（透明背景导致的深色穿透）',

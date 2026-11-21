@@ -164,27 +164,42 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
               ),
             ),
           ),
-          // 第 1 轮带例句提示
-          if (_round == 1 && _p.ex.isNotEmpty) ...[
+          // 第 1 轮给提示：有例句显示例句，没例句显示模块
+          if (_round == 1) ...[
             const SizedBox(height: 18),
             Container(
+              width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.6),
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: AppTheme.line),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(_p.ex,
-                      style: const TextStyle(
-                          fontSize: 14, height: 1.5, fontStyle: FontStyle.italic)),
-                  const SizedBox(height: 4),
-                  Text(_p.exCn,
-                      style: TextStyle(fontSize: 12.5, color: AppTheme.muted)),
-                ],
-              ),
+              child: _p.ex.isNotEmpty
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(_p.ex,
+                            style: const TextStyle(
+                                fontSize: 14,
+                                height: 1.5,
+                                fontStyle: FontStyle.italic)),
+                        const SizedBox(height: 4),
+                        Text(_p.exCn,
+                            style: TextStyle(
+                                fontSize: 12.5, color: AppTheme.muted)),
+                      ],
+                    )
+                  : Row(
+                      children: [
+                        const Icon(Icons.info_outline,
+                            size: 15, color: AppTheme.muted),
+                        const SizedBox(width: 6),
+                        Text('模块 ${_p.module}',
+                            style: TextStyle(
+                                fontSize: 12.5, color: AppTheme.muted)),
+                      ],
+                    ),
             ),
           ],
           const SizedBox(height: 28),
