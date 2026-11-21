@@ -129,9 +129,12 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
           ),
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
+      body: Stack(
         children: [
+          Positioned.fill(
+            child: ListView(
+              padding: const EdgeInsets.all(20),
+              children: [
           Center(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
@@ -208,37 +211,21 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
             );
           }),
 
-          if (_answered && !isCorrect) ...[
-            const SizedBox(height: 8),
-            RevealIn(
-              key: ValueKey('rev_${_p.id}_$_idx'),
-              child: MdCard(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('正确答案',
-                        style: TextStyle(
-                            fontSize: 11.5,
-                            color: AppTheme.accent,
-                            fontWeight: FontWeight.w600)),
-                    const SizedBox(height: 6),
-                    Text(_p.cn,
-                        style: const TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.w600)),
-                    const SizedBox(height: 6),
-                    Text('${_p.en}  —  ${_p.cn}',
-                        style: TextStyle(
-                            fontSize: 13, color: AppTheme.muted)),
-                    const SizedBox(height: 6),
-                    Text('这个词会重新出现，直到答对',
-                        style: TextStyle(
-                            fontSize: 11.5, color: AppTheme.muted)),
-                  ],
-                ),
+                const SizedBox(height: 20),
+              ],
+            ),
+          ),
+          if (_answered && !isCorrect)
+            Positioned(
+              left: 16,
+              right: 16,
+              bottom: 16,
+              child: RevealIn(
+                key: ValueKey('rev_${_p.id}_$_idx'),
+                offsetY: 24,
+                child: _WrongHint(phrase: _p),
               ),
             ),
-          ],
-          const SizedBox(height: 20),
         ],
       ),
       bottomNavigationBar: _answered
@@ -256,6 +243,63 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
               ),
             )
           : null,
+    );
+  }
+}
+
+/// 答错提示浮层
+class _WrongHint extends StatelessWidget {
+  final Phrase phrase;
+  const _WrongHint({required this.phrase});
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Material(
+      elevation: 6,
+      shadowColor: Colors.black.withOpacity(0.18),
+      color: scheme.surfaceContainerLowest,
+      borderRadius: BorderRadius.circular(18),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(18, 14, 18, 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.info_outline, size: 16, color: scheme.tertiary),
+                const SizedBox(width: 6),
+                Text('正确答案',
+                    style: TextStyle(
+                        fontSize: 12.5,
+                        fontWeight: FontWeight.w600,
+                        color: scheme.tertiary)),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text('${phrase.en}  ·  ${phrase.cn}',
+                style: const TextStyle(
+                    fontSize: 16, fontWeight: FontWeight.w600)),
+            if (phrase.ex.isNotEmpty) ...[
+              const SizedBox(height: 6),
+              Text(phrase.ex,
+                  style: TextStyle(
+                      fontSize: 12.5,
+                      height: 1.45,
+                      fontStyle: FontStyle.italic,
+                      color: scheme.onSurfaceVariant)),
+              Text(phrase.exCn,
+                  style: TextStyle(
+                      fontSize: 11.5, color: scheme.onSurfaceVariant)),
+            ],
+            const SizedBox(height: 6),
+            Text('这个词会重新出现，直到答对',
+                style: TextStyle(
+                    fontSize: 11, color: scheme.onSurfaceVariant)),
+          ],
+        ),
+      ),
     );
   }
 }

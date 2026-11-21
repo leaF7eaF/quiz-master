@@ -122,14 +122,19 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
           ),
         ),
       ),
-      body: LayoutBuilder(
-        builder: (context, constraints) => SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: constraints.maxHeight - 40),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+      body: Stack(
+        children: [
+          // 主内容：固定居中，不因答错提示而移动
+          Positioned.fill(
+            child: LayoutBuilder(
+              builder: (context, constraints) => SingleChildScrollView(
+                padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+                child: ConstrainedBox(
+                  constraints:
+                      BoxConstraints(minHeight: constraints.maxHeight - 40),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
           const SizedBox(height: 8),
 
           // 题干
@@ -227,53 +232,28 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
             );
           }),
 
-          // 只在答错时给解释；答对直接进入下一题
-          if (_answered && !(_picked != null && opts[_picked!] == _correctText)) ...[
-            const SizedBox(height: 8),
-            RevealIn(
-              key: ValueKey('hint_${_p.id}_$_round'),
-              child: MdCard(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(Icons.info_outline, size: 18, color: AppTheme.accent),
-                        const SizedBox(width: 6),
-                        Text('正确答案',
-                            style: TextStyle(
-                              fontSize: 13.5,
-                              fontWeight: FontWeight.w600,
-                              color: AppTheme.accent,
-                            )),
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    Text('${_p.en}  —  ${_p.cn}',
-                        style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w600)),
-                    if (_p.ex.isNotEmpty) ...[
-                      const SizedBox(height: 8),
-                      Text(_p.ex,
-                          style: const TextStyle(
-                              fontSize: 13,
-                              height: 1.45,
-                              fontStyle: FontStyle.italic)),
-                      const SizedBox(height: 2),
-                      Text(_p.exCn,
-                          style: TextStyle(
-                              fontSize: 11.5, color: AppTheme.muted)),
+                const SizedBox(height: 20),
+                      const SizedBox(height: 20),
                     ],
-                  ],
+                  ),
                 ),
               ),
             ),
-          ],
-                const SizedBox(height: 20),
-              ],
-            ),
           ),
-        ),
+          // 答错提示：从底部浮上来，不推挤上方布局
+          if (_answered &&
+              !(_picked != null && opts[_picked!] == _correctText))
+            Positioned(
+              left: 16,
+              right: 16,
+              bottom: 16,
+              child: RevealIn(
+                key: ValueKey('hint_${_p.id}_$_round'),
+                offsetY: 24,
+                child: _WrongHint(phrase: _p),
+              ),
+            ),
+        ],
       ),
       bottomNavigationBar: _answered
           ? SafeArea(
@@ -293,6 +273,59 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
               ),
             )
           : null,
+    );
+  }
+}
+
+/// 答错提示浮层：显示正确答案与例句，不参与页面布局
+class _WrongHint extends StatelessWidget {
+  final Phrase phrase;
+  const _WrongHint({required this.phrase});
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Material(
+      elevation: 6,
+      shadowColor: Colors.black.withOpacity(0.18),
+      color: scheme.surfaceContainerLowest,
+      borderRadius: BorderRadius.circular(18),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(18, 14, 18, 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.info_outline, size: 16, color: scheme.tertiary),
+                const SizedBox(width: 6),
+                Text('正确答案',
+                    style: TextStyle(
+                        fontSize: 12.5,
+                        fontWeight: FontWeight.w600,
+                        color: scheme.tertiary)),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text('${phrase.en}  ·  ${phrase.cn}',
+                style: const TextStyle(
+                    fontSize: 16, fontWeight: FontWeight.w600)),
+            if (phrase.ex.isNotEmpty) ...[
+              const SizedBox(height: 6),
+              Text(phrase.ex,
+                  style: TextStyle(
+                      fontSize: 12.5,
+                      height: 1.45,
+                      fontStyle: FontStyle.italic,
+                      color: scheme.onSurfaceVariant)),
+              Text(phrase.exCn,
+                  style: TextStyle(
+                      fontSize: 11.5, color: scheme.onSurfaceVariant)),
+            ],
+          ],
+        ),
+      ),
     );
   }
 }
