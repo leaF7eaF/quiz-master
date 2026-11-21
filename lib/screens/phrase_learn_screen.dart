@@ -32,6 +32,16 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
   int? _picked;
   bool _answered = false;
 
+  late final EnglishProvider _provider;
+  late final DateTime _sessionStart;
+
+  @override
+  void initState() {
+    super.initState();
+    _provider = context.read<EnglishProvider>();
+    _sessionStart = DateTime.now();
+  }
+
   Phrase get _p => widget.batch[_idx];
   bool get _isEnToCn => _round <= 2;
 
