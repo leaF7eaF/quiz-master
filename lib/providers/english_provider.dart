@@ -74,10 +74,12 @@ class EnglishProvider extends ChangeNotifier {
   static const _kStates = 'phrase_states_v2';
   static const _kBook = 'phrase_current_book';
   static const _kPerDay = 'phrase_per_day';
+  static const _kDaily = 'phrase_daily_counts';
 
   /// 全量短语（带册别标记）
   final Map<String, List<Phrase>> _byGrade = {};
   Map<String, PhraseState> _states = {};
+  Map<String, int> _daily = {};
   String _bookKey = 'g9';
   int _newPerDay = 5;
 
@@ -112,6 +114,13 @@ class EnglishProvider extends ChangeNotifier {
     final sp = await SharedPreferences.getInstance();
     _bookKey = sp.getString(_kBook) ?? 'g9';
     _newPerDay = sp.getInt(_kPerDay) ?? 10;
+    final rawDaily = sp.getString(_kDaily);
+    if (rawDaily != null && rawDaily.isNotEmpty) {
+      try {
+        final m = jsonDecode(rawDaily) as Map<String, dynamic>;
+        _daily = m.map((k, v) => MapEntry(k, (v as num).toInt()));
+      } catch (_) {}
+    }
     final raw = sp.getString(_kStates);
     if (raw != null && raw.isNotEmpty) {
       try {
@@ -135,6 +144,7 @@ class EnglishProvider extends ChangeNotifier {
     await sp.setString(_kStates, jsonEncode(m));
     await sp.setString(_kBook, _bookKey);
     await sp.setInt(_kPerDay, _newPerDay);
+    await sp.setString(_kDaily, jsonEncode(_daily));
   }
 
   Future<void> setNewPerDay(int n) async {
@@ -215,14 +225,57 @@ class EnglishProvider extends ChangeNotifier {
   }
 
   Future<void> advanceRound(List<Phrase> batch, int doneRound) async {
+    var newlyDone = 0;
     for (final ph in batch) {
       final cur = stateOf(ph.id);
       if (cur.round < doneRound) {
         _states[ph.id] = cur.copyWith(round: doneRound);
+        if (doneRound >= 3 && cur.round < 3) newlyDone++;
       }
+    }
+    // 记录今天真正学完（走完三轮）的数量
+    if (newlyDone > 0) {
+      final k = _ymd(DateTime.now());
+      _daily[k] = (_daily[k] ?? 0) + newlyDone;
     }
     notifyListeners();
     await _persist();
+  }
+
+  String _ymd(DateTime d) =>
+      '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
+
+  /// 今日学完数量
+  int get todayLearned => _daily[_ymd(DateTime.now())] ?? 0;
+
+  /// 累计学完数量（跨词书）
+  int get totalLearnedAll =>
+      _daily.values.fold<int>(0, (a, b) => a + b);
+
+  /// 连续学习天数
+  int get streak {
+    var n = 0;
+    var d = DateTime.now();
+    if ((_daily[_ymd(d)] ?? 0) == 0) {
+      d = d.subtract(const Duration(days: 1));
+    }
+    while ((_daily[_ymd(d)] ?? 0) > 0) {
+      n++;
+      d = d.subtract(const Duration(days: 1));
+    }
+    return n;
+  }
+
+  /// 最近 n 天每天的学习量（从早到晚）
+  List<MapEntry<DateTime, int>> recentDays(int n) {
+    final out = <MapEntry<DateTime, int>>[];
+    final now = DateTime.now();
+    for (var i = n - 1; i >= 0; i--) {
+      final d = DateTime(now.year, now.month, now.day)
+          .subtract(Duration(days: i));
+      out.add(MapEntry(d, _daily[_ymd(d)] ?? 0));
+    }
+    return out;
   }
 
   // ===== 总复习 =====

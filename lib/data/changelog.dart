@@ -7,6 +7,9 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.6.0', '2026-11-21', [
+    '英语短语新增学习数据：今日学习、累计学习、连续天数、最近 7 天记录',
+  ]),
   ChangelogEntry('2.5.1', '2026-11-21', [
     '学习/复习页固定不滚动（去掉撑高布局的占位块）',
     '全局主题改深色：选题、答题、错题选择、存档、日志页同步',
