@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/english_provider.dart';
 import '../widgets/dark_ui.dart';
+import 'phrase_book_screen.dart';
 
 /// 英语短语：词书选择
 class PhraseHomeScreen extends StatelessWidget {
