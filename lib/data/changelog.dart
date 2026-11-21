@@ -7,6 +7,10 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('1.9.2', '2026-11-21', [
+    '学短语答对后不再弹重复卡片，520ms 后自动进入下一题',
+    '答错才显示正确答案和例句',
+  ]),
   ChangelogEntry('1.9.1', '2026-11-21', [
     '英语九年级短语换用新版资料：MODULE 1-11 共 386 条',
     '合并旧资料独有短语 58 条，去重后九年级约 430 条',

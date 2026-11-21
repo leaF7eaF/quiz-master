@@ -57,6 +57,12 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
       _picked = i;
       _answered = true;
     });
+    // 答对：短暂展示后自动进入下一题
+    if (ok) {
+      Future.delayed(const Duration(milliseconds: 520), () {
+        if (mounted && _answered && _picked == i) _next();
+      });
+    }
   }
 
   void _next() {
@@ -257,8 +263,8 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
             );
           }),
 
-          // 答后提示
-          if (_answered) ...[
+          // 只在答错时给解释；答对直接进入下一题
+          if (_answered && !(_picked != null && opts[_picked!] == _correctText)) ...[
             const SizedBox(height: 8),
             RevealIn(
               key: ValueKey('hint_${_p.id}_$_round'),
@@ -269,45 +275,28 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
                   children: [
                     Row(
                       children: [
-                        Icon(
-                          _picked != null && opts[_picked!] == _correctText
-                              ? Icons.check_circle
-                              : Icons.info_outline,
-                          size: 18,
-                          color: _picked != null && opts[_picked!] == _correctText
-                              ? AppTheme.primary
-                              : AppTheme.accent,
-                        ),
+                        Icon(Icons.info_outline, size: 18, color: AppTheme.accent),
                         const SizedBox(width: 6),
-                        Text(
-                          _picked != null && opts[_picked!] == _correctText
-                              ? '正确'
-                              : '答错了，记住它',
-                          style: TextStyle(
-                            fontSize: 13.5,
-                            fontWeight: FontWeight.w600,
-                            color: _picked != null && opts[_picked!] == _correctText
-                                ? AppTheme.primary
-                                : AppTheme.accent,
-                          ),
-                        ),
+                        Text('正确答案',
+                            style: TextStyle(
+                              fontSize: 13.5,
+                              fontWeight: FontWeight.w600,
+                              color: AppTheme.accent,
+                            )),
                       ],
                     ),
                     const SizedBox(height: 10),
                     Text('${_p.en}  —  ${_p.cn}',
                         style: const TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w600)),
-                    const SizedBox(height: 4),
-                    Text('模块 ${_p.module}',
-                        style: TextStyle(
-                            fontSize: 11.5, color: AppTheme.muted)),
-                    if (_round != 1 && _p.ex.isNotEmpty) ...[
+                    if (_p.ex.isNotEmpty) ...[
                       const SizedBox(height: 8),
                       Text(_p.ex,
                           style: const TextStyle(
                               fontSize: 13,
                               height: 1.45,
                               fontStyle: FontStyle.italic)),
+                      const SizedBox(height: 2),
                       Text(_p.exCn,
                           style: TextStyle(
                               fontSize: 11.5, color: AppTheme.muted)),
