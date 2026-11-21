@@ -73,6 +73,7 @@ const List<PhraseBook> phraseBooks = [
 class EnglishProvider extends ChangeNotifier {
   static const _kStates = 'phrase_states_v2';
   static const _kBook = 'phrase_current_book';
+  static const _kPerDay = 'phrase_per_day';
 
   /// 全量短语（带册别标记）
   final Map<String, List<Phrase>> _byGrade = {};
@@ -110,6 +111,7 @@ class EnglishProvider extends ChangeNotifier {
 
     final sp = await SharedPreferences.getInstance();
     _bookKey = sp.getString(_kBook) ?? 'g9';
+    _newPerDay = sp.getInt(_kPerDay) ?? 10;
     final raw = sp.getString(_kStates);
     if (raw != null && raw.isNotEmpty) {
       try {
@@ -132,6 +134,13 @@ class EnglishProvider extends ChangeNotifier {
     final m = _states.map((k, v) => MapEntry(k, {'r': v.round, 'm': v.mastered}));
     await sp.setString(_kStates, jsonEncode(m));
     await sp.setString(_kBook, _bookKey);
+    await sp.setInt(_kPerDay, _newPerDay);
+  }
+
+  Future<void> setNewPerDay(int n) async {
+    _newPerDay = n.clamp(3, 50);
+    notifyListeners();
+    await _persist();
   }
 
   Future<void> selectBook(String key) async {

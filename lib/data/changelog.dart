@@ -7,6 +7,10 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.2.1', '2026-11-21', [
+    '每次学习数量可选：5 / 10 / 15 / 20，选择会被记住',
+    '答错提示改成底部浮层，不再把页面内容顶来顶去',
+  ]),
   ChangelogEntry('2.2.0', '2026-11-21', [
     '首页改版：全屏风景照背景（4 张随机），深色玻璃卡片，白色文字',
     '底部导航改深色玻璃，状态栏白色图标',

@@ -82,6 +82,42 @@ class PhraseBookScreen extends StatelessWidget {
                 );
               },
             ),
+            const SizedBox(height: 14),
+            // 每次学习数量
+            MdCard(
+              padding: const EdgeInsets.fromLTRB(16, 14, 12, 14),
+              child: Row(
+                children: [
+                  Text('每次学习',
+                      style: TextStyle(
+                          fontSize: 13.5,
+                          color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                  const Spacer(),
+                  ...([5, 10, 15, 20].map((n) {
+                    final on = p.newPerDay == n;
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 6),
+                      child: ChoiceChip(
+                        label: Text('$n'),
+                        selected: on,
+                        onSelected: (_) => p.setNewPerDay(n),
+                        showCheckmark: false,
+                        visualDensity: VisualDensity.compact,
+                        labelStyle: TextStyle(
+                          fontSize: 13,
+                          fontWeight: on ? FontWeight.w600 : FontWeight.normal,
+                        ),
+                      ),
+                    );
+                  })),
+                  const SizedBox(width: 4),
+                  Text('个',
+                      style: TextStyle(
+                          fontSize: 13,
+                          color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                ],
+              ),
+            ),
           ] else ...[
             // ===== 总复习入口 =====
             if (reviewLeft > 0) ...[
