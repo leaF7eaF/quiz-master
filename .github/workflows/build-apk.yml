@@ -108,6 +108,13 @@ jobs:
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "构建版本: $VERSION"
 
+      - name: 静态分析（快速失败）
+        run: |
+          echo "=== flutter analyze ==="
+          flutter analyze --no-fatal-infos --no-fatal-warnings 2>&1 | tee /tmp/analyze.log
+          # analyze 返回非 0 说明有 error，直接失败，不浪费时间编译
+          grep -q "error •" /tmp/analyze.log && { echo "发现错误，终止"; exit 1; } || echo "无错误，继续编译"
+
       - name: 构建 release APK（固定签名 + 自动版本号）
         run: |
           flutter build apk --release \

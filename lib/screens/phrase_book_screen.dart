@@ -202,6 +202,55 @@ class PhraseBookScreen extends StatelessWidget {
       ],
     );
   }
+
+  /// 修改每天学习量：直接输入数字
+  Future<void> _editPlan(BuildContext context, EnglishProvider p) async {
+    final ctrl = TextEditingController(text: '${p.newPerDay}');
+    final pending = p.pendingCount;
+
+    await showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('每天学习多少'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              controller: ctrl,
+              keyboardType: TextInputType.number,
+              autofocus: true,
+              decoration: const InputDecoration(
+                suffixText: '个',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 12),
+            Text('还剩 $pending 个没学',
+                style: TextStyle(
+                    fontSize: 12.5,
+                    color: Theme.of(ctx).colorScheme.onSurfaceVariant)),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('取消'),
+          ),
+          FilledButton(
+            onPressed: () {
+              final n = int.tryParse(ctrl.text.trim());
+              if (n != null && n > 0) {
+                p.setNewPerDay(n);
+              }
+              Navigator.pop(ctx);
+            },
+            child: const Text('保存'),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class _BigButton extends StatelessWidget {
@@ -256,55 +305,6 @@ class _BigButton extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  /// 修改每天学习量：直接输入数字
-  Future<void> _editPlan(BuildContext context, EnglishProvider p) async {
-    final ctrl = TextEditingController(text: '${p.newPerDay}');
-    final pending = p.pendingCount;
-
-    await showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('每天学习多少'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextField(
-              controller: ctrl,
-              keyboardType: TextInputType.number,
-              autofocus: true,
-              decoration: const InputDecoration(
-                suffixText: '个',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 12),
-            Text('还剩 $pending 个没学',
-                style: TextStyle(
-                    fontSize: 12.5,
-                    color: Theme.of(ctx).colorScheme.onSurfaceVariant)),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('取消'),
-          ),
-          FilledButton(
-            onPressed: () {
-              final n = int.tryParse(ctrl.text.trim());
-              if (n != null && n > 0) {
-                p.setNewPerDay(n);
-              }
-              Navigator.pop(ctx);
-            },
-            child: const Text('保存'),
-          ),
-        ],
       ),
     );
   }
