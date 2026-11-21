@@ -7,6 +7,9 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.6.1', '2026-11-21', [
+    '学习数据增加时长统计：今日时长、累计时长（自动记录学习页停留时间）',
+  ]),
   ChangelogEntry('2.6.0', '2026-11-21', [
     '英语短语新增学习数据：今日学习、累计学习、连续天数、最近 7 天记录',
   ]),

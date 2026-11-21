@@ -75,11 +75,13 @@ class EnglishProvider extends ChangeNotifier {
   static const _kBook = 'phrase_current_book';
   static const _kPerDay = 'phrase_per_day';
   static const _kDaily = 'phrase_daily_counts';
+  static const _kSeconds = 'phrase_daily_seconds';
 
   /// 全量短语（带册别标记）
   final Map<String, List<Phrase>> _byGrade = {};
   Map<String, PhraseState> _states = {};
   Map<String, int> _daily = {};
+  Map<String, int> _seconds = {};
   String _bookKey = 'g9';
   int _newPerDay = 5;
 
@@ -121,6 +123,13 @@ class EnglishProvider extends ChangeNotifier {
         _daily = m.map((k, v) => MapEntry(k, (v as num).toInt()));
       } catch (_) {}
     }
+    final rawSec = sp.getString(_kSeconds);
+    if (rawSec != null && rawSec.isNotEmpty) {
+      try {
+        final m = jsonDecode(rawSec) as Map<String, dynamic>;
+        _seconds = m.map((k, v) => MapEntry(k, (v as num).toInt()));
+      } catch (_) {}
+    }
     final raw = sp.getString(_kStates);
     if (raw != null && raw.isNotEmpty) {
       try {
@@ -145,6 +154,7 @@ class EnglishProvider extends ChangeNotifier {
     await sp.setString(_kBook, _bookKey);
     await sp.setInt(_kPerDay, _newPerDay);
     await sp.setString(_kDaily, jsonEncode(_daily));
+    await sp.setString(_kSeconds, jsonEncode(_seconds));
   }
 
   Future<void> setNewPerDay(int n) async {
@@ -251,6 +261,22 @@ class EnglishProvider extends ChangeNotifier {
   /// 累计学完数量（跨词书）
   int get totalLearnedAll =>
       _daily.values.fold<int>(0, (a, b) => a + b);
+
+  /// 记录一次学习会话的时长
+  Future<void> addStudySeconds(int sec) async {
+    if (sec <= 0 || sec > 7200) return; // 过滤异常值
+    final k = _ymd(DateTime.now());
+    _seconds[k] = (_seconds[k] ?? 0) + sec;
+    notifyListeners();
+    await _persist();
+  }
+
+  /// 今日学习时长（分钟）
+  int get todayMinutes => ((_seconds[_ymd(DateTime.now())] ?? 0) / 60).round();
+
+  /// 累计学习时长（分钟）
+  int get totalMinutes =>
+      (_seconds.values.fold<int>(0, (a, b) => a + b) / 60).round();
 
   /// 连续学习天数
   int get streak {

@@ -105,6 +105,13 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
   }
 
   @override
+  void dispose() {
+    _provider.addStudySeconds(
+        DateTime.now().difference(_sessionStart).inSeconds);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final opts = _options;
     final total = widget.batch.length;

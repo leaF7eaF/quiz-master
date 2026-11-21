@@ -158,13 +158,32 @@ class _StatsCard extends StatelessWidget {
                   height: 36,
                   color: Colors.white.withOpacity(0.10)),
               const SizedBox(width: 16),
+              Expanded(child: _metric('今日时长', '${p.todayMinutes}', '分钟')),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Row(
+            children: [
               Expanded(child: _metric('累计学习', '${p.totalLearnedAll}', '个')),
               Container(
                   width: 1,
                   height: 36,
                   color: Colors.white.withOpacity(0.10)),
               const SizedBox(width: 16),
-              Expanded(child: _metric('连续', '${p.streak}', '天')),
+              Expanded(
+                child: _metric(
+                    '累计时长',
+                    p.totalMinutes >= 60
+                        ? (p.totalMinutes / 60).toStringAsFixed(1)
+                        : '${p.totalMinutes}',
+                    p.totalMinutes >= 60 ? '小时' : '分钟'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Row(
+            children: [
+              Expanded(child: _metric('连续学习', '${p.streak}', '天')),
             ],
           ),
           const SizedBox(height: 18),

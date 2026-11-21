@@ -33,11 +33,15 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
   int _wrongCount = 0;
   int _totalAtStart = 0;
 
+  late final EnglishProvider _provider;
+  late final DateTime _sessionStart;
+
   @override
   void initState() {
     super.initState();
-    final p = context.read<EnglishProvider>();
-    _queue = List.of(p.reviewPool);
+    _provider = context.read<EnglishProvider>();
+    _sessionStart = DateTime.now();
+    _queue = List.of(_provider.reviewPool);
     _totalAtStart = _queue.length;
   }
 
@@ -117,6 +121,13 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _provider.addStudySeconds(
+        DateTime.now().difference(_sessionStart).inSeconds);
+    super.dispose();
   }
 
   @override
