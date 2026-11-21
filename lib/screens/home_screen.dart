@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('刷题本'),
       ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 110),
         children: [
           _TodayCard(p: p),
           const SizedBox(height: 20),
@@ -163,12 +163,13 @@ class _SubjectRow extends StatelessWidget {
           }
         },
         child: GlassCard(
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
-          radius: 12,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          radius: 18,
+          blur: 18,
           tint: selected
-              ? AppTheme.primary.withOpacity(0.10)
-              : Colors.white.withOpacity(0.55),
-          bordered: true,
+              ? Theme.of(context).colorScheme.primaryContainer
+              : null,
+          bordered: !selected,
           child: Row(
             children: [
               Text(meta.icon, style: const TextStyle(fontSize: 22)),
@@ -177,18 +178,34 @@ class _SubjectRow extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(meta.label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                    Text(meta.label,
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: selected
+                                ? Theme.of(context).colorScheme.onPrimaryContainer
+                                : AppTheme.ink)),
                     const SizedBox(height: 3),
                     Text(
                         _isEnglish
                             ? '$total 个短语 · 已学 $done 个'
                             : '$total 题 · 已做 $done 题 · 正确率 ${(acc * 100).toStringAsFixed(0)}%',
-                        style: const TextStyle(fontSize: 12, color: AppTheme.muted)),
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: selected
+                                ? Theme.of(context)
+                                    .colorScheme
+                                    .onPrimaryContainer
+                                    .withOpacity(0.75)
+                                : AppTheme.muted)),
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right,
-                  color: AppTheme.muted, size: 20),
+              Icon(Icons.chevron_right,
+                  color: selected
+                      ? Theme.of(context).colorScheme.onPrimaryContainer
+                      : AppTheme.muted,
+                  size: 20),
             ],
           ),
         ),

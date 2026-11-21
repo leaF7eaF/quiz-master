@@ -72,7 +72,7 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
       backgroundColor: Colors.transparent,
       appBar: AppBar(title: Text(title)),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 96),
         children: [
           // 科目筛选
           SizedBox(

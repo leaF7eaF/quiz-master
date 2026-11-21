@@ -32,50 +32,17 @@ class GlassCard extends StatelessWidget {
       borderRadius: r,
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
-        child: Stack(
-          children: [
-            Positioned.fill(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: tint != null
-                        ? [tint!.withOpacity(0.88), tint!]
-                        : [
-                            Colors.white.withOpacity(0.72),
-                            Colors.white.withOpacity(0.42),
-                          ],
-                  ),
-                  borderRadius: r,
-                  border: bordered
-                      ? Border.all(
-                          color: Colors.white.withOpacity(0.9), width: 1.2)
-                      : null,
-                ),
-              ),
-            ),
-            // 顶部斜射高光
-            Positioned.fill(
-              child: IgnorePointer(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: r,
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.white.withOpacity(0.30),
-                        Colors.transparent,
-                      ],
-                      stops: const [0.0, 0.32],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(padding: padding, child: child),
-          ],
+        child: Container(
+          padding: padding,
+          decoration: BoxDecoration(
+            // 单色半透明：浅背景上不会被渐变弄脏
+            color: tint ?? Colors.white.withOpacity(0.72),
+            borderRadius: r,
+            border: bordered
+                ? Border.all(color: Colors.white.withOpacity(0.85), width: 1)
+                : null,
+          ),
+          child: child,
         ),
       ),
     );
@@ -85,14 +52,9 @@ class GlassCard extends StatelessWidget {
         borderRadius: r,
         boxShadow: [
           BoxShadow(
-            color: Colors.white.withOpacity(0.45),
-            blurRadius: 1.5,
-            offset: const Offset(0, -1),
-          ),
-          BoxShadow(
-            color: AppTheme.ink.withOpacity(0.07),
-            blurRadius: 22,
-            offset: const Offset(0, 8),
+            color: AppTheme.ink.withOpacity(0.06),
+            blurRadius: 14,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -123,8 +85,8 @@ class GlassBar extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.white.withOpacity(0.80),
-                const Color(0xFFF1F5EE).withOpacity(0.94),
+                Colors.white.withOpacity(0.70),
+                const Color(0xFFE6EFE4).withOpacity(0.86),
               ],
             ),
             border: Border(
@@ -132,9 +94,9 @@ class GlassBar extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: AppTheme.ink.withOpacity(0.09),
-                blurRadius: 20,
-                offset: const Offset(0, -5),
+                color: AppTheme.ink.withOpacity(0.13),
+                blurRadius: 26,
+                offset: const Offset(0, -6),
               ),
             ],
           ),
