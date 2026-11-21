@@ -138,7 +138,7 @@ class EnglishProvider extends ChangeNotifier {
   }
 
   Future<void> setNewPerDay(int n) async {
-    _newPerDay = n.clamp(3, 50);
+    _newPerDay = n.clamp(1, 200);
     notifyListeners();
     await _persist();
   }
@@ -197,6 +197,15 @@ class EnglishProvider extends ChangeNotifier {
   }
 
   int totalOf(String bookKey) => phrasesOf(bookKey).length;
+
+  /// 剩余待学数量
+  int get pendingCount => pending.length;
+
+  /// 按每天 n 个，预计多少天学完
+  int estimatedDays(int perDay) {
+    if (perDay <= 0) return 0;
+    return (pendingCount / perDay).ceil();
+  }
 
   // ===== 新学 =====
   List<Phrase> nextBatch() {

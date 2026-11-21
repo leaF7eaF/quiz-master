@@ -83,38 +83,55 @@ class PhraseBookScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 14),
-            // 每次学习数量
+            // 学习计划：每天多少个 + 预计完成天数
             MdCard(
-              padding: const EdgeInsets.fromLTRB(16, 14, 12, 14),
+              padding: const EdgeInsets.fromLTRB(18, 16, 14, 16),
+              onTap: () => _editPlan(context, p),
               child: Row(
                 children: [
-                  Text('每次学习',
-                      style: TextStyle(
-                          fontSize: 13.5,
-                          color: Theme.of(context).colorScheme.onSurfaceVariant)),
-                  const Spacer(),
-                  ...([5, 10, 15, 20].map((n) {
-                    final on = p.newPerDay == n;
-                    return Padding(
-                      padding: const EdgeInsets.only(left: 6),
-                      child: ChoiceChip(
-                        label: Text('$n'),
-                        selected: on,
-                        onSelected: (_) => p.setNewPerDay(n),
-                        showCheckmark: false,
-                        visualDensity: VisualDensity.compact,
-                        labelStyle: TextStyle(
-                          fontSize: 13,
-                          fontWeight: on ? FontWeight.w600 : FontWeight.normal,
-                        ),
-                      ),
-                    );
-                  })),
-                  const SizedBox(width: 4),
-                  Text('个',
-                      style: TextStyle(
-                          fontSize: 13,
-                          color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('每天学习',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color:
+                                    Theme.of(context).colorScheme.onSurfaceVariant)),
+                        const SizedBox(height: 4),
+                        Text('${p.newPerDay} 个',
+                            style: const TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w700)),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 1,
+                    height: 34,
+                    color: Theme.of(context).colorScheme.outlineVariant,
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('预计完成',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color:
+                                    Theme.of(context).colorScheme.onSurfaceVariant)),
+                        const SizedBox(height: 4),
+                        Text('${p.estimatedDays(p.newPerDay)} 天',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                                color: Theme.of(context).colorScheme.primary)),
+                      ],
+                    ),
+                  ),
+                  Icon(Icons.edit_outlined,
+                      size: 18,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant),
                 ],
               ),
             ),
@@ -239,6 +256,55 @@ class _BigButton extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  /// 修改每天学习量：直接输入数字
+  Future<void> _editPlan(BuildContext context, EnglishProvider p) async {
+    final ctrl = TextEditingController(text: '${p.newPerDay}');
+    final pending = p.pendingCount;
+
+    await showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('每天学习多少'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              controller: ctrl,
+              keyboardType: TextInputType.number,
+              autofocus: true,
+              decoration: const InputDecoration(
+                suffixText: '个',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 12),
+            Text('还剩 $pending 个没学',
+                style: TextStyle(
+                    fontSize: 12.5,
+                    color: Theme.of(ctx).colorScheme.onSurfaceVariant)),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('取消'),
+          ),
+          FilledButton(
+            onPressed: () {
+              final n = int.tryParse(ctrl.text.trim());
+              if (n != null && n > 0) {
+                p.setNewPerDay(n);
+              }
+              Navigator.pop(ctx);
+            },
+            child: const Text('保存'),
+          ),
+        ],
       ),
     );
   }

@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../providers/english_provider.dart';
-import '../theme/app_theme.dart';
 import '../widgets/animate.dart';
-import '../widgets/glass.dart';
 import '../utils/sound_fx.dart';
 
-/// 总复习：英文→选中文
-/// 答对 → 标记掌握，移出队列
-/// 答错 → 显示详情，重新排到队尾
+class _C {
+  static const bg = Color(0xFF0E1A14);
+  static const bgTop = Color(0xFF16241C);
+  static const card = Color(0x14FFFFFF);
+  static const cardBorder = Color(0x1FFFFFFF);
+  static const ink = Colors.white;
+  static const sub = Color(0x8AFFFFFF);
+  static const green = Color(0xFF5FD08A);
+  static const red = Color(0xFFE86A6A);
+}
+
+/// 总复习：英文 → 选中文，答错重来直到全对
 class PhraseReviewScreen extends StatefulWidget {
   const PhraseReviewScreen({super.key});
 
@@ -45,6 +53,8 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
     return opts;
   }
 
+  bool get _isCorrect => _picked != null && _options[_picked!] == _p.cn;
+
   void _pick(int i) {
     if (_answered) return;
     final ok = _options[i] == _p.cn;
@@ -60,11 +70,8 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
   }
 
   Future<void> _next() async {
-    final opts = _options;
-    final isCorrect = _picked != null && opts[_picked!] == _p.cn;
     final p = context.read<EnglishProvider>();
-
-    if (isCorrect) {
+    if (_isCorrect) {
       _correctCount++;
       await p.markMastered(_p.id);
       if (_idx < _queue.length - 1) {
@@ -78,7 +85,6 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
       }
     } else {
       _wrongCount++;
-      // 重新排到队尾
       setState(() {
         _queue.add(_queue.removeAt(_idx));
         if (_idx >= _queue.length) _idx = 0;
@@ -94,10 +100,12 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
       context: context,
       barrierDismissible: false,
       builder: (_) => AlertDialog(
-        title: const Text('总复习完成'),
-        content: Text('本轮 $_totalAtStart 个短语\n'
-            '一次答对 $_correctCount 个\n'
-            '答错重来 $_wrongCount 次'),
+        backgroundColor: const Color(0xFF1E2C24),
+        title: const Text('复习完成', style: TextStyle(color: _C.ink)),
+        content: Text(
+          '本轮 $_totalAtStart 个\n一次答对 $_correctCount 个\n重来 $_wrongCount 次',
+          style: const TextStyle(color: _C.sub, height: 1.6),
+        ),
         actions: [
           TextButton(
             onPressed: () {
@@ -113,191 +121,234 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final opts = _options;
-    final isCorrect = _picked != null && opts[_picked!] == _p.cn;
-
-    return Scaffold(
-      backgroundColor: AppTheme.paper,
-      appBar: AppBar(
-        title: Text('总复习  ${_idx + 1}/${_queue.length}'),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(3),
-          child: LinearProgressIndicator(
-            value: _queue.isEmpty ? 0 : (_idx + 1) / _queue.length,
-            minHeight: 3,
-            backgroundColor: AppTheme.line,
-          ),
+    if (_queue.isEmpty) {
+      return Scaffold(
+        backgroundColor: _C.bg,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          foregroundColor: _C.ink,
+          title: const Text('总复习'),
+          elevation: 0,
         ),
-      ),
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: ListView(
-              padding: const EdgeInsets.all(20),
+        body: const Center(
+          child: Text('没有需要复习的短语',
+              style: TextStyle(color: _C.sub, fontSize: 14)),
+        ),
+      );
+    }
+
+    final opts = _options;
+
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.light,
+      child: Scaffold(
+        backgroundColor: _C.bg,
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [_C.bgTop, _C.bg],
+              stops: [0.0, 0.45],
+            ),
+          ),
+          child: SafeArea(
+            child: Stack(
               children: [
-          Center(
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              decoration: BoxDecoration(
-                color: AppTheme.primary.withOpacity(0.10),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: const Text('看英文，选中文',
-                  style: TextStyle(fontSize: 11.5, color: AppTheme.primary)),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Center(
-            child: Text(
-              _p.en,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                  fontSize: 28, fontWeight: FontWeight.w700, height: 1.35),
-            ),
-          ),
-          const SizedBox(height: 28),
-          ...List.generate(opts.length, (i) {
-            final picked = _picked == i;
-            final correct = opts[i] == _p.cn;
-            Color border = AppTheme.line;
-            Color? bg;
-            if (_answered) {
-              if (correct) {
-                border = AppTheme.primary;
-                bg = AppTheme.primary.withOpacity(0.10);
-              } else if (picked) {
-                border = Colors.red.shade400;
-                bg = Colors.red.withOpacity(0.07);
-              }
-            } else if (picked) {
-              border = AppTheme.primary;
-              bg = AppTheme.primary.withOpacity(0.08);
-            }
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 14),
-              child: Material(
-                color: bg ?? Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(16),
-                  onTap: _answered ? null : () => _pick(i),
-                  child: Container(
-                    constraints: const BoxConstraints(minHeight: 64),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 20),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                          color: border,
-                          width: picked || (_answered && correct) ? 2 : 1),
-                      borderRadius: BorderRadius.circular(16),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 4, 16, 0),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.arrow_back_ios_new,
+                                size: 18, color: _C.sub),
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                          const Text('总复习',
+                              style: TextStyle(color: _C.sub, fontSize: 13)),
+                          const Spacer(),
+                          Text('${_idx + 1}/${_queue.length}',
+                              style: const TextStyle(
+                                  color: _C.sub,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600)),
+                        ],
+                      ),
                     ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Text(opts[i],
-                              style: const TextStyle(fontSize: 16.5)),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(2),
+                        child: LinearProgressIndicator(
+                          value: (_idx + 1) / _queue.length,
+                          minHeight: 2.5,
+                          backgroundColor: Colors.white.withOpacity(0.10),
+                          color: _C.green,
                         ),
-                        if (_answered && correct)
-                          const Icon(Icons.check_circle,
-                              size: 18, color: AppTheme.primary),
-                        if (_answered && picked && !correct)
-                          Icon(Icons.cancel,
-                              size: 18, color: Colors.red.shade400),
-                      ],
+                      ),
+                    ),
+                    Expanded(
+                      child: LayoutBuilder(
+                        builder: (context, constraints) => SingleChildScrollView(
+                          padding: const EdgeInsets.fromLTRB(22, 0, 22, 16),
+                          child: ConstrainedBox(
+                            constraints:
+                                BoxConstraints(minHeight: constraints.maxHeight),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  _p.en,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    color: _C.ink,
+                                    fontSize: 40,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.25,
+                                  ),
+                                ),
+                                const SizedBox(height: 30),
+                                ...List.generate(opts.length, (i) {
+                                  final picked = _picked == i;
+                                  final correct = opts[i] == _p.cn;
+                                  Color bgc = _C.card;
+                                  Color bdc = _C.cardBorder;
+                                  Color txt = _C.ink;
+                                  if (_answered) {
+                                    if (correct) {
+                                      bgc = _C.green.withOpacity(0.16);
+                                      bdc = _C.green.withOpacity(0.55);
+                                      txt = _C.green;
+                                    } else if (picked) {
+                                      bgc = _C.red.withOpacity(0.14);
+                                      bdc = _C.red.withOpacity(0.5);
+                                      txt = _C.red;
+                                    }
+                                  }
+                                  return Padding(
+                                    padding: const EdgeInsets.only(bottom: 12),
+                                    child: Material(
+                                      color: bgc,
+                                      borderRadius: BorderRadius.circular(14),
+                                      child: InkWell(
+                                        borderRadius: BorderRadius.circular(14),
+                                        onTap: _answered ? null : () => _pick(i),
+                                        child: Container(
+                                          constraints: const BoxConstraints(
+                                              minHeight: 62),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 18, vertical: 18),
+                                          decoration: BoxDecoration(
+                                            border: Border.all(
+                                                color: bdc, width: 1),
+                                            borderRadius:
+                                                BorderRadius.circular(14),
+                                          ),
+                                          alignment: Alignment.centerLeft,
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Text(opts[i],
+                                                    style: TextStyle(
+                                                        color: txt,
+                                                        fontSize: 16.5,
+                                                        height: 1.35)),
+                                              ),
+                                              if (_answered && correct)
+                                                Icon(Icons.check_circle,
+                                                    size: 18, color: _C.green),
+                                              if (_answered &&
+                                                  picked &&
+                                                  !correct)
+                                                Icon(Icons.cancel,
+                                                    size: 18, color: _C.red),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 74),
+                  ],
+                ),
+                if (_answered)
+                  Positioned(
+                    left: 16,
+                    right: 16,
+                    bottom: 14,
+                    child: RevealIn(
+                      key: ValueKey('rev_${_p.id}_$_idx'),
+                      offsetY: 20,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (!_isCorrect)
+                            Container(
+                              width: double.infinity,
+                              padding:
+                                  const EdgeInsets.fromLTRB(18, 14, 18, 16),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF1E2C24),
+                                borderRadius: BorderRadius.circular(16),
+                                border: Border.all(
+                                    color: Colors.white.withOpacity(0.12)),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('正确答案',
+                                      style: TextStyle(
+                                          fontSize: 11.5,
+                                          color: _C.red,
+                                          fontWeight: FontWeight.w600)),
+                                  const SizedBox(height: 6),
+                                  Text('${_p.en}  ·  ${_p.cn}',
+                                      style: const TextStyle(
+                                          color: _C.ink,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600)),
+                                  const SizedBox(height: 4),
+                                  Text('这个词会重新出现，直到答对',
+                                      style: TextStyle(
+                                          fontSize: 11,
+                                          color: Colors.white.withOpacity(0.4))),
+                                ],
+                              ),
+                            ),
+                          const SizedBox(height: 10),
+                          SizedBox(
+                            width: double.infinity,
+                            height: 50,
+                            child: FilledButton(
+                              onPressed: _next,
+                              style: FilledButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                foregroundColor: _C.bg,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25)),
+                              ),
+                              child: Text(_isCorrect ? '下一个' : '重来',
+                                  style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-            );
-          }),
-
-                const SizedBox(height: 20),
               ],
             ),
           ),
-          if (_answered && !isCorrect)
-            Positioned(
-              left: 16,
-              right: 16,
-              bottom: 16,
-              child: RevealIn(
-                key: ValueKey('rev_${_p.id}_$_idx'),
-                offsetY: 24,
-                child: _WrongHint(phrase: _p),
-              ),
-            ),
-        ],
-      ),
-      bottomNavigationBar: _answered
-          ? SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
-                child: FilledButton(
-                  onPressed: _next,
-                  style: FilledButton.styleFrom(
-                    backgroundColor: AppTheme.primary,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                  ),
-                  child: Text(isCorrect ? '下一个' : '重来'),
-                ),
-              ),
-            )
-          : null,
-    );
-  }
-}
-
-/// 答错提示浮层
-class _WrongHint extends StatelessWidget {
-  final Phrase phrase;
-  const _WrongHint({required this.phrase});
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Material(
-      elevation: 6,
-      shadowColor: Colors.black.withOpacity(0.18),
-      color: scheme.surfaceContainerLowest,
-      borderRadius: BorderRadius.circular(18),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(18, 14, 18, 16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(Icons.info_outline, size: 16, color: scheme.tertiary),
-                const SizedBox(width: 6),
-                Text('正确答案',
-                    style: TextStyle(
-                        fontSize: 12.5,
-                        fontWeight: FontWeight.w600,
-                        color: scheme.tertiary)),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Text('${phrase.en}  ·  ${phrase.cn}',
-                style: const TextStyle(
-                    fontSize: 16, fontWeight: FontWeight.w600)),
-            if (phrase.ex.isNotEmpty) ...[
-              const SizedBox(height: 6),
-              Text(phrase.ex,
-                  style: TextStyle(
-                      fontSize: 12.5,
-                      height: 1.45,
-                      fontStyle: FontStyle.italic,
-                      color: scheme.onSurfaceVariant)),
-              Text(phrase.exCn,
-                  style: TextStyle(
-                      fontSize: 11.5, color: scheme.onSurfaceVariant)),
-            ],
-            const SizedBox(height: 6),
-            Text('这个词会重新出现，直到答对',
-                style: TextStyle(
-                    fontSize: 11, color: scheme.onSurfaceVariant)),
-          ],
         ),
       ),
     );

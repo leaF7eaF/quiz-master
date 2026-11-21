@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../providers/english_provider.dart';
-import '../theme/app_theme.dart';
 import '../widgets/animate.dart';
-import '../widgets/glass.dart';
 import '../utils/sound_fx.dart';
 
+/// 深色学习界面配色
+class _C {
+  static const bg = Color(0xFF0E1A14);
+  static const bgTop = Color(0xFF16241C);
+  static const card = Color(0x14FFFFFF); // 白 8%
+  static const cardBorder = Color(0x1FFFFFFF); // 白 12%
+  static const ink = Colors.white;
+  static const sub = Color(0x8AFFFFFF); // 白 54%
+  static const green = Color(0xFF5FD08A);
+  static const red = Color(0xFFE86A6A);
+}
+
 /// 新学：一批短语走三轮
-/// 第1轮 英→中（带例句提示）
-/// 第2轮 英→中
-/// 第3轮 中→英
 class PhraseLearnScreen extends StatefulWidget {
   final List<Phrase> batch;
   const PhraseLearnScreen({super.key, required this.batch});
@@ -19,11 +27,10 @@ class PhraseLearnScreen extends StatefulWidget {
 }
 
 class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
-  int _round = 1; // 1/2/3
+  int _round = 1;
   int _idx = 0;
   int? _picked;
   bool _answered = false;
-  final Stopwatch _sw = Stopwatch()..start();
 
   Phrase get _p => widget.batch[_idx];
   bool get _isEnToCn => _round <= 2;
@@ -35,7 +42,6 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
         : p.distractorsEn(_p, _idx + _round * 17);
     final correct = _isEnToCn ? _p.cn : _p.en;
     final opts = <String>[correct, ...distract];
-    // 按固定规则打散，保证每次一致
     final pos = (_idx + _round) % opts.length;
     opts.remove(correct);
     opts.insert(pos, correct);
@@ -43,6 +49,8 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
   }
 
   String get _correctText => _isEnToCn ? _p.cn : _p.en;
+
+  bool get _isCorrect => _picked != null && _options[_picked!] == _correctText;
 
   void _pick(int i) {
     if (_answered) return;
@@ -57,7 +65,6 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
       _picked = i;
       _answered = true;
     });
-    // 答对：短暂展示后自动进入下一题
     if (ok) {
       Future.delayed(const Duration(milliseconds: 520), () {
         if (mounted && _answered && _picked == i) _next();
@@ -85,14 +92,9 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
       SoundFx().finish();
       if (mounted) {
         Navigator.pop(context);
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('本轮 ${widget.batch.length} 个短语已学完')),
-        );
       }
       return;
     }
-
-    // 直接进入下一轮，不弹对话框
     if (!mounted) return;
     setState(() {
       _round++;
@@ -106,224 +108,252 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
   Widget build(BuildContext context) {
     final opts = _options;
     final total = widget.batch.length;
-    // 总进度
     final overall = ((_round - 1) * total + _idx + 1) / (3 * total);
 
-    return Scaffold(
-      backgroundColor: AppTheme.paper,
-      appBar: AppBar(
-        title: Text('第 $_round 轮  ${_idx + 1}/$total'),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(3),
-          child: LinearProgressIndicator(
-            value: overall.clamp(0.0, 1.0),
-            minHeight: 3,
-            backgroundColor: AppTheme.line,
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.light,
+      child: Scaffold(
+        backgroundColor: _C.bg,
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [_C.bgTop, _C.bg],
+              stops: [0.0, 0.45],
+            ),
           ),
-        ),
-      ),
-      body: Stack(
-        children: [
-          // 主内容：固定居中，不因答错提示而移动
-          Positioned.fill(
-            child: LayoutBuilder(
-              builder: (context, constraints) => SingleChildScrollView(
-                padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
-                child: ConstrainedBox(
-                  constraints:
-                      BoxConstraints(minHeight: constraints.maxHeight - 40),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+          child: SafeArea(
+            child: Stack(
+              children: [
+                Column(
+              children: [
+                // 顶栏
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 4, 16, 0),
+                  child: Row(
                     children: [
-          const SizedBox(height: 8),
-
-          // 题干
-          Center(
-            child: Text(
-              _isEnToCn ? _p.en : _p.cn,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: _isEnToCn ? 28 : 22,
-                fontWeight: FontWeight.w700,
-                height: 1.35,
-              ),
-            ),
-          ),
-          // 第 1 轮：有例句才显示例句卡
-          if (_round == 1 && _p.ex.isNotEmpty) ...[
-            const SizedBox(height: 18),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(_p.ex,
-                      style: const TextStyle(
-                          fontSize: 14,
-                          height: 1.5,
-                          fontStyle: FontStyle.italic)),
-                  const SizedBox(height: 4),
-                  Text(_p.exCn,
-                      style: TextStyle(fontSize: 12.5, color: AppTheme.muted)),
-                ],
-              ),
-            ),
-          ],
-          const SizedBox(height: 28),
-
-          // 选项
-          ...List.generate(opts.length, (i) {
-            final picked = _picked == i;
-            final isCorrect = opts[i] == _correctText;
-            Color border = AppTheme.line;
-            Color? bg;
-            if (_answered) {
-              if (isCorrect) {
-                border = AppTheme.primary;
-                bg = AppTheme.primary.withOpacity(0.10);
-              } else if (picked) {
-                border = Colors.red.shade400;
-                bg = Colors.red.withOpacity(0.07);
-              }
-            } else if (picked) {
-              border = AppTheme.primary;
-              bg = AppTheme.primary.withOpacity(0.08);
-            }
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 14),
-              child: Material(
-                color: bg ?? Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(16),
-                  onTap: _answered ? null : () => _pick(i),
-                  child: Container(
-                    constraints: const BoxConstraints(minHeight: 64),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 20),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                          color: border,
-                          width: picked || (_answered && isCorrect) ? 2 : 1),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Text(opts[i],
-                              style: const TextStyle(fontSize: 16.5)),
-                        ),
-                        if (_answered && isCorrect)
-                          const Icon(Icons.check_circle,
-                              size: 18, color: AppTheme.primary),
-                        if (_answered && picked && !isCorrect)
-                          Icon(Icons.cancel,
-                              size: 18, color: Colors.red.shade400),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            );
-          }),
-
-                const SizedBox(height: 20),
-                      const SizedBox(height: 20),
+                      IconButton(
+                        icon: const Icon(Icons.arrow_back_ios_new,
+                            size: 18, color: _C.sub),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                      Text('$_round 轮',
+                          style: const TextStyle(
+                              color: _C.sub, fontSize: 13)),
+                      const Spacer(),
+                      Text('${_idx + 1}/$total',
+                          style: const TextStyle(
+                              color: _C.sub,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600)),
                     ],
                   ),
                 ),
-              ),
-            ),
-          ),
-          // 答错提示：从底部浮上来，不推挤上方布局
-          if (_answered &&
-              !(_picked != null && opts[_picked!] == _correctText))
-            Positioned(
-              left: 16,
-              right: 16,
-              bottom: 16,
-              child: RevealIn(
-                key: ValueKey('hint_${_p.id}_$_round'),
-                offsetY: 24,
-                child: _WrongHint(phrase: _p),
-              ),
-            ),
-        ],
-      ),
-      bottomNavigationBar: _answered
-          ? SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
-                child: FilledButton(
-                  onPressed: _next,
-                  style: FilledButton.styleFrom(
-                    backgroundColor: AppTheme.primary,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
+                // 进度线
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(2),
+                    child: LinearProgressIndicator(
+                      value: overall.clamp(0.0, 1.0),
+                      minHeight: 2.5,
+                      backgroundColor: Colors.white.withOpacity(0.10),
+                      color: _C.green,
+                    ),
                   ),
-                  child: Text(
-                      _idx == widget.batch.length - 1
-                          ? (_round == 3 ? '完成' : '进入第 ${_round + 1} 轮')
-                          : '下一个'),
                 ),
-              ),
-            )
-          : null,
-    );
-  }
-}
-
-/// 答错提示浮层：显示正确答案与例句，不参与页面布局
-class _WrongHint extends StatelessWidget {
-  final Phrase phrase;
-  const _WrongHint({required this.phrase});
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Material(
-      elevation: 6,
-      shadowColor: Colors.black.withOpacity(0.18),
-      color: scheme.surfaceContainerLowest,
-      borderRadius: BorderRadius.circular(18),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(18, 14, 18, 16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(Icons.info_outline, size: 16, color: scheme.tertiary),
-                const SizedBox(width: 6),
-                Text('正确答案',
-                    style: TextStyle(
-                        fontSize: 12.5,
-                        fontWeight: FontWeight.w600,
-                        color: scheme.tertiary)),
+                // 主体
+                Expanded(
+                  child: LayoutBuilder(
+                    builder: (context, constraints) => SingleChildScrollView(
+                      padding: const EdgeInsets.fromLTRB(22, 0, 22, 16),
+                      child: ConstrainedBox(
+                        constraints:
+                            BoxConstraints(minHeight: constraints.maxHeight),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // 例句（第 1 轮）
+                            if (_round == 1 && _p.ex.isNotEmpty) ...[
+                              Container(
+                                width: double.infinity,
+                                padding: const EdgeInsets.all(14),
+                                decoration: BoxDecoration(
+                                  color: _C.card,
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(_p.ex,
+                                        style: const TextStyle(
+                                            color: _C.sub,
+                                            fontSize: 13.5,
+                                            height: 1.5,
+                                            fontStyle: FontStyle.italic)),
+                                    const SizedBox(height: 4),
+                                    Text(_p.exCn,
+                                        style: TextStyle(
+                                            color: Colors.white.withOpacity(0.35),
+                                            fontSize: 12)),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(height: 22),
+                            ],
+                            // 题干
+                            Text(
+                              _isEnToCn ? _p.en : _p.cn,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: _C.ink,
+                                fontSize: _isEnToCn ? 40 : 30,
+                                fontWeight: FontWeight.w700,
+                                height: 1.25,
+                              ),
+                            ),
+                            const SizedBox(height: 30),
+                            // 选项
+                            ...List.generate(opts.length, (i) {
+                              final picked = _picked == i;
+                              final correct = opts[i] == _correctText;
+                              Color bgc = _C.card;
+                              Color bdc = _C.cardBorder;
+                              Color txt = _C.ink;
+                              if (_answered) {
+                                if (correct) {
+                                  bgc = _C.green.withOpacity(0.16);
+                                  bdc = _C.green.withOpacity(0.55);
+                                  txt = _C.green;
+                                } else if (picked) {
+                                  bgc = _C.red.withOpacity(0.14);
+                                  bdc = _C.red.withOpacity(0.5);
+                                  txt = _C.red;
+                                }
+                              }
+                              return Padding(
+                                padding: const EdgeInsets.only(bottom: 12),
+                                child: Material(
+                                  color: bgc,
+                                  borderRadius: BorderRadius.circular(14),
+                                  child: InkWell(
+                                    borderRadius: BorderRadius.circular(14),
+                                    onTap: _answered ? null : () => _pick(i),
+                                    child: Container(
+                                      constraints:
+                                          const BoxConstraints(minHeight: 62),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 18, vertical: 18),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(color: bdc, width: 1),
+                                        borderRadius: BorderRadius.circular(14),
+                                      ),
+                                      alignment: Alignment.centerLeft,
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(opts[i],
+                                                style: TextStyle(
+                                                    color: txt,
+                                                    fontSize: 16.5,
+                                                    height: 1.35)),
+                                          ),
+                                          if (_answered && correct)
+                                            Icon(Icons.check_circle,
+                                                size: 18, color: _C.green),
+                                          if (_answered && picked && !correct)
+                                            Icon(Icons.cancel,
+                                                size: 18, color: _C.red),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                // 底部占位，保持布局稳定
+                const SizedBox(height: 74),
               ],
             ),
-            const SizedBox(height: 8),
-            Text('${phrase.en}  ·  ${phrase.cn}',
-                style: const TextStyle(
-                    fontSize: 16, fontWeight: FontWeight.w600)),
-            if (phrase.ex.isNotEmpty) ...[
-              const SizedBox(height: 6),
-              Text(phrase.ex,
-                  style: TextStyle(
-                      fontSize: 12.5,
-                      height: 1.45,
-                      fontStyle: FontStyle.italic,
-                      color: scheme.onSurfaceVariant)),
-              Text(phrase.exCn,
-                  style: TextStyle(
-                      fontSize: 11.5, color: scheme.onSurfaceVariant)),
-            ],
-          ],
+                // 答错：底部浮层显示正确答案
+                if (_answered && !_isCorrect)
+                  Positioned(
+                    left: 16,
+                    right: 16,
+                    bottom: 14,
+                    child: RevealIn(
+                      key: ValueKey('hint_${_p.id}_$_round'),
+                      offsetY: 20,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.fromLTRB(18, 14, 18, 16),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF1E2C24),
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(
+                                  color: Colors.white.withOpacity(0.12)),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('正确答案',
+                                    style: TextStyle(
+                                        fontSize: 11.5,
+                                        color: _C.red,
+                                        fontWeight: FontWeight.w600)),
+                                const SizedBox(height: 6),
+                                Text('${_p.en}  ·  ${_p.cn}',
+                                    style: const TextStyle(
+                                        color: _C.ink,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600)),
+                                if (_p.ex.isNotEmpty) ...[
+                                  const SizedBox(height: 5),
+                                  Text(_p.ex,
+                                      style: const TextStyle(
+                                          color: _C.sub,
+                                          fontSize: 12.5,
+                                          height: 1.4,
+                                          fontStyle: FontStyle.italic)),
+                                ],
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          SizedBox(
+                            width: double.infinity,
+                            height: 50,
+                            child: FilledButton(
+                              onPressed: _next,
+                              style: FilledButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                foregroundColor: _C.bg,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25)),
+                              ),
+                              child: const Text('继续',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
         ),
       ),
     );

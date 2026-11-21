@@ -7,6 +7,10 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.3.0', '2026-11-21', [
+    '学习与复习界面改成深色风格：深墨绿渐变 + 大字 + 半透明选项',
+    '每天学习量改为自己输入（1~200 个），实时显示预计完成天数',
+  ]),
   ChangelogEntry('2.2.1', '2026-11-21', [
     '每次学习数量可选：5 / 10 / 15 / 20，选择会被记住',
     '答错提示改成底部浮层，不再把页面内容顶来顶去',
