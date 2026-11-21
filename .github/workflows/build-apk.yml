@@ -110,8 +110,10 @@ jobs:
 
       - name: 静态分析（快速失败）
         run: |
+          # flutter create 会生成引用 MyApp 的模板测试，与项目无关，删掉
+          rm -rf test
           echo "=== flutter analyze ==="
-          flutter analyze --no-fatal-infos --no-fatal-warnings 2>&1 | tee /tmp/analyze.log
+          flutter analyze lib --no-fatal-infos --no-fatal-warnings 2>&1 | tee /tmp/analyze.log
           # analyze 返回非 0 说明有 error，直接失败，不浪费时间编译
           grep -q "error •" /tmp/analyze.log && { echo "发现错误，终止"; exit 1; } || echo "无错误，继续编译"
 
