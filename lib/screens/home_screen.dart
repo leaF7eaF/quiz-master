@@ -6,7 +6,6 @@ import '../providers/english_provider.dart';
 import '../data/all_questions.dart';
 import '../widgets/scenic_background.dart';
 import 'phrase_home_screen.dart';
-import 'practice_screen.dart';
 import 'browse_screen.dart';
 import 'wrong_pick_screen.dart';
 
@@ -28,12 +27,13 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 120),
               children: [
                 const Text(
-                  '刷题本',
+                  'PRACTICE',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
                     fontWeight: FontWeight.w700,
-                    letterSpacing: 0.5,
+                    letterSpacing: 5,
+                    height: 1.1,
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -45,41 +45,33 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 34),
-                _sectionLabel('选择科目'),
-                const SizedBox(height: 10),
-                ...allSubjects.map((s) => _SubjectRow(meta: s, p: p)),
-                const SizedBox(height: 20),
-                _sectionLabel('快捷练习'),
-                const SizedBox(height: 10),
-                Row(children: [
-                  Expanded(
-                    child: _QuickBtn(
-                      icon: Icons.shuffle,
-                      label: '随机 10 题',
-                      onTap: () {
-                        final qs = List.of(p.currentSubjectQuestions)..shuffle();
-                        if (qs.isEmpty) return;
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => PracticeScreen(
-                                    questions: qs.take(10).toList(),
-                                    title: '随机练习')));
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: _QuickBtn(
-                      icon: Icons.error_outline,
-                      label: '错题重练',
+                // 标题行 + 错题入口
+                Row(
+                  children: [
+                    _sectionLabel('选择科目'),
+                    const Spacer(),
+                    GestureDetector(
+                      behavior: HitTestBehavior.opaque,
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (_) => const WrongPickScreen())),
+                      child: Row(
+                        children: [
+                          Icon(Icons.replay,
+                              size: 13, color: Colors.white.withOpacity(0.45)),
+                          const SizedBox(width: 4),
+                          Text('错题重练',
+                              style: TextStyle(
+                                  color: Colors.white.withOpacity(0.45),
+                                  fontSize: 12)),
+                        ],
+                      ),
                     ),
-                  ),
-                ]),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                ...allSubjects.map((s) => _SubjectRow(meta: s, p: p)),
               ],
             ),
           ),
@@ -156,32 +148,6 @@ class _SubjectRow extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _QuickBtn extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final VoidCallback onTap;
-  const _QuickBtn({
-    required this.icon,
-    required this.label,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return DarkGlass(
-      padding: const EdgeInsets.symmetric(vertical: 18),
-      radius: 16,
-      onTap: onTap,
-      child: Column(children: [
-        Icon(icon, color: Colors.white.withOpacity(0.9), size: 22),
-        const SizedBox(height: 8),
-        Text(label,
-            style: const TextStyle(color: Colors.white, fontSize: 13)),
-      ]),
     );
   }
 }
