@@ -56,7 +56,7 @@ class PhraseBookScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 14),
                 Text(
-                  finished ? '已全部学完 🎉' : '还有 ${total - learned} 个短语没学',
+                  finished ? '已全部学完' : '还有 ${total - learned} 个短语没学',
                   style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
                 ),
               ],

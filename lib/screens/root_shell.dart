@@ -1,10 +1,9 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'stats_screen.dart';
 import 'heatmap_screen.dart';
 import 'wrong_screen.dart';
-import '../widgets/glass.dart';
-import '../theme/app_theme.dart';
 
 class RootShell extends StatefulWidget {
   const RootShell({super.key});
@@ -25,53 +24,67 @@ class _RootShellState extends State<RootShell> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          const AmbientBackground(),
-          AnimatedSwitcher(
-            duration: const Duration(milliseconds: 220),
-            switchInCurve: Curves.easeOut,
-            switchOutCurve: Curves.easeIn,
-            transitionBuilder: (child, anim) => FadeTransition(
-              opacity: anim,
-              child: SlideTransition(
-                position: Tween<Offset>(
-                  begin: const Offset(0, 0.012),
-                  end: Offset.zero,
-                ).animate(anim),
-                child: child,
+      extendBody: true,
+      body: IndexedStack(index: _i, children: _pages),
+      bottomNavigationBar: ClipRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
+          child: Container(
+            color: Colors.black.withOpacity(0.40),
+            child: NavigationBarTheme(
+              data: NavigationBarThemeData(
+                backgroundColor: Colors.transparent,
+                surfaceTintColor: Colors.transparent,
+                elevation: 0,
+                height: 68,
+                indicatorColor: Colors.white.withOpacity(0.20),
+                indicatorShape: const StadiumBorder(),
+                labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+                labelTextStyle: WidgetStateProperty.resolveWith((states) {
+                  final sel = states.contains(WidgetState.selected);
+                  return TextStyle(
+                    fontSize: 12,
+                    fontWeight: sel ? FontWeight.w600 : FontWeight.w500,
+                    color:
+                        sel ? Colors.white : Colors.white.withOpacity(0.55),
+                  );
+                }),
+                iconTheme: WidgetStateProperty.resolveWith((states) {
+                  final sel = states.contains(WidgetState.selected);
+                  return IconThemeData(
+                    size: 24,
+                    color:
+                        sel ? Colors.white : Colors.white.withOpacity(0.55),
+                  );
+                }),
+              ),
+              child: NavigationBar(
+                selectedIndex: _i,
+                onDestinationSelected: (v) => setState(() => _i = v),
+                backgroundColor: Colors.transparent,
+                destinations: const [
+                  NavigationDestination(
+                      icon: Icon(Icons.home_outlined),
+                      selectedIcon: Icon(Icons.home),
+                      label: '首页'),
+                  NavigationDestination(
+                      icon: Icon(Icons.insights_outlined),
+                      selectedIcon: Icon(Icons.insights),
+                      label: '统计'),
+                  NavigationDestination(
+                      icon: Icon(Icons.grid_on_outlined),
+                      selectedIcon: Icon(Icons.grid_on),
+                      label: '热力图'),
+                  NavigationDestination(
+                      icon: Icon(Icons.flag_outlined),
+                      selectedIcon: Icon(Icons.flag),
+                      label: '错题'),
+                ],
               ),
             ),
-            child: KeyedSubtree(
-              key: ValueKey<int>(_i),
-              child: _pages[_i],
-            ),
           ),
-        ],
-      ),
-      extendBody: false,
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _i,
-        onDestinationSelected: (v) => setState(() => _i = v),
-        destinations: const [
-          NavigationDestination(
-              icon: Icon(Icons.home_outlined),
-              selectedIcon: Icon(Icons.home),
-              label: '首页'),
-          NavigationDestination(
-              icon: Icon(Icons.insights_outlined),
-              selectedIcon: Icon(Icons.insights),
-              label: '统计'),
-          NavigationDestination(
-              icon: Icon(Icons.grid_on_outlined),
-              selectedIcon: Icon(Icons.grid_on),
-              label: '热力图'),
-          NavigationDestination(
-              icon: Icon(Icons.flag_outlined),
-              selectedIcon: Icon(Icons.flag),
-                label: '错题'),
-          ],
         ),
+      ),
     );
   }
 }

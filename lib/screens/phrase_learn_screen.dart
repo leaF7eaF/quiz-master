@@ -92,31 +92,14 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
       return;
     }
 
-    // 进入下一轮
+    // 直接进入下一轮，不弹对话框
     if (!mounted) return;
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => AlertDialog(
-        title: Text('第 $_round 轮完成'),
-        content: Text('接下来是第 ${_round + 1} 轮'
-            '${_round + 1 == 3 ? '（中译英）' : '（去掉例句提示）'}'),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              setState(() {
-                _round++;
-                _idx = 0;
-                _picked = null;
-                _answered = false;
-              });
-            },
-            child: const Text('继续'),
-          ),
-        ],
-      ),
-    );
+    setState(() {
+      _round++;
+      _idx = 0;
+      _picked = null;
+      _answered = false;
+    });
   }
 
   @override
@@ -147,21 +130,7 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-          // 提示
-          Center(
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              decoration: BoxDecoration(
-                color: AppTheme.primary.withOpacity(0.10),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Text(
-                _isEnToCn ? '看英文，选中文' : '看中文，选英文',
-                style: const TextStyle(fontSize: 11.5, color: AppTheme.primary),
-              ),
-            ),
-          ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 8),
 
           // 题干
           Center(

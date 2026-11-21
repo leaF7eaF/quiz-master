@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import '../models/question.dart';
 import 'politics_2026_unit1.dart';
 import 'politics_2026_unit234.dart';
@@ -161,16 +162,16 @@ List<Question> buildAllQuestions() {
 class SubjectMeta {
   final String key;
   final String label;
-  final String icon;
+  final IconData icon;
   const SubjectMeta(this.key, this.label, this.icon);
 }
 
 const List<SubjectMeta> allSubjects = [
-  SubjectMeta('politics', '道德与法治', '⚖️'),
-  SubjectMeta('history', '历史', '📜'),
-  SubjectMeta('chinese', '语文', '📖'),
-  SubjectMeta('chemistry', '化学', '⚗️'),
-  SubjectMeta('english', '英语短语', '🔤'),
+  SubjectMeta('politics', '道德与法治', Icons.balance_outlined),
+  SubjectMeta('history', '历史', Icons.history_edu_outlined),
+  SubjectMeta('chinese', '语文', Icons.menu_book_outlined),
+  SubjectMeta('chemistry', '化学', Icons.science_outlined),
+  SubjectMeta('english', '英语短语', Icons.translate_outlined),
 ];
 
 /// 只含选择题科目（英语短语单独走自己的模块）

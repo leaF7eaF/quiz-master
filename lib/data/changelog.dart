@@ -7,6 +7,12 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.2.0', '2026-11-21', [
+    '首页改版：全屏风景照背景（4 张随机），深色玻璃卡片，白色文字',
+    '底部导航改深色玻璃，状态栏白色图标',
+    '科目图标从 emoji 换成 Material 线性图标',
+    '去掉「看英文选中文」提示与轮次切换弹窗',
+  ]),
   ChangelogEntry('2.1.1', '2026-11-21', [
     '去掉「模块 M1」提示（新版资料已不按模块划分）',
     '第1轮只在有例句时显示例句卡',
