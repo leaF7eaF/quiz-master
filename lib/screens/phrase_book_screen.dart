@@ -20,7 +20,7 @@ class PhraseBookScreen extends StatelessWidget {
     final mastered = p.masteredCount;
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppTheme.paper,
       appBar: AppBar(title: Text(p.currentBook.label)),
       body: ListView(
         padding: const EdgeInsets.all(16),

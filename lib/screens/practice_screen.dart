@@ -4,6 +4,7 @@ import '../models/question.dart';
 import '../providers/quiz_provider.dart';
 import '../theme/app_theme.dart';
 import '../widgets/animate.dart';
+import '../utils/sound_fx.dart';
 
 class PracticeScreen extends StatefulWidget {
   final List<Question> questions;
@@ -39,7 +40,12 @@ class _PracticeScreenState extends State<PracticeScreen> {
     if (_choice == null || _isSubmitted) return;
     final q = _q;
     final ok = _check(q, _choice);
-    if (ok) _correctCount++;
+    if (ok) {
+      _correctCount++;
+      SoundFx().correct();
+    } else {
+      SoundFx().wrong();
+    }
     setState(() => _submitted.add(q.id));
     await context.read<QuizProvider>().answer(q, ok, _sw.elapsedMilliseconds);
     _sw.reset();
@@ -50,7 +56,12 @@ class _PracticeScreenState extends State<PracticeScreen> {
   void _submitFlash(bool remembered) async {
     if (_isSubmitted) return;
     final q = _q;
-    if (remembered) _correctCount++;
+    if (remembered) {
+      _correctCount++;
+      SoundFx().correct();
+    } else {
+      SoundFx().wrong();
+    }
     setState(() => _submitted.add(q.id));
     await context.read<QuizProvider>().answer(q, remembered, _sw.elapsedMilliseconds);
 

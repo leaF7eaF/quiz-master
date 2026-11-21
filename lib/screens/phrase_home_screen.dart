@@ -18,7 +18,7 @@ class PhraseHomeScreen extends StatelessWidget {
     final grand = p.totalOf(totalAll);
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppTheme.paper,
       appBar: AppBar(title: const Text('英语短语')),
       body: ListView(
         padding: const EdgeInsets.all(16),

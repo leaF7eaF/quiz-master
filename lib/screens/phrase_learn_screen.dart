@@ -4,6 +4,7 @@ import '../providers/english_provider.dart';
 import '../theme/app_theme.dart';
 import '../widgets/animate.dart';
 import '../widgets/glass.dart';
+import '../utils/sound_fx.dart';
 
 /// 新学：一批短语走三轮
 /// 第1轮 英→中（带例句提示）
@@ -46,6 +47,12 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
   void _pick(int i) {
     if (_answered) return;
     final opts = _options;
+    final ok = opts[i] == _correctText;
+    if (ok) {
+      SoundFx().correct();
+    } else {
+      SoundFx().wrong();
+    }
     setState(() {
       _picked = i;
       _answered = true;
@@ -69,6 +76,7 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
     await p.advanceRound(widget.batch, _round);
 
     if (_round >= 3) {
+      SoundFx().finish();
       if (mounted) {
         Navigator.pop(context);
         ScaffoldMessenger.of(context).showSnackBar(
@@ -113,7 +121,7 @@ class _PhraseLearnScreenState extends State<PhraseLearnScreen> {
     final overall = ((_round - 1) * total + _idx + 1) / (3 * total);
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppTheme.paper,
       appBar: AppBar(
         title: Text('第 $_round 轮  ${_idx + 1}/$total'),
         bottom: PreferredSize(

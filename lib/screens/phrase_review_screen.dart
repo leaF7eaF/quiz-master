@@ -4,6 +4,7 @@ import '../providers/english_provider.dart';
 import '../theme/app_theme.dart';
 import '../widgets/animate.dart';
 import '../widgets/glass.dart';
+import '../utils/sound_fx.dart';
 
 /// 总复习：英文→选中文
 /// 答对 → 标记掌握，移出队列
@@ -46,6 +47,12 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
 
   void _pick(int i) {
     if (_answered) return;
+    final ok = _options[i] == _p.cn;
+    if (ok) {
+      SoundFx().correct();
+    } else {
+      SoundFx().wrong();
+    }
     setState(() {
       _picked = i;
       _answered = true;
@@ -82,6 +89,7 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
   }
 
   void _finish() {
+    SoundFx().finish();
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -109,7 +117,7 @@ class _PhraseReviewScreenState extends State<PhraseReviewScreen> {
     final isCorrect = _picked != null && opts[_picked!] == _p.cn;
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppTheme.paper,
       appBar: AppBar(
         title: Text('总复习  ${_idx + 1}/${_queue.length}'),
         bottom: PreferredSize(

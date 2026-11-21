@@ -7,6 +7,10 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('1.9.0', '2026-11-21', [
+    '新增答题音效：答对上行三音、答错下行两音、完成四音',
+    '修复英语模块页面黑底问题（透明背景导致的深色穿透）',
+  ]),
   ChangelogEntry('1.8.1', '2026-11-19', [
     '英语短语扩充至 325 条（七上64/七下64/八上48/八下44/九上82/九下23）',
     '全部带例句与中文翻译',
