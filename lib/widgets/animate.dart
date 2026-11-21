@@ -9,7 +9,7 @@ class RevealIn extends StatefulWidget {
   const RevealIn({
     super.key,
     required this.child,
-    this.duration = const Duration(milliseconds: 260),
+    this.duration = const Duration(milliseconds: 300),
     this.offsetY = 8,
   });
 
@@ -35,6 +35,7 @@ class _RevealInState extends State<RevealIn>
 
   @override
   Widget build(BuildContext context) {
+    // 只保留淡入+位移：三重叠加在低端机上会掉帧
     final curved = CurvedAnimation(parent: _c, curve: Curves.easeOutCubic);
     return FadeTransition(
       opacity: curved,
@@ -43,10 +44,7 @@ class _RevealInState extends State<RevealIn>
           begin: Offset(0, widget.offsetY / 100),
           end: Offset.zero,
         ).animate(curved),
-        child: ScaleTransition(
-          scale: Tween<double>(begin: 0.985, end: 1.0).animate(curved),
-          child: widget.child,
-        ),
+        child: widget.child,
       ),
     );
   }
@@ -86,8 +84,9 @@ class _PressScaleState extends State<PressScale> {
       onTap: widget.onTap,
       child: AnimatedScale(
         scale: _down ? widget.scaleTo : 1.0,
-        duration: const Duration(milliseconds: 110),
-        curve: Curves.easeOut,
+        // 110ms 太快显得生硬，160ms + easeOutCubic 更顺
+        duration: const Duration(milliseconds: 160),
+        curve: Curves.easeOutCubic,
         child: widget.child,
       ),
     );

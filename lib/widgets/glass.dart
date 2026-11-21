@@ -79,15 +79,70 @@ class GlassBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRect(
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           decoration: BoxDecoration(
-            color: AppTheme.paper.withOpacity(0.72),
+            // 关键：比页面背景(纸白)更"灰"一档，才看得出是一块面板
+            color: const Color(0xFFF1EEE6).withOpacity(0.97),
             border: Border(
-              top: BorderSide(color: Colors.white.withOpacity(0.8), width: 1),
+              top: BorderSide(
+                color: AppTheme.ink.withOpacity(0.10),
+                width: 1,
+              ),
             ),
+            boxShadow: [
+              BoxShadow(
+                color: AppTheme.ink.withOpacity(0.10),
+                blurRadius: 18,
+                offset: const Offset(0, -4),
+              ),
+            ],
           ),
           child: child,
+        ),
+      ),
+    );
+  }
+}
+
+/// 柔和光晕背景（玻璃卡片需要它才有层次）
+class AmbientBackground extends StatelessWidget {
+  const AmbientBackground({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(color: AppTheme.paper),
+      child: Stack(
+        children: [
+          Positioned(
+            top: -60,
+            right: -40,
+            child: _blob(220, const Color(0xFF2F6B4F), 0.10),
+          ),
+          Positioned(
+            top: 220,
+            left: -70,
+            child: _blob(260, const Color(0xFFB4552D), 0.07),
+          ),
+          Positioned(
+            bottom: 40,
+            right: -50,
+            child: _blob(240, const Color(0xFF2F6B4F), 0.08),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _blob(double size, Color color, double opacity) {
+    return Container(
+      width: size,
+      height: size,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: RadialGradient(
+          colors: [color.withOpacity(opacity), color.withOpacity(0)],
         ),
       ),
     );
