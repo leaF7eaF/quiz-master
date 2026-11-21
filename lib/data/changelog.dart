@@ -7,6 +7,9 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.7.2', '2026-11-22', [
+    '滚动复习取消限额：今日能复习多少就复习多少',
+  ]),
   ChangelogEntry('2.7.1', '2026-11-22', [
     '滚动复习去重：当天复习过的短语不再重复出现',
     '学习按钮显示今日进度（今日 3/10），学满后仍可继续学',

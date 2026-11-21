@@ -95,17 +95,17 @@ class PhraseBookScreen extends StatelessWidget {
             if (learned > 0)
               Builder(builder: (context) {
                 final canReview = p.reviewableToday;
-                final n = canReview < p.newPerDay ? canReview : p.newPerDay;
                 return _BigButton(
                   title: '滚动复习',
+                  // 不限额：今日能复习多少就复习多少
                   subtitle: canReview == 0
                       ? '今日复习已完成'
-                      : '复习最近学过的 $n 个（今日可复习 $canReview 个）',
+                      : '复习今日可复习的 $canReview 个',
                   icon: Icons.replay,
                   subtle: true,
                   enabled: canReview > 0,
                   onTap: () {
-                    final qs = p.recentLearned(n);
+                    final qs = p.recentLearned(canReview);
                     if (qs.isEmpty) return;
                     Navigator.push(
                       context,
