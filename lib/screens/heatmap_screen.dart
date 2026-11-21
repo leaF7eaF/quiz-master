@@ -173,15 +173,31 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
     final sel = _filterSubject == key;
     return Padding(
       padding: const EdgeInsets.only(right: 8),
-      child: ChoiceChip(
-        label: Text(label),
-        selected: sel,
-        onSelected: (_) => setState(() => _filterSubject = key),
-        showCheckmark: false,
-        selectedColor: DarkC.green.withOpacity(0.14),
-        labelStyle: TextStyle(
-            color: sel ? DarkC.green : DarkC.ink,
-            fontWeight: sel ? FontWeight.w600 : FontWeight.normal),
+      child: GestureDetector(
+        onTap: () => setState(() => _filterSubject = key),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+          decoration: BoxDecoration(
+            color: sel
+                ? DarkC.green.withOpacity(0.20)
+                : Colors.white.withOpacity(0.10),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: sel
+                  ? DarkC.green.withOpacity(0.55)
+                  : Colors.white.withOpacity(0.14),
+              width: 1,
+            ),
+          ),
+          child: Text(
+            label,
+            style: TextStyle(
+              color: sel ? DarkC.green : DarkC.ink,
+              fontSize: 13,
+              fontWeight: sel ? FontWeight.w600 : FontWeight.w500,
+            ),
+          ),
+        ),
       ),
     );
   }

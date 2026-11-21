@@ -7,6 +7,10 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.3.1', '2026-11-21', [
+    '英语词书列表与词书详情改深色',
+    '热力图筛选按钮修复（之前白底白字看不见）',
+  ]),
   ChangelogEntry('2.3.0', '2026-11-21', [
     '学习与复习界面改成深色风格：深墨绿渐变 + 大字 + 半透明选项',
     '每天学习量改为自己输入（1~200 个），实时显示预计完成天数',
