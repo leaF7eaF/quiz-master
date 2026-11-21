@@ -49,9 +49,8 @@ class _RootShellState extends State<RootShell> {
           ),
         ],
       ),
-      extendBody: true,
-      bottomNavigationBar: GlassBar(
-        child: NavigationBar(
+      extendBody: false,
+      bottomNavigationBar: NavigationBar(
         selectedIndex: _i,
         onDestinationSelected: (v) => setState(() => _i = v),
         destinations: const [
@@ -72,11 +71,7 @@ class _RootShellState extends State<RootShell> {
               selectedIcon: Icon(Icons.flag),
                 label: '错题'),
           ],
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          surfaceTintColor: Colors.transparent,
         ),
-      ),
     );
   }
 }

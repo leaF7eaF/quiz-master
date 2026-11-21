@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('刷题本'),
       ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 110),
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
         children: [
           _TodayCard(p: p),
           const SizedBox(height: 20),
@@ -69,9 +69,8 @@ class _TodayCard extends StatelessWidget {
     // 液态玻璃 + 墨绿染色：保留强调感，又和整体玻璃风格统一
     return GlassCard(
       padding: const EdgeInsets.all(20),
-      radius: 24,
-      blur: 30,
-      tint: AppTheme.primary.withOpacity(0.88),
+      radius: 18,
+      tint: Theme.of(context).colorScheme.primary,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -164,12 +163,10 @@ class _SubjectRow extends StatelessWidget {
         },
         child: GlassCard(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          radius: 18,
-          blur: 18,
+          radius: 14,
           tint: selected
-              ? Theme.of(context).colorScheme.primaryContainer
+              ? Theme.of(context).colorScheme.secondaryContainer
               : null,
-          bordered: !selected,
           child: Row(
             children: [
               Text(meta.icon, style: const TextStyle(fontSize: 22)),
@@ -183,7 +180,9 @@ class _SubjectRow extends StatelessWidget {
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                             color: selected
-                                ? Theme.of(context).colorScheme.onPrimaryContainer
+                                ? Theme.of(context)
+                                    .colorScheme
+                                    .onSecondaryContainer
                                 : AppTheme.ink)),
                     const SizedBox(height: 3),
                     Text(
@@ -195,15 +194,15 @@ class _SubjectRow extends StatelessWidget {
                             color: selected
                                 ? Theme.of(context)
                                     .colorScheme
-                                    .onPrimaryContainer
-                                    .withOpacity(0.75)
+                                    .onSecondaryContainer
+                                    .withOpacity(0.78)
                                 : AppTheme.muted)),
                   ],
                 ),
               ),
               Icon(Icons.chevron_right,
                   color: selected
-                      ? Theme.of(context).colorScheme.onPrimaryContainer
+                      ? Theme.of(context).colorScheme.onSecondaryContainer
                       : AppTheme.muted,
                   size: 20),
             ],

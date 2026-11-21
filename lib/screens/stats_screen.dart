@@ -25,7 +25,7 @@ class StatsScreen extends StatelessWidget {
         ),
       ]),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 96),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
         children: [
           Row(
             children: [

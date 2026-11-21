@@ -2,107 +2,73 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
-/// ===== 液态玻璃（用于外壳层：首页、导航、列表）=====
-/// 强模糊 + 顶部斜射高光 + 亮边 + 柔和外投影
+/// Material You 卡片
+/// 干净纯色块：无边框、无阴影、无半透明。靠色差和留白分层
 class GlassCard extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry padding;
   final double radius;
-  final double blur;
+  final double blur; // 保留参数兼容
   final Color? tint;
-  final bool bordered;
+  final bool bordered; // 保留参数兼容，M3 下不使用
   final VoidCallback? onTap;
 
   const GlassCard({
     super.key,
     required this.child,
     this.padding = const EdgeInsets.all(16),
-    this.radius = 22,
-    this.blur = 24,
+    this.radius = 14,
+    this.blur = 0,
     this.tint,
-    this.bordered = true,
+    this.bordered = false,
     this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     final r = BorderRadius.circular(radius);
 
-    final body = ClipRRect(
-      borderRadius: r,
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
-        child: Container(
-          padding: padding,
-          decoration: BoxDecoration(
-            // 单色半透明：浅背景上不会被渐变弄脏
-            color: tint ?? Colors.white.withOpacity(0.72),
-            borderRadius: r,
-            border: bordered
-                ? Border.all(color: Colors.white.withOpacity(0.85), width: 1)
-                : null,
-          ),
-          child: child,
-        ),
-      ),
-    );
-
-    final withShadow = DecoratedBox(
+    final body = Container(
       decoration: BoxDecoration(
+        color: tint ?? scheme.surfaceContainerLowest,
         borderRadius: r,
-        boxShadow: [
-          BoxShadow(
-            color: AppTheme.ink.withOpacity(0.06),
-            blurRadius: 14,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
-      child: body,
+      padding: padding,
+      child: child,
     );
 
-    if (onTap == null) return withShadow;
+    if (onTap == null) return body;
     return Material(
       color: Colors.transparent,
-      child: InkWell(borderRadius: r, onTap: onTap, child: withShadow),
+      child: InkWell(
+        borderRadius: r,
+        onTap: onTap,
+        child: body,
+      ),
     );
   }
 }
 
-/// 液态玻璃底部导航外壳
+/// 底部导航：M3 纯色 + 顶部细线（不用模糊）
 class GlassBar extends StatelessWidget {
   final Widget child;
   const GlassBar({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
-    return ClipRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 28, sigmaY: 28),
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.white.withOpacity(0.70),
-                const Color(0xFFE6EFE4).withOpacity(0.86),
-              ],
-            ),
-            border: Border(
-              top: BorderSide(color: Colors.white.withOpacity(0.95), width: 1.2),
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: AppTheme.ink.withOpacity(0.13),
-                blurRadius: 26,
-                offset: const Offset(0, -6),
-              ),
-            ],
+    final scheme = Theme.of(context).colorScheme;
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainer,
+        border: Border(
+          top: BorderSide(
+            color: scheme.outlineVariant.withOpacity(0.4),
+            width: 1,
           ),
-          child: child,
         ),
       ),
+      child: child,
     );
   }
 }
@@ -121,70 +87,20 @@ class GlassPill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final c = color ?? AppTheme.primary;
+    final scheme = Theme.of(context).colorScheme;
+    final c = color ?? scheme.primary;
     return Container(
       padding: padding,
       decoration: BoxDecoration(
-        color: c.withOpacity(0.12),
+        color: c.withOpacity(0.10),
         borderRadius: BorderRadius.circular(30),
-        border: Border.all(color: c.withOpacity(0.16), width: 1),
       ),
       child: child,
     );
   }
 }
 
-/// 柔和光晕背景（让玻璃有色彩可透）
-class AmbientBackground extends StatelessWidget {
-  const AmbientBackground({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(color: AppTheme.paper),
-      child: Stack(
-        children: [
-          Positioned(
-            top: -90,
-            right: -60,
-            child: _blob(300, const Color(0xFF2F6B4F), 0.15),
-          ),
-          Positioned(
-            top: 180,
-            left: -110,
-            child: _blob(320, const Color(0xFFB4552D), 0.10),
-          ),
-          Positioned(
-            top: 460,
-            right: -80,
-            child: _blob(280, const Color(0xFF3F7F9F), 0.09),
-          ),
-          Positioned(
-            bottom: -40,
-            left: -40,
-            child: _blob(300, const Color(0xFF2F6B4F), 0.12),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _blob(double size, Color color, double opacity) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: RadialGradient(
-          colors: [color.withOpacity(opacity), color.withOpacity(0)],
-        ),
-      ),
-    );
-  }
-}
-
-/// ===== Material You 卡片（用于内容层：答题、释义、解析）=====
-/// 纯色表面 + 细边，保证长时间阅读不累
+/// M3 内容卡片（与 GlassCard 同实现，保留给内容页用）
 class MdCard extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry padding;
@@ -197,9 +113,9 @@ class MdCard extends StatelessWidget {
     super.key,
     required this.child,
     this.padding = const EdgeInsets.all(16),
-    this.radius = 16,
+    this.radius = 14,
     this.color,
-    this.bordered = true,
+    this.bordered = false,
     this.onTap,
   });
 
@@ -209,11 +125,8 @@ class MdCard extends StatelessWidget {
     final r = BorderRadius.circular(radius);
     final body = Container(
       decoration: BoxDecoration(
-        color: color ?? scheme.surfaceContainerLowest,
+        color: color ?? scheme.surfaceContainerLow,
         borderRadius: r,
-        border: bordered
-            ? Border.all(color: scheme.outlineVariant.withOpacity(0.6), width: 1)
-            : null,
       ),
       padding: padding,
       child: child,
@@ -223,5 +136,16 @@ class MdCard extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(borderRadius: r, onTap: onTap, child: body),
     );
+  }
+}
+
+/// 纯色背景（M3 没有光晕）
+class AmbientBackground extends StatelessWidget {
+  const AmbientBackground({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(color: scheme.surface);
   }
 }

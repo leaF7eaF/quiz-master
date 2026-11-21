@@ -7,6 +7,12 @@ class ChangelogEntry {
 }
 
 const List<ChangelogEntry> appChangelog = [
+  ChangelogEntry('2.1.0', '2026-11-21', [
+    '卡片按 Google Material You 重做：纯色块，无边框、无阴影、无半透明',
+    '移除背景光晕与玻璃模糊，改用 M3 表面色分层',
+    '强调卡片用 primary 纯墨绿，选中项用 secondaryContainer',
+    '底部导航改 M3 标准样式，圆角统一 14',
+  ]),
   ChangelogEntry('2.0.0', '2026-11-21', [
     '混合风格：外壳（首页/导航/词书列表）用液态玻璃，内容区（答题/学习/解析）用 Material You 纯色',
     '主题换 Material 3 标准色板，surface 分五级层次',
