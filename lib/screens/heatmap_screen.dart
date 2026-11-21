@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/quiz_provider.dart';
-import '../theme/app_theme.dart';
+import '../widgets/dark_ui.dart';
 import '../data/all_questions.dart';
 
 /// 热力图：默认统计全部科目，可筛选单科
@@ -68,12 +68,14 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
     }).toList()
       ..sort((a, b) => a.value.compareTo(b.value));
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      appBar: AppBar(title: Text(title)),
+    return DarkScaffold(
+      title: '热力图',
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+        padding: const EdgeInsets.fromLTRB(16, 4, 16, 120),
         children: [
+          Text(_filterSubject == null ? '全部科目' : title,
+              style: TextStyle(fontSize: 12, color: DarkC.faint)),
+          const SizedBox(height: 10),
           // 科目筛选
           SizedBox(
             height: 40,
@@ -86,21 +88,20 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
             ),
           ),
           const SizedBox(height: 10),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(14),
-              child: Column(
+          DarkPanel(
+            padding: const EdgeInsets.all(14),
+            child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(children: [
                     Text('近 105 天累计 $total 题',
                         style:
-                            const TextStyle(fontSize: 13, color: AppTheme.muted)),
+                            const TextStyle(fontSize: 13, color: DarkC.sub)),
                     const Spacer(),
                     Text('连续 $streakN 天',
                         style: const TextStyle(
                             fontSize: 13,
-                            color: AppTheme.primary,
+                            color: DarkC.green,
                             fontWeight: FontWeight.w600)),
                   ]),
                   const SizedBox(height: 12),
@@ -110,7 +111,7 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
                     children: [
                       const Text('少',
                           style: TextStyle(
-                              fontSize: 11, color: AppTheme.muted)),
+                              fontSize: 11, color: DarkC.sub)),
                       const SizedBox(width: 4),
                       ..._legendColors.map((c) => Container(
                             width: 12,
@@ -125,22 +126,24 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
                       const SizedBox(width: 4),
                       const Text('多',
                           style: TextStyle(
-                              fontSize: 11, color: AppTheme.muted)),
+                              fontSize: 11, color: DarkC.sub)),
                     ],
                   ),
                 ],
               ),
-            ),
           ),
           const SizedBox(height: 18),
           const Text('薄弱知识点',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+              style: TextStyle(
+                  color: DarkC.sub,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600)),
           const SizedBox(height: 4),
           Text(
             _filterSubject == null
                 ? '全部科目 · 正确率低于 60% 的考点'
                 : '${quizSubjects.firstWhere((s) => s.key == _filterSubject).label} · 正确率低于 60% 的考点',
-            style: const TextStyle(fontSize: 12, color: AppTheme.muted),
+            style: const TextStyle(fontSize: 12, color: DarkC.sub),
           ),
           const SizedBox(height: 10),
           if (weak.isEmpty)
@@ -148,14 +151,17 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
               padding: EdgeInsets.symmetric(vertical: 20),
               child: Center(
                 child: Text('暂无薄弱点，继续加油',
-                    style: TextStyle(color: AppTheme.muted)),
+                    style: TextStyle(color: DarkC.sub)),
               ),
             )
           else
             ...weak.map((e) => _WeakRow(knowledge: e.key, acc: e.value)),
           const SizedBox(height: 18),
           const Text('最近 7 天',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+              style: TextStyle(
+                  color: DarkC.sub,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600)),
           const SizedBox(height: 10),
           ..._recentWeekRows(daily),
         ],
@@ -172,20 +178,20 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
         selected: sel,
         onSelected: (_) => setState(() => _filterSubject = key),
         showCheckmark: false,
-        selectedColor: AppTheme.primary.withOpacity(0.14),
+        selectedColor: DarkC.green.withOpacity(0.14),
         labelStyle: TextStyle(
-            color: sel ? AppTheme.primary : AppTheme.ink,
+            color: sel ? DarkC.green : DarkC.ink,
             fontWeight: sel ? FontWeight.w600 : FontWeight.normal),
       ),
     );
   }
 
   static const _legendColors = [
-    Color(0xFFEBEDF0),
-    Color(0xFFC6E1CE),
-    Color(0xFF8FC4A2),
-    Color(0xFF4E9C6E),
-    Color(0xFF2F6B4F),
+    Color(0x1AFFFFFF),
+    Color(0x3355C08A),
+    Color(0x6655C08A),
+    Color(0x9955C08A),
+    Color(0xFF5FD08A),
   ];
 
   String _ymd(DateTime d) =>
@@ -206,7 +212,7 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
             width: 78,
             child: Text('${d.month}月${d.day}日',
                 style:
-                    const TextStyle(fontSize: 12, color: AppTheme.muted)),
+                    const TextStyle(fontSize: 12, color: DarkC.sub)),
           ),
           Expanded(
             child: ClipRRect(
@@ -214,8 +220,8 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
               child: LinearProgressIndicator(
                 value: c == 0 ? 0.0 : (c / 20).clamp(0.05, 1.0).toDouble(),
                 minHeight: 8,
-                backgroundColor: AppTheme.line,
-                color: AppTheme.primary,
+                backgroundColor: DarkC.track,
+                color: DarkC.green,
               ),
             ),
           ),
@@ -254,11 +260,11 @@ class _HeatGrid extends StatelessWidget {
     if (cur.isNotEmpty) weeks.add(cur);
 
     final palette = [
-      const Color(0xFFEBEDF0),
-      const Color(0xFFC6E1CE),
-      const Color(0xFF8FC4A2),
-      const Color(0xFF4E9C6E),
-      const Color(0xFF2F6B4F),
+      const Color(0x1AFFFFFF),
+      const Color(0x3355C08A),
+      const Color(0x6655C08A),
+      const Color(0x9955C08A),
+      const Color(0xFF5FD08A),
     ];
     Color colorFor(int count) {
       if (count <= 0) return palette[0];
@@ -316,8 +322,8 @@ class _WeakRow extends StatelessWidget {
             child: LinearProgressIndicator(
               value: acc,
               minHeight: 7,
-              backgroundColor: AppTheme.line,
-              color: acc < 0.4 ? Colors.red.shade400 : AppTheme.accent,
+              backgroundColor: DarkC.track,
+              color: acc < 0.4 ? DarkC.red : DarkC.orange,
             ),
           ),
         ),

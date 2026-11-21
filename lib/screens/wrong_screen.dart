@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/quiz_provider.dart';
-import '../theme/app_theme.dart';
+import '../widgets/dark_ui.dart';
 import 'practice_screen.dart';
 
 class WrongScreen extends StatelessWidget {
@@ -12,59 +12,85 @@ class WrongScreen extends StatelessWidget {
     final p = context.watch<QuizProvider>();
     final wrongs = p.wrongQuestions;
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      appBar: AppBar(title: const Text('错题本')),
+    return DarkScaffold(
+      title: '错题本',
       body: wrongs.isEmpty
-          ? const Center(
+          ? Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.check_circle_outline, size: 44, color: AppTheme.muted),
-                  SizedBox(height: 10),
-                  Text('当前科目还没有错题', style: TextStyle(color: AppTheme.muted)),
+                  Icon(Icons.check_circle_outline,
+                      size: 44, color: DarkC.faint),
+                  const SizedBox(height: 12),
+                  Text('当前科目还没有错题',
+                      style: TextStyle(color: DarkC.sub, fontSize: 13)),
                 ],
               ),
             )
           : Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(14),
+                  padding: const EdgeInsets.fromLTRB(20, 4, 16, 12),
                   child: Row(children: [
                     Text('共 ${wrongs.length} 道',
-                        style: const TextStyle(color: AppTheme.muted, fontSize: 13)),
+                        style: TextStyle(color: DarkC.sub, fontSize: 13)),
                     const Spacer(),
                     FilledButton.tonalIcon(
-                      icon: const Icon(Icons.replay, size: 18),
-                      label: const Text('重练全部'),
+                      style: FilledButton.styleFrom(
+                        backgroundColor: Colors.white.withOpacity(0.12),
+                        foregroundColor: DarkC.ink,
+                      ),
+                      icon: const Icon(Icons.replay, size: 17),
+                      label: const Text('重练全部',
+                          style: TextStyle(fontSize: 13)),
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => PracticeScreen(
-                            questions: (List.of(wrongs)..shuffle()), title: '错题重练')),
+                        MaterialPageRoute(
+                            builder: (_) => PracticeScreen(
+                                questions: (List.of(wrongs)..shuffle()),
+                                title: '错题重练')),
                       ),
                     ),
                   ]),
                 ),
-                const Divider(height: 1),
                 Expanded(
                   child: ListView.separated(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 120),
                     itemCount: wrongs.length,
-                    separatorBuilder: (_, __) => const Divider(height: 1, indent: 16),
+                    separatorBuilder: (_, __) => const SizedBox(height: 8),
                     itemBuilder: (_, i) {
                       final q = wrongs[i];
-                      return ListTile(
-                        title: Text(q.stem,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontSize: 14)),
-                        subtitle: Text('${q.unit} · ${q.knowledge}',
-                            style: const TextStyle(fontSize: 11)),
-                        trailing: const Icon(Icons.chevron_right,
-                            size: 20, color: AppTheme.muted),
+                      return DarkPanel(
+                        padding: const EdgeInsets.fromLTRB(16, 14, 12, 14),
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (_) => PracticeScreen(questions: [q], title: '错题查看')),
+                              builder: (_) => PracticeScreen(
+                                  questions: [q], title: '错题查看')),
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(q.stem,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: const TextStyle(
+                                          color: DarkC.ink,
+                                          fontSize: 14,
+                                          height: 1.4)),
+                                  const SizedBox(height: 5),
+                                  Text('${q.unit} · ${q.knowledge}',
+                                      style: TextStyle(
+                                          fontSize: 11, color: DarkC.faint)),
+                                ],
+                              ),
+                            ),
+                            Icon(Icons.chevron_right,
+                                size: 20, color: DarkC.faint),
+                          ],
                         ),
                       );
                     },

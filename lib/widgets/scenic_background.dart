@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
 /// 风景照片背景：每次启动随机选一张
@@ -71,23 +70,19 @@ class DarkGlass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = BorderRadius.circular(radius);
-    final body = ClipRRect(
-      borderRadius: r,
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
-          padding: padding,
-          decoration: BoxDecoration(
-            color: tint ?? Colors.white.withOpacity(0.13),
-            borderRadius: r,
-            border: Border.all(
-              color: Colors.white.withOpacity(0.16),
-              width: 1,
-            ),
-          ),
-          child: child,
+    // 不用 BackdropFilter：列表里多个卡片同时模糊会拖垮滚动帧率
+    // 用半透明色 + 细边，观感接近而且滚动顺滑
+    final body = Container(
+      padding: padding,
+      decoration: BoxDecoration(
+        color: tint ?? const Color(0x2E1B241E),
+        borderRadius: r,
+        border: Border.all(
+          color: Colors.white.withOpacity(0.13),
+          width: 1,
         ),
       ),
+      child: child,
     );
     if (onTap == null) return body;
     return Material(

@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
           SafeArea(
             bottom: false,
             child: ListView(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 120),
               children: [
                 const Text(
                   '刷题本',
