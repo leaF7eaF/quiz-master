@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../providers/quiz_provider.dart';
+import '../providers/english_provider.dart';
 import '../data/all_questions.dart';
-import '../theme/app_theme.dart';
-import 'practice_screen.dart';
+import '../widgets/scenic_background.dart';
+import 'phrase_home_screen.dart';
 import 'browse_screen.dart';
-import 'stats_screen.dart';
+import 'wrong_pick_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,108 +15,87 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = context.watch<QuizProvider>();
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('刷题本'),
-        actions: [
-          IconButton(
-            tooltip: '学习统计',
-            icon: const Icon(Icons.insights_outlined),
-            onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: (_) => const StatsScreen())),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.light,
+      child: Scaffold(
+        body: Stack(
+          children: [
+            const ScenicBackground(),
+          SafeArea(
+            bottom: false,
+            child: ListView(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 120),
+              children: [
+                const Text(
+                  'PRACTICE',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 5,
+                    height: 1.1,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  _dateLabel(),
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.55),
+                    fontSize: 12.5,
+                  ),
+                ),
+                const SizedBox(height: 34),
+                // 标题行 + 错题入口
+                Row(
+                  children: [
+                    _sectionLabel('选择科目'),
+                    const Spacer(),
+                    GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const WrongPickScreen())),
+                      child: Row(
+                        children: [
+                          Icon(Icons.replay,
+                              size: 13, color: Colors.white.withOpacity(0.45)),
+                          const SizedBox(width: 4),
+                          Text('错题重练',
+                              style: TextStyle(
+                                  color: Colors.white.withOpacity(0.45),
+                                  fontSize: 12)),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                ...allSubjects.map((s) => _SubjectRow(meta: s, p: p)),
+              ],
+            ),
           ),
-        ],
-      ),
-      body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-        children: [
-          _TodayCard(p: p),
-          const SizedBox(height: 20),
-          const Text('选择科目', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-          const SizedBox(height: 10),
-          ...allSubjects.map((s) => _SubjectRow(meta: s, p: p)),
-          const SizedBox(height: 12),
-          const Text('快捷练习', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-          const SizedBox(height: 10),
-          Row(children: [
-            Expanded(
-              child: _QuickBtn(
-                icon: Icons.shuffle,
-                label: '随机 10 题',
-                onTap: () {
-                  final qs = List.of(p.currentSubjectQuestions)..shuffle();
-                  if (qs.isEmpty) return;
-                  Navigator.push(context, MaterialPageRoute(
-                      builder: (_) => PracticeScreen(questions: qs.take(10).toList(), title: '随机练习')));
-                },
-              ),
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: _QuickBtn(
-                icon: Icons.error_outline,
-                label: '错题重练',
-                onTap: () {
-                  final qs = List.of(p.wrongQuestions)..shuffle();
-                  if (qs.isEmpty) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('当前科目还没有错题')));
-                    return;
-                  }
-                  Navigator.push(context, MaterialPageRoute(
-                      builder: (_) => PracticeScreen(questions: qs, title: '错题重练')));
-                },
-              ),
-            ),
-          ]),
-        ],
+          ],
+        ),
       ),
     );
   }
-}
 
-class _TodayCard extends StatelessWidget {
-  final QuizProvider p;
-  const _TodayCard({required this.p});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        color: AppTheme.primary,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text('今日已练', style: TextStyle(color: Colors.white70, fontSize: 13)),
-          const SizedBox(height: 6),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text('${p.todayCount}',
-                  style: const TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w700, height: 1)),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 6, left: 4),
-                child: Text('题', style: TextStyle(color: Colors.white70, fontSize: 15)),
-              ),
-              const Spacer(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text('连续 ${p.streak} 天',
-                      style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600)),
-                  const SizedBox(height: 2),
-                  Text('累计正确率 ${(p.accuracy * 100).toStringAsFixed(0)}%',
-                      style: const TextStyle(color: Colors.white70, fontSize: 12)),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
+  static String _dateLabel() {
+    final d = DateTime.now();
+    const w = ['一', '二', '三', '四', '五', '六', '日'];
+    return '${d.month} 月 ${d.day} 日 · 周${w[d.weekday - 1]}';
   }
+
+  static Widget _sectionLabel(String t) => Text(
+        t,
+        style: TextStyle(
+          color: Colors.white.withOpacity(0.72),
+          fontSize: 13,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0.6,
+        ),
+      );
 }
 
 class _SubjectRow extends StatelessWidget {
@@ -122,76 +103,50 @@ class _SubjectRow extends StatelessWidget {
   final QuizProvider p;
   const _SubjectRow({required this.meta, required this.p});
 
+  bool get _isEnglish => meta.key == 'english';
+
   @override
   Widget build(BuildContext context) {
-    final total = p.all.where((q) => q.subject == meta.key).length;
-    final done = p.records.where((r) => r.subject == meta.key).length;
-    final correct = p.records.where((r) => r.subject == meta.key && r.correct).length;
-    final acc = done == 0 ? 0.0 : correct / done;
-    final selected = p.subject == meta.key;
-
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(10),
+      child: DarkGlass(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+        radius: 16,
         onTap: () {
-          p.selectSubject(meta.key);
-          Navigator.push(context,
-              MaterialPageRoute(builder: (_) => const BrowseScreen(initialPick: true)));
+          if (_isEnglish) {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const PhraseHomeScreen()));
+          } else {
+            p.selectSubject(meta.key);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const BrowseScreen()));
+          }
         },
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
-          decoration: BoxDecoration(
-            color: selected ? AppTheme.primary.withOpacity(0.06) : Colors.white,
-            border: Border.all(color: selected ? AppTheme.primary : AppTheme.line),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Row(
-            children: [
-              Text(meta.icon, style: const TextStyle(fontSize: 22)),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(meta.label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-                    const SizedBox(height: 3),
-                    Text('$total 题 · 已做 $done 题 · 正确率 ${(acc * 100).toStringAsFixed(0)}%',
-                        style: const TextStyle(fontSize: 12, color: AppTheme.muted)),
-                  ],
-                ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(meta.enLabel,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.2)),
+                  const SizedBox(height: 3),
+                  Text(meta.label,
+                      style: TextStyle(
+                          color: Colors.white.withOpacity(0.42),
+                          fontSize: 11.5,
+                          letterSpacing: 0.5)),
+                ],
               ),
-              const Icon(Icons.chevron_right, color: AppTheme.muted, size: 20),
-            ],
-          ),
+            ),
+            Icon(Icons.chevron_right,
+                color: Colors.white.withOpacity(0.30), size: 18),
+          ],
         ),
-      ),
-    );
-  }
-}
-
-class _QuickBtn extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final VoidCallback onTap;
-  const _QuickBtn({required this.icon, required this.label, required this.onTap});
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(10),
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: AppTheme.line),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(children: [
-          Icon(icon, color: AppTheme.primary, size: 22),
-          const SizedBox(height: 6),
-          Text(label, style: const TextStyle(fontSize: 13)),
-        ]),
       ),
     );
   }

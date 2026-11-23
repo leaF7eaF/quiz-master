@@ -3,9 +3,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   // ===== 第一单元 文明的产生和古代亚非文明 =====
   {
     "id": "his26_u1_001",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "从原始社会到奴隶社会", "workbook": "自编", "type": "single",
+    "knowledge": "从原始社会到奴隶社会",
+    "lesson": "第1课 从原始社会到奴隶社会", "workbook": "自编", "type": "single",
     "stem": "考古学家在西亚发现了距今约1万年的农业村落遗址，出土了石镰、磨盘和碳化的麦粒；在我国浙江，河姆渡遗址出土了碳化稻谷和骨耜。这些发现共同说明（ ）",
     "options": [
       "原始人类已从事农业生产，开始定居生活",
@@ -19,9 +20,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_002",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "从原始社会到奴隶社会", "workbook": "自编", "type": "single",
+    "knowledge": "从原始社会到奴隶社会",
+    "lesson": "第1课 从原始社会到奴隶社会", "workbook": "自编", "type": "single",
     "stem": "随着生产力发展，原始社会末期出现了剩余产品，氏族内部贫富分化加剧，战俘不再被杀死而成为奴隶，私有制和阶级由此产生。这段材料说明（ ）",
     "options": [
       "生产力的发展是私有制和阶级产生的根本原因",
@@ -35,9 +37,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_003",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "古代埃及", "workbook": "自编", "type": "single",
+    "knowledge": "古代埃及",
+    "lesson": "第2课 古代埃及", "workbook": "自编", "type": "single",
     "stem": "古希腊历史学家希罗多德说：“埃及是尼罗河的赠礼。”尼罗河每年定期泛滥，留下肥沃淤泥，古埃及人据此制定历法、丈量土地、组织灌溉。这说明（ ）",
     "options": [
       "自然环境对古代文明的形成有重要影响",
@@ -51,9 +54,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_004",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "古代埃及", "workbook": "自编", "type": "single",
+    "knowledge": "古代埃及",
+    "lesson": "第2课 古代埃及", "workbook": "自编", "type": "single",
     "stem": "胡夫金字塔高约146米，由约230万块巨石砌成，石块之间严丝合缝。在没有现代机械的古代，古埃及人依靠大量劳动力、简单的斜坡和杠杆完成了这一工程。金字塔的修建反映了（ ）",
     "options": [
       "古埃及国王拥有至高无上的权力和强大的组织能力",
@@ -67,9 +71,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_005",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "古代两河流域", "workbook": "自编", "type": "single",
+    "knowledge": "古代两河流域",
+    "lesson": "第3课 古代两河流域", "workbook": "自编", "type": "single",
     "stem": "《汉谟拉比法典》刻在一根黑色石柱上，正文282条，涉及诉讼、财产、债务、婚姻、继承等。法典规定：如果理发师不经奴隶主许可剃去奴隶的标记，就要被砍掉双手。这一条款说明（ ）",
     "options": [
       "法典严格维护奴隶主阶级的利益",
@@ -83,9 +88,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_006",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "古代两河流域", "workbook": "自编", "type": "single",
+    "knowledge": "古代两河流域",
+    "lesson": "第3课 古代两河流域", "workbook": "自编", "type": "single",
     "stem": "《汉谟拉比法典》是迄今已知世界上第一部较为完整的成文法典，它用楔形文字刻写，内容涵盖社会生活的方方面面。这一文献的价值在于（ ）",
     "options": [
       "为研究古巴比伦社会提供了重要史料",
@@ -99,9 +105,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_007",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "古代印度", "workbook": "自编", "type": "single",
+    "knowledge": "古代印度",
+    "lesson": "第4课 古代印度", "workbook": "自编", "type": "single",
     "stem": "在古代印度，婆罗门掌管祭祀，刹帝利掌握军政大权，吠舍从事农业、畜牧业和商业，首陀罗从事各种低贱职业。各等级职业世袭、互不通婚。这套制度被称为（ ）",
     "options": ["种姓制度", "封君封臣制", "庄园制度", "科举制度"],
     "answer": "A",
@@ -110,9 +117,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_008",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "古代印度", "workbook": "自编", "type": "single",
+    "knowledge": "古代印度",
+    "lesson": "第4课 古代印度", "workbook": "自编", "type": "single",
     "stem": "古代印度法律规定：杀死一个婆罗门要处以极刑，杀死一个首陀罗只需赔偿少量财物。这一规定反映出种姓制度的实质是（ ）",
     "options": [
       "一种严格的阶级压迫制度",
@@ -126,9 +134,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_009",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "古代亚非文明", "workbook": "自编", "type": "single",
+    "knowledge": "古代亚非文明",
+    "lesson": "第4课 古代印度", "workbook": "自编", "type": "single",
     "stem": "古埃及依托尼罗河、古巴比伦依托两河流域、古印度依托印度河和恒河、中国依托黄河和长江，都孕育出灿烂的古代文明。这些文明产生方式的共同点是（ ）",
     "options": [
       "都发源于大河流域，属于大河文明",
@@ -142,9 +151,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u1_010",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第一单元 文明的产生和古代亚非文明",
-    "knowledge": "古代亚非文明", "workbook": "自编", "type": "single",
+    "knowledge": "古代亚非文明",
+    "lesson": "第4课 古代印度", "workbook": "自编", "type": "single",
     "stem": "与古代亚非文明依托大河不同，古代希腊文明依托地中海和爱琴海，工商业和海外贸易发达，城邦林立。这说明（ ）",
     "options": [
       "自然地理环境影响了文明的发展道路",
@@ -160,9 +170,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   // ===== 第二单元 古代欧洲文明 =====
   {
     "id": "his26_u2_001",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
-    "knowledge": "希腊城邦", "workbook": "自编", "type": "single",
+    "knowledge": "希腊城邦",
+    "lesson": "第5课 希腊城邦和亚历山大帝国", "workbook": "自编", "type": "single",
     "stem": "古希腊有数百个城邦，最大的雅典面积约2550平方千米、人口约30万，小的城邦只有几百人。各城邦各自为政、独立自治。这反映出希腊城邦的突出特点是（ ）",
     "options": ["小国寡民", "地广人稀", "中央集权", "大一统"],
     "answer": "A",
@@ -171,9 +182,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_002",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
-    "knowledge": "希腊城邦", "workbook": "自编", "type": "single",
+    "knowledge": "希腊城邦",
+    "lesson": "第5课 希腊城邦和亚历山大帝国", "workbook": "自编", "type": "single",
     "stem": "伯里克利时期，雅典公民大会每月召开三四次，凡年满20岁的男性公民都可参加，抽签担任公职者还能领取津贴。伯里克利宣称：“我们的制度之所以被称为民主政治，是因为政权掌握在全体公民手中。”这一时期雅典（ ）",
     "options": [
       "奴隶制民主政治发展到高峰",
@@ -187,9 +199,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_003",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
-    "knowledge": "亚历山大帝国", "workbook": "自编", "type": "single",
+    "knowledge": "亚历山大帝国",
+    "lesson": "第5课 希腊城邦和亚历山大帝国", "workbook": "自编", "type": "single",
     "stem": "亚历山大东征历时十年，行程万余里，建立了地跨欧亚非三洲的大帝国。他在征服地区建立了几十座以“亚历山大”命名的城市，希腊语成为官方语言，希腊文化与东方文化广泛交融。这表明亚历山大东征（ ）",
     "options": [
       "具有侵略性质，但客观上促进了东西方文化交流",
@@ -203,9 +216,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_004",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
-    "knowledge": "罗马城邦和罗马帝国", "workbook": "自编", "type": "single",
+    "knowledge": "罗马城邦和罗马帝国",
+    "lesson": "第6课 罗马城邦和罗马帝国", "workbook": "自编", "type": "single",
     "stem": "罗马共和国时期，执政官由选举产生、任期一年；元老院由贵族组成，掌握国家实际权力；公民大会是形式上的最高权力机关。据此可知，罗马共和国的政治特点是（ ）",
     "options": [
       "贵族寡头政治色彩浓厚",
@@ -219,9 +233,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_005",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
-    "knowledge": "罗马城邦和罗马帝国", "workbook": "自编", "type": "single",
+    "knowledge": "罗马城邦和罗马帝国",
+    "lesson": "第6课 罗马城邦和罗马帝国", "workbook": "自编", "type": "single",
     "stem": "3世纪起，罗马帝国奴隶来源枯竭、价格飞涨，奴隶消极怠工、破坏工具，农业衰落；同时帝国边境蛮族不断入侵。476年，西罗马帝国灭亡。材料说明罗马帝国衰亡的根本原因是（ ）",
     "options": [
       "奴隶制危机导致经济衰退和社会矛盾激化",
@@ -235,9 +250,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_006",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
-    "knowledge": "希腊罗马古典文化", "workbook": "自编", "type": "single",
+    "knowledge": "希腊罗马古典文化",
+    "lesson": "第7课 希腊罗马古典文化", "workbook": "自编", "type": "single",
     "stem": "《荷马史诗》包括《伊利亚特》和《奥德赛》，描写了特洛伊战争和英雄返乡的故事，是古希腊不朽的文学名著。这部作品的价值在于（ ）",
     "options": [
       "既是文学作品，也为研究早期希腊社会提供了史料",
@@ -251,9 +267,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_007",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
-    "knowledge": "希腊罗马古典文化", "workbook": "自编", "type": "single",
+    "knowledge": "希腊罗马古典文化",
+    "lesson": "第7课 希腊罗马古典文化", "workbook": "自编", "type": "single",
     "stem": "亚里士多德被誉为“百科全书式的学者”，他创立了逻辑学等学科体系，其著作涉及哲学、物理学、生物学、伦理学、政治学等领域。这反映出古希腊（ ）",
     "options": [
       "文化繁荣，哲学和科学成就突出",
@@ -267,9 +284,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u2_008",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第二单元 古代欧洲文明",
-    "knowledge": "希腊罗马古典文化", "workbook": "自编", "type": "single",
+    "knowledge": "希腊罗马古典文化",
+    "lesson": "第7课 希腊罗马古典文化", "workbook": "自编", "type": "single",
     "stem": "罗马万神庙的穹顶直径达43.3米，内部空间开阔宏大，体现了罗马建筑的高超水平；古希腊帕特农神庙则比例匀称、柱式典雅。两地建筑的差异说明（ ）",
     "options": [
       "古希腊罗马建筑各具特色，都是古典文化的代表",
@@ -285,9 +303,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   // ===== 第三单元 封建时代的欧洲 =====
   {
     "id": "his26_u3_001",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
-    "knowledge": "法兰克王国", "workbook": "自编", "type": "single",
+    "knowledge": "法兰克王国",
+    "lesson": "第7课 法兰克王国和西欧封建制度", "workbook": "自编", "type": "single",
     "stem": "496年，法兰克国王克洛维率3000名亲兵在兰斯接受主教涂油礼，皈依基督教。此后他得到罗马教会的支持，不断扩张疆域。这表明克洛维皈依基督教（ ）",
     "options": [
       "巩固了统治，推动了法兰克王国的扩张",
@@ -301,9 +320,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_002",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
-    "knowledge": "西欧封建制度", "workbook": "自编", "type": "single",
+    "knowledge": "西欧封建制度",
+    "lesson": "第7课 法兰克王国和西欧封建制度", "workbook": "自编", "type": "single",
     "stem": "在西欧，封臣向封君行臣服礼，宣誓效忠；封君则把土地封赐给封臣，并承诺保护他。若封臣不履行义务，封君可收回封地。这套关系被称为（ ）",
     "options": ["封君封臣制", "种姓制度", "科举制度", "行会制度"],
     "answer": "A",
@@ -312,9 +332,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_003",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
-    "knowledge": "西欧封建制度", "workbook": "自编", "type": "single",
+    "knowledge": "西欧封建制度",
+    "lesson": "第7课 法兰克王国和西欧封建制度", "workbook": "自编", "type": "single",
     "stem": "西欧封建制度下，“我的附庸的附庸，不是我的附庸”。这句话反映的实质是（ ）",
     "options": [
       "封君封臣关系具有严格的等级性和契约性，王权相对有限",
@@ -328,9 +349,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_004",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
-    "knowledge": "西欧庄园", "workbook": "自编", "type": "single",
+    "knowledge": "西欧庄园",
+    "lesson": "第7课 法兰克王国和西欧封建制度", "workbook": "自编", "type": "single",
     "stem": "西欧庄园内有领主住宅、教堂、磨坊、手工作坊和农奴份地，产品基本自给自足。农奴每周要在领主自营地无偿劳动几天，还要缴纳各种捐税。这说明西欧庄园（ ）",
     "options": [
       "是一个自给自足的经济和政治单位",
@@ -344,9 +366,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_005",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
-    "knowledge": "西欧城市和大学", "workbook": "自编", "type": "single",
+    "knowledge": "西欧城市和大学",
+    "lesson": "第8课 西欧的城市和大学", "workbook": "自编", "type": "single",
     "stem": "11世纪起，西欧城市兴起。市民为摆脱领主控制，或用金钱向领主赎买自治权，或通过武装斗争争取。琅城人民起义坚持多年，最终获得自治特许状。这说明（ ）",
     "options": [
       "西欧城市通过金钱赎买和武力斗争争取自治",
@@ -360,9 +383,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_006",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
-    "knowledge": "西欧城市和大学", "workbook": "自编", "type": "single",
+    "knowledge": "西欧城市和大学",
+    "lesson": "第8课 西欧的城市和大学", "workbook": "自编", "type": "single",
     "stem": "随着西欧城市兴起，市民阶层形成，他们经营手工业和商业，要求自由和自治；一些富裕商人积累资本，雇佣工人进行生产。这一现象（ ）",
     "options": [
       "促进了资本主义萌芽的产生",
@@ -376,9 +400,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_007",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
-    "knowledge": "拜占庭帝国", "workbook": "自编", "type": "single",
+    "knowledge": "拜占庭帝国",
+    "lesson": "第9课 拜占庭帝国", "workbook": "自编", "type": "single",
     "stem": "6世纪，查士丁尼组织法学家编纂《查士丁尼法典》《法学汇纂》《法理概要》《新法典》，统称《罗马民法大全》。它保留了罗马法的精华，对后世欧洲民法影响深远。这一成就说明（ ）",
     "options": [
       "拜占庭帝国在法制建设上成就突出，保存了罗马法传统",
@@ -392,9 +417,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u3_008",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第三单元 封建时代的欧洲",
-    "knowledge": "拜占庭帝国", "workbook": "自编",
+    "knowledge": "拜占庭帝国",
+    "lesson": "第9课 拜占庭帝国", "workbook": "自编",
     "type": "single",
     "stem": "拜占庭帝国都城君士坦丁堡地处欧亚交界，商业繁荣；帝国保存了大量希腊罗马古典文献，许多学者在此研究；1453年帝国灭亡后，大批学者携带典籍西逃，推动了西欧文艺复兴。这段材料说明拜占庭帝国（ ）",
     "options": [
@@ -411,9 +437,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   // ===== 第四单元 中古时期的亚洲、非洲和美洲 =====
   {
     "id": "his26_u4_001",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
-    "knowledge": "封建时代的日本", "workbook": "自编", "type": "single",
+    "knowledge": "封建时代的日本",
+    "lesson": "第10课 封建时代的日本", "workbook": "自编", "type": "single",
     "stem": "7世纪中期，日本仿效中国隋唐制度进行改革：建立中央集权国家，废除贵族世袭特权，把土地和部民收归国有，实行班田收授法。这次改革使日本（ ）",
     "options": [
       "发展成为中央集权的封建国家",
@@ -427,9 +454,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_002",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
-    "knowledge": "封建时代的日本", "workbook": "自编", "type": "single",
+    "knowledge": "封建时代的日本",
+    "lesson": "第10课 封建时代的日本", "workbook": "自编", "type": "single",
     "stem": "日本武士集团形成后，武士道强调忠君、节义、廉耻、勇武，要求武士绝对效忠主君，必要时切腹殉死。这一道德规范的实质是（ ）",
     "options": [
       "服务于封建统治阶级的思想工具",
@@ -443,9 +471,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_003",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
-    "knowledge": "阿拉伯帝国", "workbook": "自编", "type": "single",
+    "knowledge": "阿拉伯帝国",
+    "lesson": "第11课 阿拉伯帝国", "workbook": "自编", "type": "single",
     "stem": "阿拉伯人把中国的造纸术、指南针、火药传入欧洲，把印度的数字和糖传入西方，把希腊典籍翻译保存下来。这表明阿拉伯人（ ）",
     "options": [
       "成为东西方文化交流的桥梁",
@@ -459,9 +488,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_004",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
-    "knowledge": "阿拉伯帝国", "workbook": "自编", "type": "single",
+    "knowledge": "阿拉伯帝国",
+    "lesson": "第11课 阿拉伯帝国", "workbook": "自编", "type": "single",
     "stem": "中国古代四大发明中，造纸术、指南针、火药经阿拉伯人传入欧洲。这些技术传入欧洲后（ ）",
     "options": [
       "对欧洲社会变革产生了重要影响",
@@ -475,9 +505,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_005",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
-    "knowledge": "中古时期的非洲", "workbook": "自编", "type": "single",
+    "knowledge": "中古时期的非洲",
+    "lesson": "第12课 中古时期的非洲和美洲", "workbook": "自编", "type": "single",
     "stem": "在西非，加纳、马里、桑海先后兴起，控制着穿越撒哈拉沙漠的黄金和食盐贸易；马里的国王曼萨·穆萨曾赴麦加朝圣，沿途慷慨施舍，使马里声名远播。这说明中古时期的西非（ ）",
     "options": [
       "存在较为繁荣的文明和跨区域贸易",
@@ -491,9 +522,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_006",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
-    "knowledge": "中古时期的美洲", "workbook": "自编", "type": "single",
+    "knowledge": "中古时期的美洲",
+    "lesson": "第12课 中古时期的非洲和美洲", "workbook": "自编", "type": "single",
     "stem": "玛雅人创造了太阳历和象形文字；阿兹特克人发明了“浮动园地”扩大耕地；印加人建立中央集权帝国，修建了贯穿全国的道路系统。这些史实说明（ ）",
     "options": [
       "美洲印第安人独立创造了灿烂的古代文明",
@@ -507,9 +539,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_007",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
-    "knowledge": "中古时期的美洲", "workbook": "自编", "type": "single",
+    "knowledge": "中古时期的美洲",
+    "lesson": "第12课 中古时期的非洲和美洲", "workbook": "自编", "type": "single",
     "stem": "印加帝国实行中央集权统治，国王为最高统治者；全国修建了长达数万千米的道路网，沿途设驿站传递信息；还建立了完善的农业灌溉系统。这反映出印加文明（ ）",
     "options": [
       "国家治理水平较高，组织能力强",
@@ -523,9 +556,10 @@ const List<Map<String, dynamic>> history2026Unit14 = [
   },
   {
     "id": "his26_u4_008",
-    "subject": "history", "grade": "九年级",
+    "subject": "history", "grade": "九年级上册",
     "unit": "第四单元 中古时期的亚洲、非洲和美洲",
-    "knowledge": "中古世界文明", "workbook": "自编", "type": "single",
+    "knowledge": "中古世界文明",
+    "lesson": "第12课 中古时期的非洲和美洲", "workbook": "自编", "type": "single",
     "stem": "中古时期，东亚的日本和朝鲜、西亚的阿拉伯帝国、南亚的印度、西非的加纳马里桑海、美洲的玛雅阿兹特克印加，各自发展出独具特色的文明，并通过商路彼此交流。这说明中古时期世界文明（ ）",
     "options": [
       "多元并行发展、交流互鉴",
