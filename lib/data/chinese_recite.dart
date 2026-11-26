@@ -1,9 +1,12 @@
 // 语文九年级上册 —— 古诗文背诵速过卡（flash 类型：看题→点显示答案→自评）
+// 分类：古诗 / 文言文（不再按教材单元拆分）
 const List<Map<String, dynamic>> chineseRecite = [
-  // ===== 岳阳楼记 =====
+  // ========== 文言文 ==========
+
+  // ---- 岳阳楼记 ----
   {
     "id": "chy_rec_001", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
+    "unit": "文言文", "lesson": "岳阳楼记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "先天下之忧而忧，＿＿＿＿＿＿＿。",
     "options": [], "answer": "后天下之乐而乐",
@@ -12,7 +15,7 @@ const List<Map<String, dynamic>> chineseRecite = [
   },
   {
     "id": "chy_rec_002", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
+    "unit": "文言文", "lesson": "岳阳楼记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "不以物喜，＿＿＿＿＿＿＿。",
     "options": [], "answer": "不以己悲",
@@ -21,7 +24,7 @@ const List<Map<String, dynamic>> chineseRecite = [
   },
   {
     "id": "chy_rec_003", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
+    "unit": "文言文", "lesson": "岳阳楼记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "居庙堂之高则忧其民，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "处江湖之远则忧其君",
@@ -30,18 +33,27 @@ const List<Map<String, dynamic>> chineseRecite = [
   },
   {
     "id": "chy_rec_004", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
+    "unit": "文言文", "lesson": "岳阳楼记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "衔远山，吞长江，＿＿＿＿＿＿，横无际涯。",
     "options": [], "answer": "浩浩汤汤",
     "analysis": "出自《岳阳楼记》，写洞庭湖的壮阔气象。",
     "difficulty": 2
   },
-
-  // ===== 醉翁亭记 =====
   {
     "id": "chy_rec_005", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "醉翁亭记",
+    "unit": "文言文", "lesson": "岳阳楼记",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "《岳阳楼记》中描写洞庭湖月夜美景的句子：浮光跃金，＿＿＿＿＿＿。",
+    "options": [], "answer": "静影沉璧",
+    "analysis": "“浮光跃金，静影沉璧”写月夜湖面波光与月影，一动一静。",
+    "difficulty": 2
+  },
+
+  // ---- 醉翁亭记 ----
+  {
+    "id": "chy_rec_006", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "醉翁亭记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "醉翁之意不在酒，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "在乎山水之间也",
@@ -49,8 +61,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_006", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "醉翁亭记",
+    "id": "chy_rec_007", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "醉翁亭记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "山水之乐，＿＿＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "得之心而寓之酒也",
@@ -58,19 +70,28 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_007", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "醉翁亭记",
+    "id": "chy_rec_008", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "醉翁亭记",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "野芳发而幽香，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "佳木秀而繁阴",
     "analysis": "出自《醉翁亭记》，写春夏之景。",
     "difficulty": 2
   },
-
-  // ===== 湖心亭看雪 =====
   {
-    "id": "chy_rec_008", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "湖心亭看雪",
+    "id": "chy_rec_009", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "醉翁亭记",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "《醉翁亭记》中写朝暮之景的句子：日出而林霏开，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "云归而岩穴暝",
+    "analysis": "写琅琊山早晚明暗变化。",
+    "difficulty": 2
+  },
+
+  // ---- 湖心亭看雪 ----
+  {
+    "id": "chy_rec_010", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "湖心亭看雪",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "雾凇沆砀，天与云与山与水，＿＿＿＿＿＿。",
     "options": [], "answer": "上下一白",
@@ -78,8 +99,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_009", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "湖心亭看雪",
+    "id": "chy_rec_011", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "湖心亭看雪",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "湖上影子，惟长堤一痕、湖心亭一点、＿＿＿＿＿＿＿＿＿＿、舟中人两三粒而已。",
     "options": [], "answer": "与余舟一芥",
@@ -87,10 +108,10 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
 
-  // ===== 曹刿论战 =====
+  // ---- 曹刿论战 ----
   {
-    "id": "chy_rec_010", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "曹刿论战",
+    "id": "chy_rec_012", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "曹刿论战",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "一鼓作气，＿＿＿＿，＿＿＿＿。",
     "options": [], "answer": "再而衰，三而竭",
@@ -98,8 +119,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_011", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "曹刿论战",
+    "id": "chy_rec_013", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "曹刿论战",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "夫战，勇气也。＿＿＿＿＿＿＿，再而衰，三而竭。",
     "options": [], "answer": "一鼓作气",
@@ -107,8 +128,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_012", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "曹刿论战",
+    "id": "chy_rec_014", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "曹刿论战",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "小大之狱，虽不能察，＿＿＿＿＿。",
     "options": [], "answer": "必以情",
@@ -116,10 +137,10 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
 
-  // ===== 邹忌讽齐王纳谏 =====
+  // ---- 邹忌讽齐王纳谏 ----
   {
-    "id": "chy_rec_013", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "邹忌讽齐王纳谏",
+    "id": "chy_rec_015", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "邹忌讽齐王纳谏",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "群臣吏民能面刺寡人之过者，＿＿＿＿＿；上书谏寡人者，＿＿＿＿＿。",
     "options": [], "answer": "受上赏；受中赏",
@@ -127,8 +148,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
   {
-    "id": "chy_rec_014", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "邹忌讽齐王纳谏",
+    "id": "chy_rec_016", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "邹忌讽齐王纳谏",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "燕、赵、韩、魏闻之，皆朝于齐。＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "此所谓战胜于朝廷",
@@ -136,10 +157,10 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
 
-  // ===== 陈涉世家 =====
+  // ---- 陈涉世家 ----
   {
-    "id": "chy_rec_015", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "陈涉世家",
+    "id": "chy_rec_017", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "陈涉世家",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "王侯将相＿＿＿＿＿＿＿！",
     "options": [], "answer": "宁有种乎",
@@ -147,8 +168,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_016", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "陈涉世家",
+    "id": "chy_rec_018", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "陈涉世家",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "燕雀安知＿＿＿＿＿＿＿哉！",
     "options": [], "answer": "鸿鹄之志",
@@ -156,8 +177,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_017", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "陈涉世家",
+    "id": "chy_rec_019", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "陈涉世家",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "苟富贵，＿＿＿＿＿。",
     "options": [], "answer": "无相忘",
@@ -165,10 +186,10 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
 
-  // ===== 出师表 =====
+  // ---- 出师表 ----
   {
-    "id": "chy_rec_018", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "出师表",
+    "id": "chy_rec_020", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "出师表",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "受任于败军之际，＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "奉命于危难之间",
@@ -176,8 +197,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_019", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "出师表",
+    "id": "chy_rec_021", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "出师表",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "先帝创业未半而中道崩殂，今天下三分，益州疲弊，＿＿＿＿＿＿＿。",
     "options": [], "answer": "此诚危急存亡之秋也",
@@ -185,8 +206,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_020", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "出师表",
+    "id": "chy_rec_022", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "出师表",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "苟全性命于乱世，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "不求闻达于诸侯",
@@ -194,8 +215,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_021", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "出师表",
+    "id": "chy_rec_023", "subject": "chinese", "grade": "九年级上册",
+    "unit": "文言文", "lesson": "出师表",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "＿＿＿＿＿＿＿，不宜异同。",
     "options": [], "answer": "陟罚臧否",
@@ -203,10 +224,12 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
 
-  // ===== 行路难 =====
+  // ========== 古诗 ==========
+
+  // ---- 行路难（其一） ----
   {
-    "id": "chy_rec_022", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
+    "id": "chy_rec_024", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "长风破浪会有时，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "直挂云帆济沧海",
@@ -214,8 +237,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_023", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
+    "id": "chy_rec_025", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "欲渡黄河冰塞川，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "将登太行雪满山",
@@ -223,171 +246,17 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_024", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
+    "id": "chy_rec_026", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "闲来垂钓碧溪上，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "忽复乘舟梦日边",
     "analysis": "李白《行路难》，用姜尚、伊尹的典故表达期待被重用。",
     "difficulty": 3
   },
-
-  // ===== 酬乐天扬州初逢席上见赠 =====
-  {
-    "id": "chy_rec_025", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "酬乐天扬州初逢席上见赠",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "沉舟侧畔千帆过，＿＿＿＿＿＿＿＿＿。",
-    "options": [], "answer": "病树前头万木春",
-    "analysis": "刘禹锡此句蕴含新事物必将取代旧事物的哲理。",
-    "difficulty": 1
-  },
-  {
-    "id": "chy_rec_026", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "酬乐天扬州初逢席上见赠",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "巴山楚水凄凉地，＿＿＿＿＿＿＿＿＿。",
-    "options": [], "answer": "二十三年弃置身",
-    "analysis": "刘禹锡《酬乐天扬州初逢席上见赠》首联，慨叹贬谪之久。",
-    "difficulty": 2
-  },
   {
     "id": "chy_rec_027", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "酬乐天扬州初逢席上见赠",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "今日听君歌一曲，＿＿＿＿＿＿＿＿＿。",
-    "options": [], "answer": "暂凭杯酒长精神",
-    "analysis": "刘禹锡诗尾联，表达振作精神、积极进取的态度。",
-    "difficulty": 2
-  },
-
-  // ===== 水调歌头 =====
-  {
-    "id": "chy_rec_028", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "但愿人长久，＿＿＿＿＿＿＿。",
-    "options": [], "answer": "千里共婵娟",
-    "analysis": "苏轼《水调歌头》，表达对亲人的美好祝愿。",
-    "difficulty": 1
-  },
-  {
-    "id": "chy_rec_029", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "人有悲欢离合，＿＿＿＿＿＿＿，此事古难全。",
-    "options": [], "answer": "月有阴晴圆缺",
-    "analysis": "苏轼《水调歌头》，以自然规律宽解人生缺憾。",
-    "difficulty": 1
-  },
-  {
-    "id": "chy_rec_030", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "明月几时有？＿＿＿＿＿＿＿。",
-    "options": [], "answer": "把酒问青天",
-    "analysis": "苏轼《水调歌头》开篇，气势豪迈。",
-    "difficulty": 1
-  },
-  {
-    "id": "chy_rec_031", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "不应有恨，＿＿＿＿＿＿＿＿＿？",
-    "options": [], "answer": "何事长向别时圆",
-    "analysis": "苏轼《水调歌头》，以埋怨月亮的问句写离别之愁。",
-    "difficulty": 3
-  },
-
-  // ===== 月夜忆舍弟 =====
-  {
-    "id": "chy_rec_032", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "月夜忆舍弟",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "露从今夜白，＿＿＿＿＿＿＿。",
-    "options": [], "answer": "月是故乡明",
-    "analysis": "杜甫《月夜忆舍弟》，写思乡怀亲之情。",
-    "difficulty": 1
-  },
-  {
-    "id": "chy_rec_033", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "月夜忆舍弟",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "戍鼓断人行，＿＿＿＿＿＿＿。",
-    "options": [], "answer": "边秋一雁声",
-    "analysis": "杜甫《月夜忆舍弟》首联，写战乱中的边塞秋景。",
-    "difficulty": 2
-  },
-  {
-    "id": "chy_rec_034", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "月夜忆舍弟",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "寄书长不达，＿＿＿＿＿＿＿。",
-    "options": [], "answer": "况乃未休兵",
-    "analysis": "杜甫《月夜忆舍弟》尾联，写战乱中音书难通。",
-    "difficulty": 3
-  },
-
-  // ===== 长沙过贾谊宅 =====
-  {
-    "id": "chy_rec_035", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "长沙过贾谊宅",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "汉文有道恩犹薄，＿＿＿＿＿＿＿＿＿。",
-    "options": [], "answer": "湘水无情吊岂知",
-    "analysis": "刘长卿《长沙过贾谊宅》，借贾谊遭贬抒发自己怀才不遇的悲愤。",
-    "difficulty": 3
-  },
-  {
-    "id": "chy_rec_036", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "长沙过贾谊宅",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "寂寂江山摇落处，＿＿＿＿＿＿＿＿＿。",
-    "options": [], "answer": "怜君何事到天涯",
-    "analysis": "刘长卿诗尾联，既怜贾谊也自怜。",
-    "difficulty": 3
-  },
-  {
-    "id": "chy_rec_037", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "长沙过贾谊宅",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "秋草独寻人去后，＿＿＿＿＿＿＿＿＿。",
-    "options": [], "answer": "寒林空见日斜时",
-    "analysis": "刘长卿《长沙过贾谊宅》颔联，写凭吊时的萧瑟景象。",
-    "difficulty": 3
-  },
-
-  // ===== 综合默写 =====
-  {
-    "id": "chy_rec_038", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "岳阳楼记",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "《岳阳楼记》中描写洞庭湖月夜美景的句子是：浮光跃金，＿＿＿＿＿＿。",
-    "options": [], "answer": "静影沉璧",
-    "analysis": "“浮光跃金，静影沉璧”写月夜湖面波光与月影，一动一静。",
-    "difficulty": 2
-  },
-  {
-    "id": "chy_rec_039", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 文言名篇", "lesson": "醉翁亭记",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "《醉翁亭记》中写朝暮之景的句子：日出而林霏开，＿＿＿＿＿＿＿＿＿。",
-    "options": [], "answer": "云归而岩穴暝",
-    "analysis": "写琅琊山早晚明暗变化。",
-    "difficulty": 2
-  },
-  {
-    "id": "chy_rec_040", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
-    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
-    "stem": "《行路难》中运用典故、表达希望被朝廷重用的句子是：＿＿＿＿＿＿＿＿，忽复乘舟梦日边。",
-    "options": [], "answer": "闲来垂钓碧溪上",
-    "analysis": "用姜太公渭水垂钓、伊尹梦日边受聘的典故。",
-    "difficulty": 2
-  },
-  {
-    "id": "chy_rec_041", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
+    "unit": "古诗", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "金樽清酒斗十千，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "玉盘珍羞直万钱",
@@ -395,8 +264,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_042", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
+    "id": "chy_rec_028", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "停杯投箸不能食，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "拔剑四顾心茫然",
@@ -404,8 +273,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_043", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "行路难（其一）",
+    "id": "chy_rec_029", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "行路难（其一）",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "行路难！行路难！多歧路，＿＿＿＿＿？",
     "options": [], "answer": "今安在",
@@ -413,17 +282,93 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 1
   },
   {
-    "id": "chy_rec_044", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "酬乐天扬州初逢席上见赠",
+    "id": "chy_rec_030", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "行路难（其一）",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "《行路难》中运用典故、表达希望被朝廷重用的句子是：＿＿＿＿＿＿＿＿，忽复乘舟梦日边。",
+    "options": [], "answer": "闲来垂钓碧溪上",
+    "analysis": "用姜太公渭水垂钓、伊尹梦日边受聘的典故。",
+    "difficulty": 2
+  },
+
+  // ---- 酬乐天扬州初逢席上见赠 ----
+  {
+    "id": "chy_rec_031", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "酬乐天扬州初逢席上见赠",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "沉舟侧畔千帆过，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "病树前头万木春",
+    "analysis": "刘禹锡此句蕴含新事物必将取代旧事物的哲理。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_032", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "酬乐天扬州初逢席上见赠",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "巴山楚水凄凉地，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "二十三年弃置身",
+    "analysis": "刘禹锡《酬乐天扬州初逢席上见赠》首联，慨叹贬谪之久。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_033", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "酬乐天扬州初逢席上见赠",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "今日听君歌一曲，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "暂凭杯酒长精神",
+    "analysis": "刘禹锡诗尾联，表达振作精神、积极进取的态度。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_034", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "酬乐天扬州初逢席上见赠",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "怀旧空吟闻笛赋，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "到乡翻似烂柯人",
     "analysis": "刘禹锡诗颔联，用向秀《思旧赋》和王质烂柯的典故写物是人非。",
     "difficulty": 3
   },
+
+  // ---- 水调歌头·明月几时有 ----
   {
-    "id": "chy_rec_045", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
+    "id": "chy_rec_035", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "水调歌头·明月几时有",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "但愿人长久，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "千里共婵娟",
+    "analysis": "苏轼《水调歌头》，表达对亲人的美好祝愿。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_036", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "水调歌头·明月几时有",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "人有悲欢离合，＿＿＿＿＿＿＿，此事古难全。",
+    "options": [], "answer": "月有阴晴圆缺",
+    "analysis": "苏轼《水调歌头》，以自然规律宽解人生缺憾。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_037", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "水调歌头·明月几时有",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "明月几时有？＿＿＿＿＿＿＿。",
+    "options": [], "answer": "把酒问青天",
+    "analysis": "苏轼《水调歌头》开篇，气势豪迈。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_038", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "水调歌头·明月几时有",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "不应有恨，＿＿＿＿＿＿＿＿＿？",
+    "options": [], "answer": "何事长向别时圆",
+    "analysis": "苏轼《水调歌头》，以埋怨月亮的问句写离别之愁。",
+    "difficulty": 3
+  },
+  {
+    "id": "chy_rec_039", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "不知天上宫阙，＿＿＿＿＿＿＿。",
     "options": [], "answer": "今夕是何年",
@@ -431,8 +376,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_046", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
+    "id": "chy_rec_040", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "起舞弄清影，＿＿＿＿＿＿＿。",
     "options": [], "answer": "何似在人间",
@@ -440,8 +385,8 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 2
   },
   {
-    "id": "chy_rec_047", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
+    "id": "chy_rec_041", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "我欲乘风归去，＿＿＿＿＿＿＿＿＿，高处不胜寒。",
     "options": [], "answer": "又恐琼楼玉宇",
@@ -449,30 +394,244 @@ const List<Map<String, dynamic>> chineseRecite = [
     "difficulty": 3
   },
   {
-    "id": "chy_rec_048", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "水调歌头·明月几时有",
+    "id": "chy_rec_042", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "水调歌头·明月几时有",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "转朱阁，低绮户，＿＿＿＿＿。",
     "options": [], "answer": "照无眠",
     "analysis": "苏轼《水调歌头》，写月光移动与不眠之人。",
     "difficulty": 2
   },
+
+  // ---- 月夜忆舍弟 ----
   {
-    "id": "chy_rec_049", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "月夜忆舍弟",
+    "id": "chy_rec_043", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "月夜忆舍弟",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "露从今夜白，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "月是故乡明",
+    "analysis": "杜甫《月夜忆舍弟》，写思乡怀亲之情。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_044", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "月夜忆舍弟",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "戍鼓断人行，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "边秋一雁声",
+    "analysis": "杜甫《月夜忆舍弟》首联，写战乱中的边塞秋景。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_045", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "月夜忆舍弟",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "寄书长不达，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "况乃未休兵",
+    "analysis": "杜甫《月夜忆舍弟》尾联，写战乱中音书难通。",
+    "difficulty": 3
+  },
+  {
+    "id": "chy_rec_046", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "月夜忆舍弟",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "有弟皆分散，＿＿＿＿＿＿＿。",
     "options": [], "answer": "无家问死生",
     "analysis": "杜甫《月夜忆舍弟》，写战乱中骨肉分离之痛。",
     "difficulty": 2
   },
+
+  // ---- 长沙过贾谊宅 ----
+  {
+    "id": "chy_rec_047", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "长沙过贾谊宅",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "汉文有道恩犹薄，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "湘水无情吊岂知",
+    "analysis": "刘长卿《长沙过贾谊宅》，借贾谊遭贬抒发自己怀才不遇的悲愤。",
+    "difficulty": 3
+  },
+  {
+    "id": "chy_rec_048", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "长沙过贾谊宅",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "寂寂江山摇落处，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "怜君何事到天涯",
+    "analysis": "刘长卿诗尾联，既怜贾谊也自怜。",
+    "difficulty": 3
+  },
+  {
+    "id": "chy_rec_049", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "长沙过贾谊宅",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "秋草独寻人去后，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "寒林空见日斜时",
+    "analysis": "刘长卿《长沙过贾谊宅》颔联，写凭吊时的萧瑟景象。",
+    "difficulty": 3
+  },
   {
     "id": "chy_rec_050", "subject": "chinese", "grade": "九年级上册",
-    "unit": "背诵默写 诗词曲", "lesson": "长沙过贾谊宅",
+    "unit": "古诗", "lesson": "长沙过贾谊宅",
     "knowledge": "名句默写", "workbook": "自编", "type": "flash",
     "stem": "三年谪宦此栖迟，＿＿＿＿＿＿＿＿＿。",
     "options": [], "answer": "万古惟留楚客悲",
     "analysis": "刘长卿《长沙过贾谊宅》首联，借贾谊谪居起笔。",
     "difficulty": 3
-  }
+  },
+
+  // ---- 浣溪沙（秦观） ----
+  {
+    "id": "chy_rec_051", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "浣溪沙",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "漠漠轻寒上小楼，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "晓阴无赖似穷秋",
+    "analysis": "出自秦观《浣溪沙》，写暮春阴冷之景。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_052", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "浣溪沙",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "自在飞花轻似梦，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "无边丝雨细如愁",
+    "analysis": "出自秦观《浣溪沙》，以飞花、丝雨喻愁。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_053", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "浣溪沙",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "＿＿＿＿＿＿＿，＿＿＿＿＿＿＿，宝帘闲挂小银钩。",
+    "options": [], "answer": "自在飞花轻似梦，无边丝雨细如愁",
+    "analysis": "出自秦观《浣溪沙》结句，写闲愁。",
+    "difficulty": 3
+  },
+
+  // ---- 丑奴儿·书博山道中壁（辛弃疾） ----
+  {
+    "id": "chy_rec_054", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "丑奴儿·书博山道中壁",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "少年不识愁滋味，＿＿＿＿＿。",
+    "options": [], "answer": "爱上层楼",
+    "analysis": "出自辛弃疾《丑奴儿·书博山道中壁》，写少时轻狂。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_055", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "丑奴儿·书博山道中壁",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "而今识尽愁滋味，＿＿＿＿＿。",
+    "options": [], "answer": "欲说还休",
+    "analysis": "出自辛弃疾《丑奴儿·书博山道中壁》，写老来愁苦。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_056", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "丑奴儿·书博山道中壁",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "少年不识愁滋味，爱上层楼。爱上层楼，＿＿＿＿＿＿＿＿＿。而今识尽愁滋味，欲说还休。欲说还休，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "为赋新词强说愁；却道天凉好个秋",
+    "analysis": "辛弃疾《丑奴儿·书博山道中壁》全文，对比少年与成年愁情。",
+    "difficulty": 3
+  },
+
+  // ---- 无题（李商隐） ----
+  {
+    "id": "chy_rec_057", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "无题",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "相见时难别亦难，东风无力百花残，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "春蚕到死丝方尽，蜡炬成灰泪始干",
+    "analysis": "李商隐《无题》，名句：春蚕到死丝方尽，蜡炬成灰泪始干。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_058", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "无题",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "晓镜但愁云鬓改，夜吟应觉月光寒，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "蓬山此去无多路，青鸟殷勤为探看",
+    "analysis": "李商隐《无题》尾联，写相思之切。",
+    "difficulty": 2
+  },
+
+  // ---- 赤壁怀古（杜牧） ----
+  {
+    "id": "chy_rec_059", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "赤壁怀古",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "折戟沉沙铁未销，自将磨洗认前朝，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "东风不与周郎便，铜雀春深锁二乔",
+    "analysis": "杜牧《赤壁怀古》，咏赤壁之战，感今怀古。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_060", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "赤壁怀古",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "＿＿＿＿＿＿＿＿＿，东风不与周郎便，铜雀春深锁二乔。",
+    "options": [], "answer": "折戟沉沙铁未销，自将磨洗认前朝",
+    "analysis": "杜牧《赤壁怀古》首联，写当年周郎东风夺胜。",
+    "difficulty": 2
+  },
+
+  // ---- 琵琶行（白居易，节选） ----
+  {
+    "id": "chy_rec_061", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "琵琶行",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "浔阳江头夜送客，枫叶荻花秋瑟瑟，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "主人下马客在船，举酒欲饮无管弦",
+    "analysis": "白居易《琵琶行》开篇，写秋夜送客。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_062", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "琵琶行",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "＿＿＿＿＿＿＿，不闻近前琵琶声。",
+    "options": [], "answer": "醉不成欢惨将别，别时茫茫江浸月",
+    "analysis": "白居易《琵琶行》，写夜宴散去，忽闻琵琶声。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_063", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "琵琶行",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "忽闻水上琵琶声，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "主人忘归客不发",
+    "analysis": "白居易《琵琶行》，写琵琶声动人心魄。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_064", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "琵琶行",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "寻声暗问弹者谁，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "琵琶声停欲语迟",
+    "analysis": "白居易《琵琶行》，写诗人暗中寻访琵琶女。",
+    "difficulty": 2
+  },
+
+  // ---- 咸阳城东楼（许浑） ----
+  {
+    "id": "chy_rec_065", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "咸阳城东楼",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "三秦烟树旧西京，五陵佳气总横飞，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "山郡经遥烽火断，江村雁远笛声微",
+    "analysis": "许浑《咸阳城东楼》，写久战后太平景象。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_066", "subject": "chinese", "grade": "九年级上册",
+    "unit": "古诗", "lesson": "咸阳城东楼",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "＿＿＿＿＿＿＿＿＿，无人不说太平时。",
+    "options": [], "answer": "万户千门开一面",
+    "analysis": "许浑《咸阳城东楼》，百姓歌颂太平。",
+    "difficulty": 2
+  },
 ];
