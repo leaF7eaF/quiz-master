@@ -1,58 +1,8 @@
-// 语文九年级上册 2026新版 全单选题（古诗文/文言/名著/语言运用）
+// 语文九年级上册 —— 阅读/文言文/语言运用（现代诗非必背，已移除）
 const List<Map<String, dynamic>> chinese2026Unit = [
   {
-    "id": "chy26_001", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第一单元 诗歌", "knowledge": "《沁园春·雪》",
- "lesson": "《沁园春·雪》", "workbook": "自编", "type": "single",
-    "stem": "《沁园春·雪》中“山舞银蛇，原驰蜡象”运用的修辞手法是（ ）",
-    "options": ["比喻、对偶", "拟人、夸张", "排比、反问", "借代、设问"],
-    "answer": "A",
-    "analysis": "“山舞银蛇，原驰蜡象”把山比作银蛇、原比作蜡象，是比喻；上下句结构对称，是对偶。",
-    "difficulty": 2
-  },
-  {
-    "id": "chy26_002", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第一单元 诗歌", "knowledge": "《沁园春·雪》",
- "lesson": "《沁园春·雪》", "workbook": "自编", "type": "single",
-    "stem": "《沁园春·雪》中“数风流人物，还看今朝”的“风流人物”指的是（ ）",
-    "options": ["建功立业的英雄人物", "风流浪子", "有文采的人", "古代帝王"],
-    "answer": "A",
-    "analysis": "“风流人物”指能建功立业的英雄人物，表达了作者对当代英雄的赞美和自信。",
-    "difficulty": 2
-  },
-  {
-    "id": "chy26_003", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第一单元 诗歌", "knowledge": "《我爱这土地》",
- "lesson": "《我爱这土地》", "workbook": "自编", "type": "single",
-    "stem": "《我爱这土地》的作者是（ ）",
-    "options": ["艾青", "徐志摩", "闻一多", "戴望舒"],
-    "answer": "A",
-    "analysis": "《我爱这土地》是艾青的代表作，表达了深沉的爱国之情。",
-    "difficulty": 1
-  },
-  {
-    "id": "chy26_004", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第一单元 诗歌", "knowledge": "《乡愁》",
- "lesson": "《乡愁》", "workbook": "自编", "type": "single",
-    "stem": "《乡愁》中诗人用“邮票、船票、坟墓、海峡”四个意象，表达的主题是（ ）",
-    "options": ["思乡之情和家国之思", "爱情", "友情", "对自然的赞美"],
-    "answer": "A",
-    "analysis": "《乡愁》通过四个意象层层递进，表达思乡之情和家国之思。",
-    "difficulty": 1
-  },
-  {
-    "id": "chy26_005", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第一单元 诗歌", "knowledge": "《周总理，你在哪里》",
- "lesson": "《周总理，你在哪里》", "workbook": "自编", "type": "single",
-    "stem": "《周总理，你在哪里》一诗表达的情感是（ ）",
-    "options": ["对周总理的深切怀念和崇敬", "对自然的赞美", "对爱情的追求", "对战争的厌恶"],
-    "answer": "A",
-    "analysis": "《周总理，你在哪里》通过反复呼唤，表达对周总理的深切怀念和崇敬之情。",
-    "difficulty": 1
-  },
-  {
     "id": "chy26_006", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第三单元 文言文", "knowledge": "《岳阳楼记》",
+    "unit": "文言文", "knowledge": "《岳阳楼记》",
  "lesson": "岳阳楼记", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》中表达作者政治抱负的名句是（ ）",
     "options": [
@@ -67,7 +17,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_007", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第三单元 文言文", "knowledge": "《岳阳楼记》",
+    "unit": "文言文", "knowledge": "《岳阳楼记》",
  "lesson": "岳阳楼记", "workbook": "自编", "type": "single",
     "stem": "《岳阳楼记》的作者是（ ）",
     "options": ["范仲淹", "欧阳修", "苏轼", "王安石"],
@@ -77,7 +27,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_008", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第三单元 文言文", "knowledge": "《醉翁亭记》",
+    "unit": "文言文", "knowledge": "《醉翁亭记》",
  "lesson": "醉翁亭记", "workbook": "自编", "type": "single",
     "stem": "《醉翁亭记》中“醉翁之意不在酒”的下一句是（ ）",
     "options": ["在乎山水之间也", "得之心而寓之酒也", "山水之乐也", "而年又最高"],
@@ -87,7 +37,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_009", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第三单元 文言文", "knowledge": "《醉翁亭记》",
+    "unit": "文言文", "knowledge": "《醉翁亭记》",
  "lesson": "醉翁亭记", "workbook": "自编", "type": "single",
     "stem": "《醉翁亭记》的作者是（ ）",
     "options": ["欧阳修", "范仲淹", "苏轼", "柳宗元"],
@@ -97,7 +47,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_010", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第三单元 文言文", "knowledge": "《湖心亭看雪》",
+    "unit": "文言文", "knowledge": "《湖心亭看雪》",
  "lesson": "湖心亭看雪", "workbook": "自编", "type": "single",
     "stem": "《湖心亭看雪》中“雾凇沆砀”的“沆砀”意思是（ ）",
     "options": ["白气弥漫的样子", "水汽冻结", "寒冷", "朦胧"],
@@ -107,7 +57,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_011", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第六单元 文言文", "knowledge": "《曹刿论战》",
+    "unit": "文言文", "knowledge": "《曹刿论战》",
  "lesson": "曹刿论战", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》中“一鼓作气”的下一句是（ ）",
     "options": ["再而衰，三而竭", "再而衰", "三而竭", "彼竭我盈"],
@@ -117,7 +67,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_012", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第六单元 文言文", "knowledge": "《曹刿论战》",
+    "unit": "文言文", "knowledge": "《曹刿论战》",
  "lesson": "曹刿论战", "workbook": "自编", "type": "single",
     "stem": "《曹刿论战》选自（ ）",
     "options": ["《左传》", "《战国策》", "《史记》", "《论语》"],
@@ -127,7 +77,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_013", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第六单元 文言文", "knowledge": "《邹忌讽齐王纳谏》",
+    "unit": "文言文", "knowledge": "《邹忌讽齐王纳谏》",
  "lesson": "邹忌讽齐王纳谏", "workbook": "自编", "type": "single",
     "stem": "《邹忌讽齐王纳谏》中邹忌用什么事例讽谏齐王？（ ）",
     "options": ["自己与徐公比美", "治国之道", "战争胜负", "农业生产"],
@@ -137,7 +87,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_014", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第六单元 文言文", "knowledge": "《陈涉世家》",
+    "unit": "文言文", "knowledge": "《陈涉世家》",
  "lesson": "陈涉世家", "workbook": "自编", "type": "single",
     "stem": "《陈涉世家》中“王侯将相宁有种乎”表达了（ ）",
     "options": ["对封建等级制度的反抗精神", "对君主的忠诚", "对财富的追求", "对和平的向往"],
@@ -147,7 +97,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_015", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第六单元 文言文", "knowledge": "《出师表》",
+    "unit": "文言文", "knowledge": "《出师表》",
  "lesson": "出师表", "workbook": "自编", "type": "single",
     "stem": "《出师表》中“先帝创业未半而中道崩殂”的作者是（ ）",
     "options": ["诸葛亮", "刘备", "曹操", "关羽"],
@@ -157,7 +107,7 @@ const List<Map<String, dynamic>> chinese2026Unit = [
   },
   {
     "id": "chy26_016", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第六单元 文言文", "knowledge": "《出师表》",
+    "unit": "文言文", "knowledge": "《出师表》",
  "lesson": "出师表", "workbook": "自编", "type": "single",
     "stem": "《出师表》中诸葛亮提出的三条建议不包括（ ）",
     "options": ["广开言路", "严明赏罚", "亲贤远佞", "增加赋税"],
@@ -211,18 +161,8 @@ const List<Map<String, dynamic>> chinese2026Unit = [
     "difficulty": 2
   },
   {
-    "id": "chy26_021", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第一单元 诗歌", "knowledge": "《你是人间的四月天》",
- "lesson": "《你是人间的四月天》", "workbook": "自编", "type": "single",
-    "stem": "《你是人间的四月天》的作者是（ ）",
-    "options": ["林徽因", "冰心", "丁玲", "萧红"],
-    "answer": "A",
-    "analysis": "《你是人间的四月天》是林徽因的代表诗作。",
-    "difficulty": 1
-  },
-  {
     "id": "chy26_022", "subject": "chinese", "grade": "九年级上册",
-    "unit": "第三单元 文言文", "knowledge": "文言实词",
+    "unit": "文言文", "knowledge": "文言实词",
  "lesson": "岳阳楼记", "workbook": "自编", "type": "single",
     "stem": "下列加点词解释有误的一项是（ ）",
     "options": [
@@ -254,5 +194,5 @@ const List<Map<String, dynamic>> chinese2026Unit = [
     "answer": "A",
     "analysis": "出自刘禹锡《酬乐天扬州初逢席上见赠》：“沉舟侧畔千帆过，病树前头万木春。”",
     "difficulty": 1
-  }
+  },
 ];
