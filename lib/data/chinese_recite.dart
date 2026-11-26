@@ -601,4 +601,61 @@ const List<Map<String, dynamic>> chineseRecite = [
     "analysis": "王磐曲结句，写宦官搜刮致使民穷财尽。",
     "difficulty": 3
   },
+  // ===== 浣溪沙（秦观）=====
+  {
+    "id": "chy_rec_65", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "浣溪沙",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "漠漠轻寒上小楼，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "晓阴无赖似穷秋",
+    "analysis": "出自秦观《浣溪沙》，写暮春阴冷之景。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_66", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "浣溪沙",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "自在飞花轻似梦，＿＿＿＿＿＿＿。",
+    "options": [], "answer": "无边丝雨细如愁",
+    "analysis": "出自秦观《浣溪沙》，以飞花、丝雨喻愁。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_67", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "浣溪沙",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "＿＿＿＿＿＿＿，＿＿＿＿＿＿＿，宝帘闲挂小银钩。",
+    "options": [], "answer": "自在飞花轻似梦，无边丝雨细如愁",
+    "analysis": "出自秦观《浣溪沙》结句，写闲愁。",
+    "difficulty": 3
+  },
+
+  // ===== 丑奴儿·书博山道中壁（辛弃疾）=====
+  {
+    "id": "chy_rec_68", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "丑奴儿·书博山道中壁",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "少年不识愁滋味，＿＿＿＿＿。",
+    "options": [], "answer": "爱上层楼",
+    "analysis": "出自辛弃疾《丑奴儿·书博山道中壁》，写少时轻狂。",
+    "difficulty": 1
+  },
+  {
+    "id": "chy_rec_69", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "丑奴儿·书博山道中壁",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "而今识尽愁滋味，＿＿＿＿＿。",
+    "options": [], "answer": "欲说还休",
+    "analysis": "出自辛弃疾《丑奴儿·书博山道中壁》，写老来愁苦。",
+    "difficulty": 2
+  },
+  {
+    "id": "chy_rec_70", "subject": "chinese", "grade": "九年级上册",
+    "unit": "课外古诗词诵读", "lesson": "丑奴儿·书博山道中壁",
+    "knowledge": "名句默写", "workbook": "自编", "type": "flash",
+    "stem": "少年不识愁滋味，爱上层楼。爱上层楼，＿＿＿＿＿＿＿＿＿。而今识尽愁滋味，欲说还休。欲说还休，＿＿＿＿＿＿＿＿＿。",
+    "options": [], "answer": "为赋新词强说愁；却道天凉好个秋",
+    "analysis": "辛弃疾《丑奴儿·书博山道中壁》全文，对比少年与成年愁情。",
+    "difficulty": 3
+  },
 ];
